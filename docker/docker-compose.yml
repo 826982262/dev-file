@@ -1,12 +1,22 @@
-version: "3.4"
+version: '3.7'
 services:
+  swagger:
+    image: swaggerapi/swagger-ui
+    container_name: group-purchase-swagger
+    volumes: 
+      - ./swagger-manageter/swaggerCinfig:/foo
+    ports:
+      - 8090:8080
+    environment:
+      - SWAGGER_JSON=/foo/swagger.json
   swagger-manageter:
     container_name: swagger-manageter
     # image: daocloud.io/library/node:16
     restart: always
     working_dir: /swagger-manageter
     volumes:
-      - ./swagger-manageter:/swagger-manageter
+      - ./swagger-manageter/swaggerCinfig:/swagger-manageter/swaggerCinfig
+      - ./swagger-manageter/workdir:/swagger-manageter/workdir
     build:
       context: .
       dockerfile: Dockerfile

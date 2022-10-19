@@ -1,1 +1,3604 @@
-啊实打实
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Group Purchase API",
+      "description": "社区团购",
+      "version": "0.1.0"
+    },
+    "x-info": {
+      "port": 8000
+    },
+    "servers": [
+      {
+        "url": "http://localhost:8000",
+        "description": "Optional server description, e.g. Main (production) server"
+      },
+      {
+        "url": "http://buy.smallsaas.cn",
+        "description": "Optional server description, e.g. Internal staging server for testing"
+      }
+    ],
+    "tags": [
+      {
+        "name": "General",
+        "description": "通用"
+      },
+      {
+        "name": "Manager",
+        "description": "管理员"
+      },
+      {
+        "name": "Supplier",
+        "description": "供应商"
+      },
+      {
+        "name": "GroupLeader",
+        "description": "团长"
+      },
+      {
+        "name": "GroupMember",
+        "description": "团友"
+      },
+      {
+        "name": "Brand",
+        "description": "品牌商"
+      },
+      {
+        "name": "Investor",
+        "description": "投资商"
+      }
+    ],
+    "paths": {
+      "/api/v1/identities": {
+        "get": {
+          "operationId": "QueryUserIdentities",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查询当前用户身份信息",
+          "description": "一进入系统首先调用这个接口，该接口会返回当前用户的身份信息，比如管理员，团长，供应商等",
+          "tags": [
+            "General"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QueryUserIdentitiesResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/suppliers/{supplierId}/profile": {
+        "get": {
+          "operationId": "QuerySupplierProfile",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查看供应商profile",
+          "tags": [
+            "Supplier"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/SupplierId"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QuerySupplierProfileResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "put": {
+          "operationId": "UpdateSupplierProfile",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "更新供应商profile",
+          "tags": [
+            "Supplier"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/SupplierId"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/UpdateSupplierProfileRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/suppliers/{supplierId}/products": {
+        "get": {
+          "operationId": "QuerySupplierProducts",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查看供应商商品列表",
+          "tags": [
+            "Supplier"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/SupplierId"
+            },
+            {
+              "$ref": "#/components/parameters/PageNumber"
+            },
+            {
+              "$ref": "#/components/parameters/PageSize"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QuerySupplierProductsResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "post": {
+          "operationId": "CreateSupplierProduct",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "添加供应商商品",
+          "tags": [
+            "Supplier"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/SupplierId"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/CreateSupplierProductRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/suppliers/{supplierId}/products/{productId}": {
+        "get": {
+          "operationId": "QuerySupplierProduct",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查看供应商商品详情",
+          "tags": [
+            "Supplier"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/SupplierId"
+            },
+            {
+              "$ref": "#/components/parameters/ProductId"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QuerySupplierProductResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "put": {
+          "operationId": "UpdateSupplierProduct",
+          "summary": "更新供应商商品",
+          "tags": [
+            "Supplier"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/SupplierId"
+            },
+            {
+              "$ref": "#/components/parameters/ProductId"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/UpdateSupplierProductRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "delete": {
+          "operationId": "DeleteSupplierProduct",
+          "summary": "删除供应商商品",
+          "tags": [
+            "Supplier"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/SupplierId"
+            },
+            {
+              "$ref": "#/components/parameters/ProductId"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/suppliers/{supplierId}/groupPurchaseProducts": {
+        "put": {
+          "operationId": "UpdateSupplierGroupPurchaseProducts",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "设置供应商参与团购的商品列表",
+          "tags": [
+            "Supplier"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/SupplierId"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/UpdateSupplierGroupPurchaseProductsRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/suppliers/{supplierId}/orders": {
+        "get": {
+          "operationId": "QuerySupplierOrders",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查看供应商订单列表",
+          "tags": [
+            "Supplier"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/SupplierId"
+            },
+            {
+              "$ref": "#/components/parameters/PageNumber"
+            },
+            {
+              "$ref": "#/components/parameters/PageSize"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QuerySupplierOrdersResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/suppliers/{supplierId}/orders/{orderId}": {
+        "put": {
+          "operationId": "UpdateSupplierOrder",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "更新供应商订单",
+          "tags": [
+            "Supplier"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/SupplierId"
+            },
+            {
+              "$ref": "#/components/parameters/ProductId"
+            },
+            {
+              "$ref": "#/components/parameters/OrderId"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/UpdateSupplierOrderRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/managers": {
+        "get": {
+          "operationId": "QueryManagers",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查询管理员列表",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/PageNumber"
+            },
+            {
+              "$ref": "#/components/parameters/PageSize"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QueryManagersResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "post": {
+          "operationId": "CreateManager",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "添加管理员",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/CreateManagerRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/managers/{managerId}": {
+        "get": {
+          "operationId": "QueryManager",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查询管理员详情",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/ManagerId"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QueryManagerResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "put": {
+          "operationId": "UpdateManager",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "更新管理员",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/ManagerId"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/UpdateManagerRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "delete": {
+          "operationId": "DeleteManager",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "删除管理员",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/ManagerId"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/suppliers": {
+        "get": {
+          "operationId": "QuerySuppliers",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查询供应商列表",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/PageNumber"
+            },
+            {
+              "$ref": "#/components/parameters/PageSize"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QuerySuppliersResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "post": {
+          "operationId": "CreateSupplier",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "添加供应商",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/CreateSupplierRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/suppliers/{supplierId}": {
+        "get": {
+          "operationId": "QuerySupplier",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查询供应商详情",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/SupplierId"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QuerySupplierResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "put": {
+          "operationId": "UpdateSupplier",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "更新供应商",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/SupplierId"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/UpdateSupplierRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "delete": {
+          "operationId": "DeleteSupplier",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "删除供应商",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/SupplierId"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/groupLeaders": {
+        "get": {
+          "operationId": "QueryGroupLeaders",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查询团长列表",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/PageNumber"
+            },
+            {
+              "$ref": "#/components/parameters/PageSize"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QueryGroupLeadersResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "post": {
+          "operationId": "CreateGroupLeader",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "添加团长",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/CreateGroupLeaderRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/groupLeaders/{groupLeaderId}": {
+        "get": {
+          "operationId": "QueryGroupLeader",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查询团长详情",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupLeaderId"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QueryGroupLeaderResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "put": {
+          "operationId": "UpdateGroupLeader",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "更新团长",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupLeaderId"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/UpdateGroupLeaderRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "delete": {
+          "operationId": "DeleteGroupLeader",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "删除团长",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupLeaderId"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/brands": {
+        "get": {
+          "operationId": "QueryBrands",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查询品牌商列表",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/PageNumber"
+            },
+            {
+              "$ref": "#/components/parameters/PageSize"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QueryBrandsResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "post": {
+          "operationId": "CreateBrand",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "添加品牌商",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/CreateBrandRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/brands/{brandId}": {
+        "get": {
+          "operationId": "QueryBrand",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查询品牌商详情",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/BrandId"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QueryBrandResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "put": {
+          "operationId": "UpdateBrand",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "更新品牌商",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/BrandId"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/UpdateBrandRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "delete": {
+          "operationId": "DeleteBrand",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "删除品牌商",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/BrandId"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/investors": {
+        "get": {
+          "operationId": "QueryInvestors",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查询投资商列表",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/PageNumber"
+            },
+            {
+              "$ref": "#/components/parameters/PageSize"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QueryInvestorsResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "post": {
+          "operationId": "CreateInvestor",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "添加投资商",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/CreateInvestorRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/investors/{investorId}": {
+        "get": {
+          "operationId": "QueryInvestor",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查询投资商详情",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/InvestorId"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QueryInvestorResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "put": {
+          "operationId": "UpdateInvestor",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "更新投资商",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/InvestorId"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/UpdateInvestorRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "delete": {
+          "operationId": "DeleteInvestor",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "删除投资商",
+          "tags": [
+            "Manager"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/InvestorId"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/groupMembers/{groupMemberId}/profile": {
+        "get": {
+          "operationId": "QueryGroupMemberProfile",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查看团友profile",
+          "tags": [
+            "GroupMember"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupMemberId"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QueryGroupMemberProfileResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "put": {
+          "operationId": "UpdateGroupMemberProfile",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "更新团友profile",
+          "tags": [
+            "GroupMember"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupMemberId"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/UpdateGroupMemberProfileRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/groupMembers/{groupMemberId}/orders": {
+        "get": {
+          "operationId": "QueryGroupMemberOrders",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查看团友订单",
+          "tags": [
+            "GroupMember"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupMemberId"
+            },
+            {
+              "$ref": "#/components/parameters/PageNumber"
+            },
+            {
+              "$ref": "#/components/parameters/PageSize"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QueryGroupMemberOrdersResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/groupMembers/{groupMemberId}/groupLeaders": {
+        "post": {
+          "operationId": "ApplyGroupLeader",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "申请成为团长",
+          "tags": [
+            "GroupMember"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupMemberId"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/ApplyGroupLeaderRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/groupMembers/{groupMemberId}/suppliers": {
+        "post": {
+          "operationId": "ApplySupplier",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "申请成为供应商",
+          "tags": [
+            "GroupMember"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupMemberId"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/ApplySupplierRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/groupLeaders/{groupLeaderId}/profile": {
+        "get": {
+          "operationId": "QueryGroupLeaderProfile",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查看团长profile",
+          "tags": [
+            "GroupLeader"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupLeaderId"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QueryGroupLeaderProfileResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "put": {
+          "operationId": "UpdateGroupLeaderProfile",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "更新团长profile",
+          "tags": [
+            "GroupLeader"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupLeaderId"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/UpdateGroupLeaderProfileRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/groupLeaders/{groupLeaderId}/products": {
+        "get": {
+          "operationId": "QueryGroupLeaderProducts",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查看团长可选商品",
+          "tags": [
+            "GroupLeader"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupLeaderId"
+            },
+            {
+              "$ref": "#/components/parameters/PageNumber"
+            },
+            {
+              "$ref": "#/components/parameters/PageSize"
+            },
+            {
+              "$ref": "#/components/parameters/SelfProduct"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QueryGroupLeaderProductsResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "post": {
+          "operationId": "CreateGroupLeaderProduct",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "团长添加自营商品",
+          "tags": [
+            "GroupLeader"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupLeaderId"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/CreateGroupLeaderProductRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/groupLeaders/{groupLeaderId}/products/{productId}": {
+        "get": {
+          "operationId": "QueryGroupLeaderProduct",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查看团长可选商品详情",
+          "tags": [
+            "GroupLeader"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupLeaderId"
+            },
+            {
+              "$ref": "#/components/parameters/PageNumber"
+            },
+            {
+              "$ref": "#/components/parameters/PageSize"
+            },
+            {
+              "$ref": "#/components/parameters/ProductId"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QueryGroupLeaderProductResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "put": {
+          "operationId": "UpdateGroupLeaderProduct",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "团长更新自营商品",
+          "tags": [
+            "GroupLeader"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupLeaderId"
+            },
+            {
+              "$ref": "#/components/parameters/ProductId"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/UpdateGroupLeaderProductRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "delete": {
+          "operationId": "DeleteGroupLeaderProduct",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "团长删除自营商品",
+          "tags": [
+            "GroupLeader"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupLeaderId"
+            },
+            {
+              "$ref": "#/components/parameters/ProductId"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/groupLeaders/{groupLeaderId}/groupPurchases": {
+        "get": {
+          "operationId": "QueryGroupLeaderPurchases",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "团长查询我的团",
+          "tags": [
+            "GroupLeader"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupLeaderId"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QueryGroupLeaderPurchasesResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "post": {
+          "operationId": "CreateGroupLeaderPurchase",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "团长开团",
+          "tags": [
+            "GroupLeader"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupLeaderId"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/CreateGroupLeaderPurchaseRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/groupLeaders/{groupLeaderId}/groupPurchases/{groupPurchaseId}": {
+        "get": {
+          "operationId": "QueryGroupPurchase",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查看团信息",
+          "tags": [
+            "GroupMember",
+            "GroupLeader"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupLeaderId"
+            },
+            {
+              "$ref": "#/components/parameters/GroupPurchaseId"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QueryGroupPurchaseResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/groupLeaders/{groupLeaderId}/groupMembers": {
+        "get": {
+          "operationId": "QueryGroupLeaderMembers",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查询团长的团友列表",
+          "tags": [
+            "GroupLeader"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupLeaderId"
+            },
+            {
+              "$ref": "#/components/parameters/PageNumber"
+            },
+            {
+              "$ref": "#/components/parameters/PageSize"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QueryGroupLeaderMembersResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/groupLeaders/{groupLeaderId}/groupMembers/{groupMemberId}": {
+        "put": {
+          "operationId": "UpdateGroupLeaderMember",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "修改团友信息",
+          "tags": [
+            "GroupLeader"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupLeaderId"
+            },
+            {
+              "$ref": "#/components/parameters/GroupMemberId"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/CreateGroupLeaderPurchaseRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/groupLeaders/{groupLeaderId}/orders": {
+        "get": {
+          "operationId": "QueryGroupLeaderOrders",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查看团长订单",
+          "tags": [
+            "GroupLeader"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupLeaderId"
+            },
+            {
+              "$ref": "#/components/parameters/PageNumber"
+            },
+            {
+              "$ref": "#/components/parameters/PageSize"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QueryGroupLeaderOrdersResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        },
+        "post": {
+          "operationId": "CreateGroupLeaderOrder",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "团长下单",
+          "tags": [
+            "GroupLeader"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupLeaderId"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/CreateGroupLeaderOrderRequest"
+          },
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      },
+      "/api/v1/groupLeaders/{groupLeaderId}/orders/{orderId}": {
+        "get": {
+          "operationId": "QueryGroupLeaderOrder",
+          "x-accessor": {
+            "authenticated": true
+          },
+          "summary": "查看团长订单详情",
+          "tags": [
+            "GroupLeader"
+          ],
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/AccessToken"
+            },
+            {
+              "$ref": "#/components/parameters/GroupLeaderId"
+            },
+            {
+              "$ref": "#/components/parameters/OrderId"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/QueryGroupLeaderOrderResult"
+            },
+            "400": {
+              "$ref": "#/components/responses/BadRequest"
+            },
+            "500": {
+              "$ref": "#/components/responses/InternalServerError"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "parameters": {
+        "AccessToken": {
+          "name": "authorization",
+          "description": "登录用户的accessToken",
+          "in": "header",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": "bearer eyJhbGciOiJIUzI1NiJ9.MjM1.yljSNuVwTc8tXXG4pAcI3xbqILWaZZNO5lpduvMVYu0"
+          }
+        },
+        "GroupPurchaseId": {
+          "name": "groupPurchaseId",
+          "description": "Group Purchase ID in path",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "example": 9343422
+          }
+        },
+        "GroupMemberId": {
+          "name": "groupMemberId",
+          "description": "Group Member ID in path",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "example": 9343422
+          }
+        },
+        "GroupLeaderId": {
+          "name": "groupLeaderId",
+          "description": "Group Leader ID in path",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "example": 9343422
+          }
+        },
+        "BrandId": {
+          "name": "brandId",
+          "description": "Brand ID in path",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "example": 9343422
+          }
+        },
+        "InvestorId": {
+          "name": "investorId",
+          "description": "Ivnestor ID in path",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "example": 9343422
+          }
+        },
+        "ManagerId": {
+          "name": "managerId",
+          "description": "Manager ID in path",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "example": 9343422
+          }
+        },
+        "OrderId": {
+          "name": "orderId",
+          "description": "Order ID in path",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "example": 9343422
+          }
+        },
+        "SupplierId": {
+          "name": "supplierId",
+          "description": "Supplier ID in path",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "example": 9343422
+          }
+        },
+        "ProductId": {
+          "name": "productId",
+          "description": "Product ID in path",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "example": 9343422
+          }
+        },
+        "Id": {
+          "name": "id",
+          "description": "ID in path",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "example": 9343422
+          }
+        },
+        "Status": {
+          "name": "status",
+          "description": "Filter by status",
+          "in": "query",
+          "schema": {
+            "type": "string"
+          }
+        },
+        "PageNumber": {
+          "name": "pageNumber",
+          "description": "current page number",
+          "in": "query",
+          "schema": {
+            "type": "integer",
+            "default": 1,
+            "example": 1
+          }
+        },
+        "PageSize": {
+          "name": "pageSize",
+          "description": "record count in one page",
+          "in": "query",
+          "schema": {
+            "type": "integer",
+            "default": 20,
+            "example": 20
+          }
+        },
+        "SelfProduct": {
+          "name": "selfProduct",
+          "description": "查询团长自营商品",
+          "in": "query",
+          "schema": {
+            "type": "boolean",
+            "default": false,
+            "example": false
+          }
+        }
+      },
+      "schemas": {
+        "GeneralError": {
+          "type": "object",
+          "properties": {
+            "errorCode": {
+              "type": "string"
+            },
+            "errorMsg": {
+              "type": "string"
+            }
+          }
+        },
+        "CommonUserInfo": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "example": 123455
+            },
+            "userId": {
+              "type": "string",
+              "example": "45435345"
+            },
+            "name": {
+              "type": "string",
+              "example": "forrest"
+            },
+            "avatar": {
+              "type": "string",
+              "example": "http://image.test.com/12.png"
+            },
+            "phone": {
+              "type": "string",
+              "example": "13800000001"
+            },
+            "province": {
+              "type": "string",
+              "example": "广东省"
+            },
+            "city": {
+              "type": "string",
+              "example": "广州市"
+            },
+            "distinct": {
+              "type": "string",
+              "example": "天河区"
+            },
+            "neighborhoods": {
+              "type": "string",
+              "description": "小区",
+              "example": "天河花园"
+            },
+            "address": {
+              "type": "string",
+              "example": "A栋1102房"
+            }
+          }
+        },
+        "UserStatus": {
+          "type": "string",
+          "description": "用户状态",
+          "enum": [
+            "NORMAL",
+            "BLOCKED"
+          ],
+          "x-ts-enum-names": [
+            "Normal",
+            "Blocked"
+          ]
+        },
+        "Manager": {
+          "type": "object",
+          "description": "管理员",
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/CommonUserInfo"
+            },
+            {
+              "properties": {
+                "status": {
+                  "$ref": "#/components/schemas/UserStatus",
+                  "x-ts-type": "UserStatus",
+                  "example": "NORMAL"
+                },
+                "roles": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "example": "SYSTEM_ADMIN"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "Brand": {
+          "type": "object",
+          "description": "品牌商",
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/CommonUserInfo"
+            },
+            {
+              "properties": {
+                "status": {
+                  "$ref": "#/components/schemas/UserStatus",
+                  "x-ts-type": "UserStatus",
+                  "example": "NORMAL"
+                }
+              }
+            }
+          ]
+        },
+        "Investor": {
+          "type": "object",
+          "description": "投资商",
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/CommonUserInfo"
+            },
+            {
+              "properties": {
+                "status": {
+                  "$ref": "#/components/schemas/UserStatus",
+                  "x-ts-type": "UserStatus",
+                  "example": "NORMAL"
+                }
+              }
+            }
+          ]
+        },
+        "GroupMember": {
+          "type": "object",
+          "description": "团友",
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/CommonUserInfo"
+            },
+            {
+              "properties": {
+                "status": {
+                  "$ref": "#/components/schemas/UserStatus",
+                  "x-ts-type": "UserStatus",
+                  "example": "NORMAL"
+                }
+              }
+            }
+          ]
+        },
+        "LeaderStatus": {
+          "type": "string",
+          "description": "团长状态",
+          "enum": [
+            "APPROVAL_PENDING",
+            "REJECTED",
+            "NORMAL",
+            "BLOCKED"
+          ],
+          "x-ts-enum-names": [
+            "ApprovalPending",
+            "Rejected",
+            "Normal",
+            "Blocked"
+          ]
+        },
+        "GroupLeader": {
+          "type": "object",
+          "description": "社区团长",
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/CommonUserInfo"
+            },
+            {
+              "properties": {
+                "status": {
+                  "$ref": "#/components/schemas/LeaderStatus",
+                  "x-ts-type": "LeaderStatus"
+                },
+                "shopName": {
+                  "type": "string",
+                  "example": "大优惠商店"
+                },
+                "shopImages": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "example": "http://images.test.com/1.png"
+                  }
+                },
+                "infoDisplaymentSettings": {},
+                "endTimeSettings": {},
+                "createdAt": {
+                  "type": "string",
+                  "example": "2022-08-01T13:02:11.000Z"
+                }
+              }
+            }
+          ]
+        },
+        "Supplier": {
+          "type": "object",
+          "description": "供应商",
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/CommonUserInfo"
+            },
+            {
+              "properties": {
+                "status": {
+                  "$ref": "#/components/schemas/UserStatus",
+                  "x-ts-type": "UserStatus"
+                }
+              }
+            }
+          ]
+        },
+        "ProductStatus": {
+          "type": "string",
+          "description": "产品状态",
+          "enum": [
+            "DRAFT",
+            "APPROVAL_PENDING",
+            "APPROVED",
+            "REJECTED",
+            "NORMAL",
+            "BLOCKED"
+          ],
+          "x-ts-enum-names": [
+            "Draft",
+            "ApprovalPending",
+            "Approved",
+            "Rejected",
+            "Normal",
+            "Blocked"
+          ]
+        },
+        "Product": {
+          "type": "object",
+          "description": "团购商品",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "example": 132
+            },
+            "supplierId": {
+              "type": "integer",
+              "description": "供应商Unique ID, 供应商商品时有效",
+              "example": 23423423
+            },
+            "groupLeaderId": {
+              "type": "integer",
+              "description": "团长ID, 团长自营商品时有效",
+              "example": 2342342
+            },
+            "title": {
+              "type": "string",
+              "description": "产品标题",
+              "example": "彩色葡萄干"
+            },
+            "subtitle": {
+              "type": "string",
+              "description": "产品副标题",
+              "example": "鲜甜可口"
+            },
+            "covers": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "description": "产品封面图",
+                "example": "/images/23424234.png"
+              }
+            },
+            "description": {
+              "type": "string",
+              "description": "产品描述",
+              "example": "超甜"
+            },
+            "sellingPrice": {
+              "type": "number",
+              "description": "售价",
+              "example": 12.00
+            },
+            "suggestedPrice": {
+              "type": "number",
+              "description": "建议售价",
+              "example": 16.00
+            },
+            "brandId": {
+              "type": "integer",
+              "description": "品牌商ID, 当供应商商品时有效",
+              "example": 2342
+            },
+            "costPrice": {
+              "type": "number",
+              "description": "成本价, 品牌商有效",
+              "example": 10.00
+            },
+            "investorId": {
+              "type": "integer",
+              "description": "投资商ID, 当供应商商品时有效",
+              "example": 2342
+            },
+            "proportion": {
+              "type": "number",
+              "description": "分成比例%, 投资商有效",
+              "example": "10"
+            },
+            "unit": {
+              "type": "string",
+              "example": "箱"
+            },
+            "inventoryTotal": {
+              "type": "integer",
+              "description": "总库存",
+              "example": "100"
+            },
+            "inventoryRemain": {
+              "type": "integer",
+              "description": "剩余库存",
+              "example": 10
+            },
+            "status": {
+              "$ref": "#/components/schemas/ProductStatus",
+              "x-ts-type": "ProductStatus"
+            },
+            "createdAt": {
+              "type": "string",
+              "example": "2022-08-01T13:02:11.000Z"
+            }
+          },
+          "required": [
+            "title",
+            "covers",
+            "description",
+            "sellingPrice",
+            "status"
+          ]
+        },
+        "SupplierGroupPurchaseProducts": {
+          "type": "object",
+          "description": "供应商每期设置的团购商品列表",
+          "properties": {
+            "endTime": {
+              "type": "string",
+              "description": "截团时间",
+              "example": "2022-08-01T13:02:11.000Z"
+            },
+            "productIds": {
+              "type": "array",
+              "description": "设置开团的商品ID列表, 系统会对这些商品状态设置为上架",
+              "items": {
+                "type": "integer"
+              }
+            }
+          },
+          "required": ["endTime", "productIds"]
+        },
+        "PurchaseStatus": {
+          "type": "string",
+          "description": "团购状态, NORMAL: 团进行中; END: 团已截止(团长尚未下单); FINISHED: 团已完结(团长已下单)",
+          "enum": [
+            "NORMAL",
+            "END",
+            "FINISHED"
+          ],
+          "x-ts-enum-names": [
+            "Normal",
+            "End",
+            "Finished"
+          ]
+        },
+        "GroupPurchaseProduct": {
+          "type": "object",
+          "description": "团长选择进入团购的商品",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "example": 234
+            },
+            "groupPurchaseId": {
+              "type": "integer",
+              "description": "团购ID",
+              "example": 234
+            },
+            "productId": {
+              "type": "integer",
+              "example": 23
+            },
+            "productTitle": {
+              "type": "string",
+              "example": "啤酒"
+            },
+            "productSubtitle": {
+              "type": "object",
+              "example": "真好喝"
+            },
+            "productCover": {
+              "type": "string",
+              "example": "http://images.test.com/1.png"
+            },
+            "productPrice": {
+              "type": "number",
+              "example": 12.00
+            },
+            "productUnit": {
+              "type": "string",
+              "example": "瓶"
+            }
+          }
+        },
+        "GroupPurchase": {
+          "type": "object",
+          "description": "团详情",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "example": 234
+            },
+            "groupLeaderId": {
+              "type": "integer",
+              "description": "团长ID",
+              "example": 34234234
+            },
+            "title": {
+              "type": "string",
+              "example": "周岁到货早餐包点接龙"
+            },
+            "subtitle": {
+              "type": "string",
+              "example": ""
+            },
+            "startTime": {
+              "type": "string",
+              "description": "开始时间",
+              "example": "2022-07-22T10:00:00.000Z"
+            },
+            "endTime": {
+              "type": "string",
+              "description": "结束时间",
+              "example": "2022-07-24T10:00:00.000Z"
+            },
+            "description": {
+              "type": "string"
+            },
+            "status": {
+              "$ref": "#/components/schemas/PurchaseStatus",
+              "x-ts-type": "PurchaseStatus"
+            },
+            "products": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GroupPurchaseProduct",
+                "x-ts-type": "GroupPurchaseProduct"
+              }
+            }
+          },
+          "required": [
+            "groupLeaderId",
+            "title",
+            "startTime",
+            "endTime",
+            "status",
+            "products"
+          ]
+        },
+        "OrderItem": {
+          "type": "object",
+          "description": "订单项",
+          "properties": {
+            "productId": {
+              "type": "integer",
+              "example": 234234
+            },
+            "productTitle": {
+              "type": "string",
+              "example": "葡萄干"
+            },
+            "productSubtitle": {
+              "type": "object",
+              "example": "真好喝"
+            },
+            "productPrice": {
+              "type": "number",
+              "description": "产品售价",
+              "example": 12.00
+            },
+            "productCount": {
+              "type": "number",
+              "description": "购买数量",
+              "example": 3
+            },
+            "productUnit": {
+              "type": "string",
+              "description": "产品单位",
+              "example": "瓶"
+            },
+            "productCover": {
+              "type": "string",
+              "description": "产品封面",
+              "example": "/images/234242.png"
+            },
+            "note": {
+              "type": "string",
+              "description": "备注"
+            }
+          },
+          "required": [
+            "productTitle",
+            "productPrice",
+            "productCount"
+          ]
+        },
+        "OrderStatus": {
+          "type": "string",
+          "description": "订单状态",
+          "enum": [
+            "DELIVER_PENDING",
+            "DELIVERED",
+            "CLOSED",
+            "CANCELED"
+          ],
+          "x-ts-enum-names": [
+            "DeliverPending",
+            "Delivered",
+            "Closed",
+            "Canceled"
+          ]
+        },
+        "MemberOrder": {
+          "type": "object",
+          "description": "会员订单-团友向团长下的单",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "example": 324234
+            },
+            "orderNumber": {
+              "type": "string",
+              "example": "343242"
+            },
+            "groupMemberId": {
+              "type": "integer",
+              "description": "下单团友ID",
+              "example": 8888234
+            },
+            "groupLeaderId": {
+              "type": "integer",
+              "description": "团长ID",
+              "example": 8888234
+            },
+            "userName": {
+              "type": "string",
+              "example": "小米"
+            },
+            "purchaseId": {
+              "type": "integer",
+              "description": "团购ID",
+              "example": 234234
+            },
+            "title": {
+              "type": "string",
+              "example": "周三到货接龙"
+            },
+            "totalPrice": {
+              "type": "number",
+              "example": 342.00
+            },
+            "createdAt": {
+              "type": "string",
+              "example": "2022-07-12T12:00:23.000Z"
+            },
+            "cover": {
+              "type": "string",
+              "example": "/images/234234.png"
+            },
+            "status": {
+              "$ref": "#/components/schemas/OrderStatus",
+              "x-ts-type": "OrderStatus"
+            },
+            "contactUser": {
+              "type": "string",
+              "example": "小米"
+            },
+            "contactPhone": {
+              "type": "string",
+              "example": "13800000000"
+            },
+            "contactAddress": {
+              "type": "string",
+              "example": "广东省广州市天河区天河花园A栋1102房"
+            },
+            "orderItems": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/OrderItem",
+                "x-ts-type": "OrderItem"
+              }
+            }
+          },
+          "required": [
+            "orderItems",
+            "purchaseId",
+            "groupMemberId",
+            "groupLeaderId",
+            "userName",
+            "status",
+            "contactUser",
+            "contactPhone",
+            "contactAddress"
+          ]
+        },
+        "LeaderOrder": {
+          "type": "object",
+          "description": "团长订单-团长向供应商下的单",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "example": 2342
+            },
+            "orderNumber": {
+              "type": "string",
+              "example": "343242"
+            },
+            "groupLeaderId": {
+              "type": "integer",
+              "description": "下单团长的ID",
+              "example": 234234
+            },
+            "userName": {
+              "type": "string",
+              "example": "Sally"
+            },
+            "supplierId": {
+              "type": "integer",
+              "description": "供应商ID, 如果是自营商品, 则该字段为空"
+            },
+            "title": {
+              "type": "string"
+            },
+            "totalPrice": {
+              "type": "number",
+              "example": 234.00
+            },
+            "createdAt": {
+              "type": "string",
+              "example": "2022-07-12T12:00:23.000Z"
+            },
+            "cover": {
+              "type": "string"
+            },
+            "status": {
+              "$ref": "#/components/schemas/OrderStatus",
+              "x-ts-type": "OrderStatus"
+            },
+            "contactUser": {
+              "type": "string"
+            },
+            "contactPhone": {
+              "type": "string"
+            },
+            "contactAddress": {
+              "type": "string"
+            },
+            "orderItems": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/OrderItem",
+                "x-ts-type": "OrderItem"
+              }
+            }
+          },
+          "required": [
+            "orderItems",
+            "groupLeaderId",
+            "userName",
+            "status",
+            "contactUser",
+            "contactPhone",
+            "contactAddress"
+          ]
+        },
+        "QueryUserIdentitiesResponse": {
+          "type": "object",
+          "properties": {
+            "groupMember": {
+              "$ref": "#/components/schemas/GroupMember",
+              "x-ts-type": "GroupMember"
+            },
+            "groupLeader": {
+              "$ref": "#/components/schemas/GroupLeader",
+              "x-ts-type": "GroupLeader"
+            },
+            "supplier": {
+              "$ref": "#/components/schemas/Supplier",
+              "x-ts-type": "Supplier"
+            },
+            "brand": {
+              "$ref": "#/components/schemas/Brand",
+              "x-ts-type": "Brand"
+            },
+            "investor": {
+              "$ref": "#/components/schemas/Investor",
+              "x-ts-type": "Investor"
+            },
+            "manager": {
+              "$ref": "#/components/schemas/Manager",
+              "x-ts-type": "Manager"
+            }
+          }
+        },
+        "QuerySupplierProfileResponse": {
+          "$ref": "#/components/schemas/Supplier",
+          "x-ts-type": "Supplier"
+        },
+        "QuerySupplierProductsResponse": {
+          "type": "object",
+          "properties": {
+            "pageNumber": {
+              "type": "integer",
+              "default": 1,
+              "example": 1
+            },
+            "pageSize": {
+              "type": "integer",
+              "default": 20,
+              "example": 20
+            },
+            "total": {
+              "type": "integer",
+              "example": 400
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Product",
+                "x-ts-type": "Product"
+              }
+            }
+          }
+        },
+        "QuerySupplierProductResponse": {
+          "$ref": "#/components/schemas/Product",
+          "x-ts-type": "Product"
+        },
+        "QuerySupplierOrdersResponse": {
+          "type": "object",
+          "properties": {
+            "pageNumber": {
+              "type": "integer",
+              "default": 1,
+              "example": 1
+            },
+            "pageSize": {
+              "type": "integer",
+              "default": 20,
+              "example": 20
+            },
+            "total": {
+              "type": "integer",
+              "example": 400
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/LeaderOrder",
+                "x-ts-type": "LeaderOrder"
+              }
+            }
+          }
+        },
+        "QueryManagersResponse": {
+          "type": "object",
+          "properties": {
+            "pageNumber": {
+              "type": "integer",
+              "default": 1,
+              "example": 1
+            },
+            "pageSize": {
+              "type": "integer",
+              "default": 20,
+              "example": 20
+            },
+            "total": {
+              "type": "integer",
+              "example": 400
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Manager",
+                "x-ts-type": "Manager"
+              }
+            }
+          }
+        },
+        "QueryManagerResponse": {
+          "$ref": "#/components/schemas/Manager",
+          "x-ts-type": "Manager"
+        },
+        "QuerySuppliersResponse": {
+          "type": "object",
+          "properties": {
+            "pageNumber": {
+              "type": "integer",
+              "default": 1,
+              "example": 1
+            },
+            "pageSize": {
+              "type": "integer",
+              "default": 20,
+              "example": 20
+            },
+            "total": {
+              "type": "integer",
+              "example": 400
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Supplier",
+                "x-ts-type": "Supplier"
+              }
+            }
+          }
+        },
+        "QuerySupplierResponse": {
+          "$ref": "#/components/schemas/Supplier",
+          "x-ts-type": "Supplier"
+        },
+        "QueryGroupLeadersResponse": {
+          "type": "object",
+          "properties": {
+            "pageNumber": {
+              "type": "integer",
+              "default": 1,
+              "example": 1
+            },
+            "pageSize": {
+              "type": "integer",
+              "default": 20,
+              "example": 20
+            },
+            "total": {
+              "type": "integer",
+              "example": 400
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GroupLeader",
+                "x-ts-type": "GroupLeader"
+              }
+            }
+          }
+        },
+        "QueryGroupLeaderResponse": {
+          "$ref": "#/components/schemas/GroupLeader",
+          "x-ts-type": "GroupLeader"
+        },
+        "QueryBrandsResponse": {
+          "type": "object",
+          "properties": {
+            "pageNumber": {
+              "type": "integer",
+              "default": 1,
+              "example": 1
+            },
+            "pageSize": {
+              "type": "integer",
+              "default": 20,
+              "example": 20
+            },
+            "total": {
+              "type": "integer",
+              "example": 400
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Brand",
+                "x-ts-type": "Brand"
+              }
+            }
+          }
+        },
+        "QueryBrandResponse": {
+          "$ref": "#/components/schemas/Brand",
+          "x-ts-type": "Brand"
+        },
+        "QueryInvestorsResponse": {
+          "type": "object",
+          "properties": {
+            "pageNumber": {
+              "type": "integer",
+              "default": 1,
+              "example": 1
+            },
+            "pageSize": {
+              "type": "integer",
+              "default": 20,
+              "example": 20
+            },
+            "total": {
+              "type": "integer",
+              "example": 400
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Investor",
+                "x-ts-type": "Investor"
+              }
+            }
+          }
+        },
+        "QueryInvestorResponse": {
+          "$ref": "#/components/schemas/Investor",
+          "x-ts-type": "Investor"
+        },
+        "QueryGroupMemberProfileResponse": {
+          "$ref": "#/components/schemas/GroupMember",
+          "x-ts-type": "GroupMember"
+        },
+        "QueryGroupMemberOrdersResponse": {
+          "type": "object",
+          "properties": {
+            "pageNumber": {
+              "type": "integer",
+              "default": 1,
+              "example": 1
+            },
+            "pageSize": {
+              "type": "integer",
+              "default": 20,
+              "example": 20
+            },
+            "total": {
+              "type": "integer",
+              "example": 400
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/MemberOrder",
+                "x-ts-type": "MemberOrder"
+              }
+            }
+          }
+        },
+        "QueryGroupLeaderProfileResponse": {
+          "$ref": "#/components/schemas/GroupLeader",
+          "x-ts-type": "GroupLeader"
+        },
+        "QueryGroupLeaderProductsResponse": {
+          "type": "object",
+          "properties": {
+            "pageNumber": {
+              "type": "integer",
+              "default": 1,
+              "example": 1
+            },
+            "pageSize": {
+              "type": "integer",
+              "default": 20,
+              "example": 20
+            },
+            "total": {
+              "type": "integer",
+              "example": 400
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Product",
+                "x-ts-type": "Product"
+              }
+            }
+          }
+        },
+        "QueryGroupLeaderProductResponse": {
+          "$ref": "#/components/schemas/Product",
+          "x-ts-type": "Product"
+        },
+        "QueryGroupLeaderPurchasesResponse": {
+          "type": "object",
+          "properties": {
+            "pageNumber": {
+              "type": "integer",
+              "default": 1,
+              "example": 1
+            },
+            "pageSize": {
+              "type": "integer",
+              "default": 20,
+              "example": 20
+            },
+            "total": {
+              "type": "integer",
+              "example": 400
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GroupPurchase",
+                "x-ts-type": "GroupPurchase"
+              }
+            }
+          }
+        },
+        "QueryGroupPurchaseResponse": {
+          "$ref": "#/components/schemas/GroupPurchase",
+          "x-ts-type": "GroupPurchase"
+        },
+        "QueryGroupMembersResponse": {
+          "type": "object",
+          "properties": {
+            "pageNumber": {
+              "type": "integer",
+              "default": 1,
+              "example": 1
+            },
+            "pageSize": {
+              "type": "integer",
+              "default": 20,
+              "example": 20
+            },
+            "total": {
+              "type": "integer",
+              "example": 400
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GroupMember",
+                "x-ts-type": "GroupMember"
+              }
+            }
+          }
+        },
+        "QueryGroupLeaderOrdersResponse": {
+          "type": "object",
+          "properties": {
+            "pageNumber": {
+              "type": "integer",
+              "default": 1,
+              "example": 1
+            },
+            "pageSize": {
+              "type": "integer",
+              "default": 20,
+              "example": 20
+            },
+            "total": {
+              "type": "integer",
+              "example": 400
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/LeaderOrder",
+                "x-ts-type": "LeaderOrder"
+              }
+            }
+          }
+        },
+        "QueryGroupLeaderOrderResponse": {
+          "$ref": "#/components/schemas/LeaderOrder",
+          "x-ts-type": "LeaderOrder"
+        }
+      },
+      "requestBodies": {
+        "UpdateSupplierProfileRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplier"
+              }
+            }
+          }
+        },
+        "UpdateSupplierProductRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            }
+          }
+        },
+        "UpdateSupplierGroupPurchaseProductsRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SupplierGroupPurchaseProducts"
+              }
+            }
+          }
+        },
+        "UpdateSupplierOrderRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LeaderOrder"
+              }
+            }
+          }
+        },
+        "CreateManagerRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Manager"
+              }
+            }
+          }
+        },
+        "UpdateManagerRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Manager"
+              }
+            }
+          }
+        },
+        "CreateSupplierRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplier"
+              }
+            }
+          }
+        },
+        "UpdateSupplierRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplier"
+              }
+            }
+          }
+        },
+        "CreateGroupLeaderRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GroupLeader"
+              }
+            }
+          }
+        },
+        "UpdateGroupLeaderRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GroupLeader"
+              }
+            }
+          }
+        },
+        "CreateBrandRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Brand"
+              }
+            }
+          }
+        },
+        "UpdateBrandRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Brand"
+              }
+            }
+          }
+        },
+        "CreateInvestorRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Investor"
+              }
+            }
+          }
+        },
+        "UpdateInvestorRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Investor"
+              }
+            }
+          }
+        },
+        "UpdateGroupMemberProfileRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GroupMember"
+              }
+            }
+          }
+        },
+        "ApplyGroupLeaderRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GroupLeader"
+              }
+            }
+          }
+        },
+        "ApplySupplierRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplier"
+              }
+            }
+          }
+        },
+        "UpdateGroupLeaderProfileRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GroupLeader"
+              }
+            }
+          }
+        },
+        "CreateGroupLeaderPurchaseRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GroupPurchase"
+              }
+            }
+          }
+        },
+        "CreateGroupLeaderProductRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            }
+          }
+        },
+        "UpdateGroupLeaderProductRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            }
+          }
+        },
+        "CreateGroupLeaderOrderRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LeaderOrder"
+              }
+            }
+          }
+        },
+        "CreateSupplierProductRequest": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            }
+          }
+        }
+      },
+      "responses": {
+        "BadRequest": {
+          "description": "400 Bad Request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeneralError"
+              }
+            }
+          }
+        },
+        "Unauthorized": {
+          "description": "401 Unauthorized",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeneralError"
+              }
+            }
+          }
+        },
+        "NotFound": {
+          "description": "404 Not Found",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeneralError"
+              }
+            }
+          }
+        },
+        "InternalServerError": {
+          "description": "500 Internal Server Error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeneralError"
+              }
+            }
+          }
+        },
+        "QueryUserIdentitiesResult": {
+          "description": "查询当前用户身份信息结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryUserIdentitiesResponse"
+              }
+            }
+          }
+        },
+        "QuerySupplierProfileResult": {
+          "description": "查询供应商资料结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuerySupplierProfileResponse"
+              }
+            }
+          }
+        },
+        "QuerySupplierProductsResult": {
+          "description": "查询供应商商品列表结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuerySupplierProductsResponse"
+              }
+            }
+          }
+        },
+        "QuerySupplierProductResult": {
+          "description": "查询供应商商品结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuerySupplierProductResponse"
+              }
+            }
+          }
+        },
+        "QuerySupplierOrdersResult": {
+          "description": "查询供应商订单列表结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuerySupplierOrdersResponse"
+              }
+            }
+          }
+        },
+        "QueryManagersResult": {
+          "description": "查询管理员列表结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryManagersResponse"
+              }
+            }
+          }
+        },
+        "QueryManagerResult": {
+          "description": "查询管理员结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryManagerResponse"
+              }
+            }
+          }
+        },
+        "QuerySuppliersResult": {
+          "description": "查询供应商列表结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuerySuppliersResponse"
+              }
+            }
+          }
+        },
+        "QuerySupplierResult": {
+          "description": "查询供应商结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuerySupplierResponse"
+              }
+            }
+          }
+        },
+        "QueryGroupLeadersResult": {
+          "description": "查询团长列表结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryGroupLeadersResponse"
+              }
+            }
+          }
+        },
+        "QueryGroupLeaderResult": {
+          "description": "查询团长详情结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryGroupLeaderResponse"
+              }
+            }
+          }
+        },
+        "QueryBrandsResult": {
+          "description": "查询品牌商列表结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryBrandsResponse"
+              }
+            }
+          }
+        },
+        "QueryBrandResult": {
+          "description": "查询品牌商结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryBrandResponse"
+              }
+            }
+          }
+        },
+        "QueryInvestorsResult": {
+          "description": "查询投资商列表结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryInvestorsResponse"
+              }
+            }
+          }
+        },
+        "QueryInvestorResult": {
+          "description": "查询投资商结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryInvestorResponse"
+              }
+            }
+          }
+        },
+        "QueryGroupMemberProfileResult": {
+          "description": "查询团友资料结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryGroupMemberProfileResponse"
+              }
+            }
+          }
+        },
+        "QueryGroupMemberOrdersResult": {
+          "description": "查询团友订单列表结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryGroupMemberOrdersResponse"
+              }
+            }
+          }
+        },
+        "QueryGroupLeaderProfileResult": {
+          "description": "查询团长资料结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryGroupLeaderProfileResponse"
+              }
+            }
+          }
+        },
+        "QueryGroupLeaderProductsResult": {
+          "description": "查询团长可选商品列表结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryGroupLeaderProductsResponse"
+              }
+            }
+          }
+        },
+        "QueryGroupLeaderProductResult": {
+          "description": "查询团长可选商品详情结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryGroupLeaderProductResponse"
+              }
+            }
+          }
+        },
+        "QueryGroupLeaderPurchasesResult": {
+          "description": "查询团长团购列表结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryGroupLeaderPurchasesResponse"
+              }
+            }
+          }
+        },
+        "QueryGroupPurchaseResult": {
+          "description": "查询团长团购结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryGroupPurchaseResponse"
+              }
+            }
+          }
+        },
+        "QueryGroupLeaderMembersResult": {
+          "description": "查询团长团友列表结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryGroupMembersResponse"
+              }
+            }
+          }
+        },
+        "QueryGroupLeaderOrdersResult": {
+          "description": "查询团长订单列表结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryGroupLeaderOrdersResponse"
+              }
+            }
+          }
+        },
+        "QueryGroupLeaderOrderResult": {
+          "description": "查询团长订单结果",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryGroupLeaderOrderResponse"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
