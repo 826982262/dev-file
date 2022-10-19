@@ -1,0 +1,16 @@
+version: "3.4"
+services:
+  swagger-manageter:
+    container_name: swagger-manageter
+    # image: daocloud.io/library/node:16
+    restart: always
+    working_dir: /swagger-manageter
+    volumes:
+      - ./swagger-manageter:/swagger-manageter
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command:  npm start
+    # 日志大小限制
+    ports:
+      - 8000:8080
