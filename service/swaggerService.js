@@ -3,31 +3,20 @@ const fs = require("fs")
 const path = require('path')
 const {WORKDIR,SWAGGERJSONFILE} = require('../config/config.default.js');
 const {getCheckSum,checkConfigFile,checkSumEqueir} = require('../utils/fileUtils')
-
+const {item} = require('../model/item')
 // 配置文件查找
 let checkConfigFileService = async (ctx, next) => {
-    var files = checkConfigFile(WORKDIR);
+    let arr = new Array()    
+    var items = checkConfigFile(WORKDIR);
+
     let res = await co(function* (){
-            if(files ==false){
+            if(items ==null){
                 ctx.throw({success: false,code: 400, message: "配置文件不存在"})
             }
-    var nowconfig=null;
-     if(fs.existsSync(SWAGGERJSONFILE)){
-        var configCheckSum = getCheckSum(SWAGGERJSONFILE);
-        for(var i=0;i<files.length;i++){
-            var vcheckSum = getCheckSum(WORKDIR+'/'+files[i])
-            if(checkSumEqueir(vcheckSum,configCheckSum)){
-                nowconfig=files[i]
-                break
-            }
-        }
-         nowconfig= nowconfig==null?null:nowconfig
-    }
     var result = {
-        "fileLists": JSON.stringify(files),
-        "nowConfig": nowconfig,
-        "code": 200,
-        "success": true
+        items: items,
+        code: 200,
+        success: true
     }
     return result
  })
@@ -51,9 +40,10 @@ let uploadFile= async (ctx, next) => {
 }
 // 执行文件
 let execFile = async (ctx, next) =>{
-   var {execFileName} = ctx.request.body
+   var {swagger} = ctx.request.body
+   console.log(swagger)
     let res = await co(function* (){
-        var data = fs.readFileSync(`${WORKDIR}/${execFileName}`);
+        var data = fs.readFileSync(`${WORKDIR}/${swagger}`);
                 fs.writeFile(SWAGGERJSONFILE, data, function (err) {
                     if (err) {
                     ctx.throw({success: false,code: err.code, message: err.message}) }
@@ -62,6 +52,7 @@ let execFile = async (ctx, next) =>{
     })
     ctx.body = res
 }
+
 
 let deleteFile = async (ctx, next) =>{
     var {deleteFileName} = ctx.request.body

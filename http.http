@@ -1,0 +1,17 @@
+@dev=http://localhost:8080
+@endpoint=https://static.smallsaas.cn
+
+
+####
+//配置查询
+GET {{dev}}/api/doswagger/checkfiles
+
+
+
+### 配置文件执行
+POST {{dev}}/api/doswagger/execConfig
+content-type: application/json
+
+{
+   "swagger": "rss/swagger.json"
+}
