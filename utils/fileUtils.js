@@ -14,14 +14,14 @@ let checkConfigFile = (WORKDIR)=>{
     }
     // 查找文件
     let fileNames = fs.readdirSync(WORKDIR)
-
     let swaggerConfigchecksum = getCheckSum(SWAGGERJSONFILE)
+
 
     fileNames.forEach(Element =>{
         let swagger = fs.readdirSync(`${WORKDIR}/${Element}`)
         let chacksum = getCheckSum(`${WORKDIR}/${Element}/${swagger}`)
         let statu = checkSumEqueir(chacksum,swaggerConfigchecksum)==true?'active':'inactive'
-        let  data = {tag: Element,swagger: `${Element}/${swagger}`,checksum: chacksum,status: statu}
+        let  data = {id: `${Element}/${swagger}`,tag: Element,swagger: `${Element}/${swagger}`,checksum: chacksum,status: statu}
         arr.push(data)
     }
     )
@@ -44,8 +44,8 @@ let getCheckSum=(file) =>{
 
     // 比对
 let checkSumEqueir = (str1,str2)=>{
-    console.log(`str1:${str1}`)
-    console.log(`str2:${str2}`)
+    // console.log(`str1:${str1}`)
+    // console.log(`str2:${str2}`)
     if(str1==str2){
         return true;
     }

@@ -1,17 +1,12 @@
 @dev=http://localhost:8080
-@endpoint=https://static.smallsaas.cn
+@endpoint=http://static.smallsaas.cn:8000
 
 
 ####
 //配置查询
-GET {{dev}}/api/doswagger/checkfiles
+GET {{dev}}/api/doswagger/checkfiles?pageNum=1&pageSize=10
 
 
 
 ### 配置文件执行
-POST {{dev}}/api/doswagger/execConfig
-content-type: application/json
-
-{
-   "swagger": "rss/swagger.json"
-}
+GET {{endpoint}}/api/doswagger/execConfig?swagger=group-purchase/group-purchase.json

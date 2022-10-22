@@ -57,7 +57,7 @@ router.get('/api/doswagger/checkfiles', async (ctx, next) => {
   await ApiService.checkConfigFileService(ctx,next)
 })
 // 配置文件执行
-router.post('/api/doswagger/execConfig', async (ctx, next) => {
+router.get('/api/doswagger/execConfig', async (ctx, next) => {
   await ApiService.execFile(ctx,next)
 })
 
