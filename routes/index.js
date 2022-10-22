@@ -1,5 +1,7 @@
 const router = require('koa-router')()
 const ApiService = require('../service/swaggerService')
+const path = require('path')
+const fs = require("fs")
 
 
   // 定义模型 可以公用 schema $ref
@@ -61,16 +63,34 @@ router.get('/api/doswagger/execConfig', async (ctx, next) => {
   await ApiService.execFile(ctx,next)
 })
 
+router.get('/api/doswagger/fileFiles', async (ctx, next) => {
+  await ApiService.checkHttpFileService(ctx,next)
+})
+
+
+// 文件下载
+router.get('/api/doswagger/download/:filePath/:fileName', async (ctx, next) => {
+  // 设置头类型, 如果不设置，会直接下载该页面
+  // ctx.type = 'html';
+  // 读取文件
+  let {filePath,fileName} = ctx.params;
+  // let {pathfile} = ctx.query
+  const pathUrl = path.join(`workdir/http/${filePath}/${fileName}`);
+  ctx.body = fs.createReadStream(pathUrl);
+
+});
+// 文件查看
+router.get('/api/doswagger/lookupfile', async (ctx, next) => {
+  await ApiService.lookupConfig(ctx,next)
+})
+
+
 // //配置文件修改
 // router.post('/api/doswagger/deleteFile', async (ctx, next) => {
 //   await ApiService.deleteFile(ctx,next)
 // })
 
 
-// // 配置文件查看
-// router.post('/api/doswagger/lookupConfig', async (ctx, next) => {
-//   await ApiService.lookupConfig(ctx,next)
-// })
 
 
 // // 配置文件上传
