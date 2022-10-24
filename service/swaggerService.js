@@ -88,7 +88,7 @@ let execFile = async (ctx, next) =>{
     var {swagger} = ctx.query
     console.log(swagger)
      let res = await co(function* (){
-         var data = fs.readFileSync(`${WORKDIR}/${swagger}`);
+         var data = fs.readFileSync(`${WORKDIR}/swagger/${swagger}`);
                  fs.writeFile(SWAGGERJSONFILE, data, function (err) {
                      if (err) {
                      ctx.throw({success: false,code: err.code, message: err.message}) }

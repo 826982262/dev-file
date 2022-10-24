@@ -4,12 +4,13 @@
 
 ####
 //配置查询
-GET {{dev}}/api/doswagger/checkfiles?pageNum=1&pageSize=10
+GET {{endpoint}}/api/doswagger/checkfiles?pageNum=1&pageSize=10
 
 
 
 ### 配置文件执行
-GET {{endpoint}}/api/doswagger/execConfig?swagger=group-purchase/group-purchase.json
+GET {{endpoint}}/api/doswagger/execConfig?swagger=rss/swagger.json
+
 
 ###查找http文件
 GET {{dev}}/api/doswagger/fileFiles?pageNum=1&pageSize=10
@@ -17,7 +18,7 @@ GET {{dev}}/api/doswagger/fileFiles?pageNum=1&pageSize=10
 ###下载文件
 GET {{dev}}/api/doswagger/download/rss/rss图片集测试用例.http
 
-###
+###查看文件
 GET {{dev}}/api/doswagger/lookupfile?filePath=rss/rss图片集测试用例.http
 
 
