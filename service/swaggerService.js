@@ -158,4 +158,43 @@ let lookupConfig =async (ctx, next)=>{
     ctx.body = res
 }
 
-module.exports = { checkHttpFileService,checkConfigFileService,uploadFile ,execFile ,deleteFile,lookupConfig}
+
+let editFile=async (ctx, next) => {
+
+    var {servers,filePath} = ctx.request.body
+    console.log(JSON.stringify(servers))
+    //读取原本json文件
+    console.log(filePath)
+    if(!fs.existsSync(`${WORKDIR}/swagger/${filePath}`)){
+        ctx.throw({success: false,code: 500, message: "文件不存在"})
+    }
+    if(JSON.stringify(servers)==''){
+        ctx.throw({success: false,code: 500, message: "参数不能为空"})
+
+    }
+    let res = await co(function* (){
+        var data = fs.readFileSync(`${WORKDIR}/swagger/${filePath}`,'utf-8');
+        //生成插入
+
+        var jsonData = JSON.parse(data.toString())
+        jsonData.servers= servers
+        console.log(jsonData)
+        // jsonData.servers.push(servers)
+        // 写入
+        console.log(JSON.stringify(jsonData,"","\t"))
+        fs.writeFile(`${WORKDIR}/swagger/${filePath}`, JSON.stringify(jsonData,"","\t"), function (err) {
+            if (err) {
+            ctx.throw({success: false,code: err.code, message: err.message}) }
+        })
+        return result={success: true,code: 200, message: "修改成功"}
+    })
+    // 查找对于url
+
+    //拼接json
+    // 存
+
+    ctx.body = res
+
+
+}
+module.exports = { editFile,checkHttpFileService,checkConfigFileService,uploadFile ,execFile ,deleteFile,lookupConfig}

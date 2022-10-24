@@ -21,5 +21,21 @@ GET {{dev}}/api/doswagger/download/rss/rss图片集测试用例.http
 ###查看文件
 GET {{dev}}/api/doswagger/lookupfile?filePath=rss/rss图片集测试用例.http
 
+###增加url
+POST {{dev}}/api/doswagger/editFile
+Content-Type: application/json
 
-http://localhost:8080/api/doswagger/download/rss/rss图片集测试用例.http
+{
+    "servers":[{
+        "url": "http://localhost:8000",
+        "description": "Optional server description, e.g. Main (production) server"
+    },{
+        "url": "https://house.cloud.smallsaas.cn",
+        "description": "Optional server description, e.g. Main (production) server"
+    }
+    ],
+    "filePath": "rss/swagger.json"
+}
+
+###
+#http://localhost:8080/api/doswagger/download/rss/rss图片集测试用例.http

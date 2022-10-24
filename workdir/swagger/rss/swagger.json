@@ -1,1785 +1,2051 @@
 {
-  "swagger" : "2.0",
-  "info" : {
-    "description" : "Parent pom providing dependency and plugin management for applications\n\t\tbuilt with Maven",
-    "version" : "1.0.0",
-    "title" : "rss"
-  },
-  "tags" : [ {
-    "name" : "General-TagService"
-  }, {
-    "name" : "Rss"
-  }, {
-    "name" : "RssComponent"
-  }, {
-    "name" : "RssComponentProp"
-  }, {
-    "name" : "RssCssNamedProps"
-  }, {
-    "name" : "RssCssPropOption"
-  }, {
-    "name" : "RssItem"
-  } ],
-  "paths" : {
-    "/api/crud/rss/rss/rsses" : {
-      "get" : {
-        "tags" : [ "Rss" ],
-        "summary" : "Rss 列表信息",
-        "description" : "",
-        "operationId" : "queryRssPage",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int32"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int32"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int64"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int32"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int32"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string",
-          "format" : "date-time"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string",
-          "format" : "date-time"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/Rss对象"
-            }
-          }
-        }
-      },
-      "post" : {
-        "tags" : [ "Rss" ],
-        "summary" : "新建 Rss",
-        "description" : "",
-        "operationId" : "createRss",
-        "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "$ref" : "#/definitions/Rss对象"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/Rss对象"
-            }
-          }
-        }
-      }
-    },
-    "/api/crud/rss/rss/rsses/{id}" : {
-      "get" : {
-        "tags" : [ "Rss" ],
-        "summary" : "查看 Rss",
-        "description" : "",
-        "operationId" : "getRss",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/Rss对象"
-            }
-          }
-        }
-      },
-      "put" : {
-        "tags" : [ "Rss" ],
-        "summary" : "修改 Rss",
-        "description" : "",
-        "operationId" : "updateRss",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        }, {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "$ref" : "#/definitions/Rss对象"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/Rss对象"
-            }
-          }
-        }
-      },
-      "delete" : {
-        "tags" : [ "Rss" ],
-        "summary" : "删除 Rss",
-        "description" : "",
-        "operationId" : "deleteRss",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/Tip"
-            }
-          }
-        }
-      }
-    },
-    "/api/crud/rss/rssComponent/rssComponents" : {
-      "get" : {
-        "tags" : [ "RssComponent" ],
-        "summary" : "RssComponent 列表信息",
-        "description" : "",
-        "operationId" : "queryRssComponentPage",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int32"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int32"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int64"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/RssComponent对象"
-            }
-          }
-        }
-      },
-      "post" : {
-        "tags" : [ "RssComponent" ],
-        "summary" : "新建 RssComponent",
-        "description" : "",
-        "operationId" : "createRssComponent",
-        "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "$ref" : "#/definitions/RssComponent对象"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/RssComponent对象"
-            }
-          }
-        }
-      }
-    },
-    "/api/crud/rss/rssComponent/rssComponents/{id}" : {
-      "get" : {
-        "tags" : [ "RssComponent" ],
-        "summary" : "查看 RssComponent",
-        "description" : "",
-        "operationId" : "getRssComponent",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/RssComponent对象"
-            }
-          }
-        }
-      },
-      "put" : {
-        "tags" : [ "RssComponent" ],
-        "summary" : "修改 RssComponent",
-        "description" : "",
-        "operationId" : "updateRssComponent",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        }, {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "$ref" : "#/definitions/RssComponent对象"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/RssComponent对象"
-            }
-          }
-        }
-      },
-      "delete" : {
-        "tags" : [ "RssComponent" ],
-        "summary" : "删除 RssComponent",
-        "description" : "",
-        "operationId" : "deleteRssComponent",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/Tip"
-            }
-          }
-        }
-      }
-    },
-    "/api/crud/rss/rssComponentProp/rssComponentProps" : {
-      "get" : {
-        "tags" : [ "RssComponentProp" ],
-        "summary" : "RssComponentProp 列表信息",
-        "description" : "",
-        "operationId" : "queryRssComponentPropPage",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int32"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int32"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int64"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/RssComponentProp对象"
-            }
-          }
-        }
-      },
-      "post" : {
-        "tags" : [ "RssComponentProp" ],
-        "summary" : "新建 RssComponentProp",
-        "description" : "",
-        "operationId" : "createRssComponentProp",
-        "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "$ref" : "#/definitions/RssComponentProp对象"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/RssComponentProp对象"
-            }
-          }
-        }
-      }
-    },
-    "/api/crud/rss/rssComponentProp/rssComponentProps/{id}" : {
-      "get" : {
-        "tags" : [ "RssComponentProp" ],
-        "summary" : "查看 RssComponentProp",
-        "description" : "",
-        "operationId" : "getRssComponentProp",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/RssComponentProp对象"
-            }
-          }
-        }
-      },
-      "put" : {
-        "tags" : [ "RssComponentProp" ],
-        "summary" : "修改 RssComponentProp",
-        "description" : "",
-        "operationId" : "updateRssComponentProp",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        }, {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "$ref" : "#/definitions/RssComponentProp对象"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/RssComponentProp对象"
-            }
-          }
-        }
-      },
-      "delete" : {
-        "tags" : [ "RssComponentProp" ],
-        "summary" : "删除 RssComponentProp",
-        "description" : "",
-        "operationId" : "deleteRssComponentProp",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/Tip"
-            }
-          }
-        }
-      }
-    },
-    "/api/crud/rss/rssCssNamedProps/rssCssNamedPropses" : {
-      "get" : {
-        "tags" : [ "RssCssNamedProps" ],
-        "summary" : "RssCssNamedProps 列表信息",
-        "description" : "",
-        "operationId" : "queryRssCssNamedPropsPage",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int32"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int32"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int64"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/RssCssNamedProps对象"
-            }
-          }
-        }
-      },
-      "post" : {
-        "tags" : [ "RssCssNamedProps" ],
-        "summary" : "新建 RssCssNamedProps",
-        "description" : "",
-        "operationId" : "createRssCssNamedProps",
-        "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "$ref" : "#/definitions/RssCssNamedProps对象"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/RssCssNamedProps对象"
-            }
-          }
-        }
-      }
-    },
-    "/api/crud/rss/rssCssNamedProps/rssCssNamedPropses/{id}" : {
-      "get" : {
-        "tags" : [ "RssCssNamedProps" ],
-        "summary" : "查看 RssCssNamedProps",
-        "description" : "",
-        "operationId" : "getRssCssNamedProps",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/RssCssNamedProps对象"
-            }
-          }
-        }
-      },
-      "put" : {
-        "tags" : [ "RssCssNamedProps" ],
-        "summary" : "修改 RssCssNamedProps",
-        "description" : "",
-        "operationId" : "updateRssCssNamedProps",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        }, {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "$ref" : "#/definitions/RssCssNamedProps对象"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/RssCssNamedProps对象"
-            }
-          }
-        }
-      },
-      "delete" : {
-        "tags" : [ "RssCssNamedProps" ],
-        "summary" : "删除 RssCssNamedProps",
-        "description" : "",
-        "operationId" : "deleteRssCssNamedProps",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/Tip"
-            }
-          }
-        }
-      }
-    },
-    "/api/crud/rss/rssCssPropOption/rssCssPropOptions" : {
-      "get" : {
-        "tags" : [ "RssCssPropOption" ],
-        "summary" : "RssCssPropOption 列表信息",
-        "description" : "",
-        "operationId" : "queryRssCssPropOptionPage",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int32"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int32"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int64"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/RssCssPropOption对象"
-            }
-          }
-        }
-      },
-      "post" : {
-        "tags" : [ "RssCssPropOption" ],
-        "summary" : "新建 RssCssPropOption",
-        "description" : "",
-        "operationId" : "createRssCssPropOption",
-        "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "$ref" : "#/definitions/RssCssPropOption对象"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/RssCssPropOption对象"
-            }
-          }
-        }
-      }
-    },
-    "/api/crud/rss/rssCssPropOption/rssCssPropOptions/{id}" : {
-      "get" : {
-        "tags" : [ "RssCssPropOption" ],
-        "summary" : "查看 RssCssPropOption",
-        "description" : "",
-        "operationId" : "getRssCssPropOption",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/RssCssPropOption对象"
-            }
-          }
-        }
-      },
-      "put" : {
-        "tags" : [ "RssCssPropOption" ],
-        "summary" : "修改 RssCssPropOption",
-        "description" : "",
-        "operationId" : "updateRssCssPropOption",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        }, {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "$ref" : "#/definitions/RssCssPropOption对象"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/RssCssPropOption对象"
-            }
-          }
-        }
-      },
-      "delete" : {
-        "tags" : [ "RssCssPropOption" ],
-        "summary" : "删除 RssCssPropOption",
-        "description" : "",
-        "operationId" : "deleteRssCssPropOption",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/Tip"
-            }
-          }
-        }
-      }
-    },
-    "/api/crud/rss/rssItem/rssItems" : {
-      "get" : {
-        "tags" : [ "RssItem" ],
-        "summary" : "RssItem 列表信息",
-        "description" : "",
-        "operationId" : "queryRssItemPage",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int32"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int32"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int64"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int32"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int32"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string",
-          "format" : "date-time"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string",
-          "format" : "date-time"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/RssItem对象"
-            }
-          }
-        }
-      },
-      "post" : {
-        "tags" : [ "RssItem" ],
-        "summary" : "新建 RssItem",
-        "description" : "",
-        "operationId" : "createRssItem",
-        "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "$ref" : "#/definitions/RssItem对象"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/RssItem对象"
-            }
-          }
-        }
-      }
-    },
-    "/api/crud/rss/rssItem/rssItems/{id}" : {
-      "get" : {
-        "tags" : [ "RssItem" ],
-        "summary" : "查看 RssItem",
-        "description" : "",
-        "operationId" : "getRssItem",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/RssItem对象"
-            }
-          }
-        }
-      },
-      "put" : {
-        "tags" : [ "RssItem" ],
-        "summary" : "修改 RssItem",
-        "description" : "",
-        "operationId" : "updateRssItem",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        }, {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "$ref" : "#/definitions/RssItem对象"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/RssItem对象"
-            }
-          }
-        }
-      },
-      "delete" : {
-        "tags" : [ "RssItem" ],
-        "summary" : "删除 RssItem",
-        "description" : "",
-        "operationId" : "deleteRssItem",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/Tip"
-            }
-          }
-        }
-      }
-    },
-    "/api/stock/tags" : {
-      "get" : {
-        "tags" : [ "General-TagService" ],
-        "summary" : "Tag List",
-        "description" : "",
-        "operationId" : "queryStockTags",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int32"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int32"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int64"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int32"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int64"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/Tip"
-            }
-          }
-        }
-      },
-      "post" : {
-        "tags" : [ "General-TagService" ],
-        "summary" : "Create Tag",
-        "description" : "",
-        "operationId" : "createStockTag",
-        "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "$ref" : "#/definitions/StockTag"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/Tip"
-            }
-          }
-        }
-      }
-    },
-    "/api/stock/tags/bulk" : {
-      "post" : {
-        "tags" : [ "General-TagService" ],
-        "summary" : "批量新建tag",
-        "description" : "",
-        "operationId" : "createStockTagWithRelation",
-        "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/StockTagRecord"
-            }
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/Tip"
-            }
-          }
-        }
-      }
-    },
-    "/api/stock/tags/ids" : {
-      "post" : {
-        "tags" : [ "General-TagService" ],
-        "summary" : "根据tagIds、stock_type查询列表",
-        "description" : "",
-        "operationId" : "updateStockTag",
-        "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "$ref" : "#/definitions/IdsRquest"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/Tip"
-            }
-          }
-        }
-      }
-    },
-    "/api/stock/tags/{id}" : {
-      "get" : {
-        "tags" : [ "General-TagService" ],
-        "summary" : "view Tag",
-        "description" : "",
-        "operationId" : "getStockTag",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/Tip"
-            }
-          }
-        },
-        "deprecated" : true
-      },
-      "put" : {
-        "tags" : [ "General-TagService" ],
-        "summary" : "Update tag Msg",
-        "description" : "",
-        "operationId" : "updateStockTag",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        }, {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "$ref" : "#/definitions/StockTag"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/Tip"
-            }
-          }
-        },
-        "deprecated" : true
-      },
-      "delete" : {
-        "tags" : [ "General-TagService" ],
-        "summary" : "Delete one Tag Msg",
-        "description" : "",
-        "operationId" : "deleteStockTag",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/Tip"
-            }
-          }
-        }
-      }
-    },
-    "/api/u/rss" : {
-      "post" : {
-        "tags" : [ "Rss" ],
-        "summary" : "新建 Rss",
-        "description" : "",
-        "operationId" : "createRss",
-        "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/RssItem对象"
-            }
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/Rss对象"
-            }
-          }
-        }
-      }
-    },
-    "/api/u/rss/{id}" : {
-      "put" : {
-        "tags" : [ "Rss" ],
-        "summary" : "修改 Rss",
-        "description" : "",
-        "operationId" : "updateRss",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        }, {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "$ref" : "#/definitions/Rss对象"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/Rss对象"
-            }
-          }
-        }
-      },
-      "delete" : {
-        "tags" : [ "Rss" ],
-        "summary" : "删除 Rss",
-        "description" : "",
-        "operationId" : "deleteRss",
-        "parameters" : [ {
-          "name" : "",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/Tip"
-            }
-          }
-        }
-      }
-    }
-  },
-  "definitions" : {
-    "IdsRquest" : {
-      "type" : "object",
-      "properties" : {
-        "ids" : {
-          "type" : "array",
-          "items" : {
-            "type" : "integer",
-            "format" : "int64"
-          }
-        },
-        "stockType" : {
-          "type" : "string"
-        },
-        "pageSize" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
-        "pageNum" : {
-          "type" : "integer",
-          "format" : "int32"
-        }
-      }
-    },
-    "RssComponentProp对象" : {
-      "type" : "object",
-      "properties" : {
-        "id" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "componentId" : {
-          "type" : "integer",
-          "format" : "int64",
-          "description" : "所属标准组件"
-        },
-        "propName" : {
-          "type" : "string",
-          "description" : "属性键/名称"
-        },
-        "propTips" : {
-          "type" : "string",
-          "description" : "属性中文名称"
-        },
-        "propDefaultValue" : {
-          "type" : "string",
-          "description" : "标准组件属性默认值"
-        },
-        "dataType" : {
-          "type" : "string",
-          "description" : "SELECT单选项  MULTISELECT多选项  NUMBER数字  TEXT文本"
-        },
-        "optionName" : {
-          "type" : "string",
-          "description" : "如果data_type=[select,multiselect],限制属性值选项"
-        }
-      }
-    },
-    "RssComponent对象" : {
-      "type" : "object",
-      "properties" : {
-        "id" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "rssItemId" : {
-          "type" : "integer",
-          "format" : "int64",
-          "description" : "rss_item_id"
-        },
-        "name" : {
-          "type" : "string",
-          "description" : "组件中文名"
-        },
-        "componentName" : {
-          "type" : "string",
-          "description" : "基于不同属性派生出来的新组件"
-        },
-        "componentType" : {
-          "type" : "string",
-          "description" : "前端已开发的组件类型"
-        },
-        "componentOption" : {
-          "type" : "string",
-          "description" : "组件类型"
-        },
-        "componentFormInputOption" : {
-          "type" : "string",
-          "description" : "组件表单输入类型"
-        },
-        "componentTag" : {
-          "type" : "string",
-          "description" : "组件类型子分类"
-        },
-        "cssName" : {
-          "type" : "string",
-          "description" : "cssName"
-        },
-        "css" : {
-          "type" : "object",
-          "additionalProperties" : {
-            "type" : "object"
-          }
-        },
-        "rssComponentPropList" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/RssComponentProp对象"
-          }
-        }
-      }
-    },
-    "RssCssNamedProps对象" : {
-      "type" : "object",
-      "properties" : {
-        "id" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "rssItemId" : {
-          "type" : "integer",
-          "format" : "int64",
-          "description" : "rss_item_id"
-        },
-        "appid" : {
-          "type" : "string",
-          "description" : "所属应用"
-        },
-        "tags" : {
-          "type" : "string",
-          "description" : "tag用于分类"
-        },
-        "name" : {
-          "type" : "string",
-          "description" : "显示名称"
-        },
-        "cssName" : {
-          "type" : "string",
-          "description" : "css名称"
-        },
-        "cssValue" : {
-          "type" : "string",
-          "description" : "css值"
-        },
-        "dataType" : {
-          "type" : "string",
-          "description" : "属性值类型"
-        },
-        "optionName" : {
-          "type" : "string",
-          "description" : "数据类型选项"
-        },
-        "rssCssPropOptionList" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/RssCssPropOption对象"
-          }
-        }
-      }
-    },
-    "RssCssPropOption对象" : {
-      "type" : "object",
-      "properties" : {
-        "id" : {
-          "type" : "integer",
-          "format" : "int64",
-          "description" : "id"
-        },
-        "cssNamePropsId" : {
-          "type" : "integer",
-          "format" : "int64",
-          "description" : "关联id"
-        },
-        "propName" : {
-          "type" : "string",
-          "description" : "属性名称"
-        },
-        "propOption" : {
-          "type" : "string",
-          "description" : "属性值选项"
-        },
-        "note" : {
-          "type" : "string",
-          "description" : "备注"
-        }
-      }
-    },
-    "RssItem对象" : {
-      "type" : "object",
-      "properties" : {
-        "id" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "pid" : {
-          "type" : "integer",
-          "format" : "int64",
-          "description" : "父id"
-        },
-        "title" : {
-          "type" : "string",
-          "description" : "标题"
-        },
-        "pictures" : {
-          "type" : "string",
-          "description" : "图片集"
-        },
-        "status" : {
-          "type" : "integer",
-          "format" : "int32",
-          "description" : "状态"
-        },
-        "sortNumber" : {
-          "type" : "integer",
-          "format" : "int32",
-          "description" : "排序号"
-        },
-        "fontWeight" : {
-          "type" : "boolean"
-        },
-        "fontSize" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
-        "lineHeight" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
-        "note" : {
-          "type" : "string",
-          "description" : "备用"
-        },
-        "createTime" : {
-          "type" : "string",
-          "format" : "date-time",
-          "description" : "创建时间"
-        },
-        "updateTime" : {
-          "type" : "string",
-          "format" : "date-time",
-          "description" : "更新时间"
-        },
-        "rssComponentList" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/RssComponent对象"
-          }
-        }
-      }
-    },
-    "Rss对象" : {
-      "type" : "object",
-      "properties" : {
-        "id" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "uuid" : {
-          "type" : "string",
-          "description" : "uuid"
-        },
-        "orgId" : {
-          "type" : "integer",
-          "format" : "int64",
-          "description" : "orgId"
-        },
-        "name" : {
-          "type" : "string",
-          "description" : "名字"
-        },
-        "status" : {
-          "type" : "integer",
-          "format" : "int32",
-          "description" : "状态"
-        },
-        "sortNumber" : {
-          "type" : "integer",
-          "format" : "int32",
-          "description" : "排序号"
-        },
-        "note" : {
-          "type" : "string",
-          "description" : "备用"
-        },
-        "createTime" : {
-          "type" : "string",
-          "format" : "date-time",
-          "description" : "创建时间"
-        },
-        "updateTime" : {
-          "type" : "string",
-          "format" : "date-time",
-          "description" : "更新时间"
-        },
-        "rssItemList" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/RssItem对象"
-          }
-        },
-        "extra" : {
-          "type" : "object",
-          "additionalProperties" : {
-            "type" : "object"
-          }
-        },
-        "tags" : {
-          "type" : "string"
-        },
-        "tagIds" : {
-          "type" : "string"
-        },
-        "items" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/RssItem对象"
-          }
-        }
-      }
-    },
-    "StockTag" : {
-      "type" : "object",
-      "properties" : {
-        "id" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "tagName" : {
-          "type" : "string"
-        },
-        "tagType" : {
-          "type" : "string"
-        },
-        "isPrimary" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
-        "sortOrder" : {
-          "type" : "integer",
-          "format" : "int32"
-        }
-      }
-    },
-    "StockTagRecord" : {
-      "type" : "object",
-      "properties" : {
-        "id" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "tagName" : {
-          "type" : "string"
-        },
-        "tagType" : {
-          "type" : "string"
-        },
-        "isPrimary" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
-        "sortOrder" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
-        "stockId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "stockType" : {
-          "type" : "string"
-        }
-      }
-    },
-    "Tip" : {
-      "type" : "object",
-      "properties" : {
-        "code" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
-        "message" : {
-          "type" : "string"
-        }
-      }
-    }
-  }
+	"swagger": "2.0",
+	"info": {
+		"description": "Parent pom providing dependency and plugin management for applications\n\t\tbuilt with Maven",
+		"version": "1.0.0",
+		"title": "rss"
+	},
+	"tags": [
+		{
+			"name": "General-TagService"
+		},
+		{
+			"name": "Rss"
+		},
+		{
+			"name": "RssComponent"
+		},
+		{
+			"name": "RssComponentProp"
+		},
+		{
+			"name": "RssCssNamedProps"
+		},
+		{
+			"name": "RssCssPropOption"
+		},
+		{
+			"name": "RssItem"
+		}
+	],
+	"paths": {
+		"/api/crud/rss/rss/rsses": {
+			"get": {
+				"tags": [
+					"Rss"
+				],
+				"summary": "Rss 列表信息",
+				"description": "",
+				"operationId": "queryRssPage",
+				"parameters": [
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int64"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "date-time"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "date-time"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Rss对象"
+						}
+					}
+				}
+			},
+			"post": {
+				"tags": [
+					"Rss"
+				],
+				"summary": "新建 Rss",
+				"description": "",
+				"operationId": "createRss",
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/Rss对象"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Rss对象"
+						}
+					}
+				}
+			}
+		},
+		"/api/crud/rss/rss/rsses/{id}": {
+			"get": {
+				"tags": [
+					"Rss"
+				],
+				"summary": "查看 Rss",
+				"description": "",
+				"operationId": "getRss",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Rss对象"
+						}
+					}
+				}
+			},
+			"put": {
+				"tags": [
+					"Rss"
+				],
+				"summary": "修改 Rss",
+				"description": "",
+				"operationId": "updateRss",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/Rss对象"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Rss对象"
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"Rss"
+				],
+				"summary": "删除 Rss",
+				"description": "",
+				"operationId": "deleteRss",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Tip"
+						}
+					}
+				}
+			}
+		},
+		"/api/crud/rss/rssComponent/rssComponents": {
+			"get": {
+				"tags": [
+					"RssComponent"
+				],
+				"summary": "RssComponent 列表信息",
+				"description": "",
+				"operationId": "queryRssComponentPage",
+				"parameters": [
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int64"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/RssComponent对象"
+						}
+					}
+				}
+			},
+			"post": {
+				"tags": [
+					"RssComponent"
+				],
+				"summary": "新建 RssComponent",
+				"description": "",
+				"operationId": "createRssComponent",
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/RssComponent对象"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/RssComponent对象"
+						}
+					}
+				}
+			}
+		},
+		"/api/crud/rss/rssComponent/rssComponents/{id}": {
+			"get": {
+				"tags": [
+					"RssComponent"
+				],
+				"summary": "查看 RssComponent",
+				"description": "",
+				"operationId": "getRssComponent",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/RssComponent对象"
+						}
+					}
+				}
+			},
+			"put": {
+				"tags": [
+					"RssComponent"
+				],
+				"summary": "修改 RssComponent",
+				"description": "",
+				"operationId": "updateRssComponent",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/RssComponent对象"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/RssComponent对象"
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"RssComponent"
+				],
+				"summary": "删除 RssComponent",
+				"description": "",
+				"operationId": "deleteRssComponent",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Tip"
+						}
+					}
+				}
+			}
+		},
+		"/api/crud/rss/rssComponentProp/rssComponentProps": {
+			"get": {
+				"tags": [
+					"RssComponentProp"
+				],
+				"summary": "RssComponentProp 列表信息",
+				"description": "",
+				"operationId": "queryRssComponentPropPage",
+				"parameters": [
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int64"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/RssComponentProp对象"
+						}
+					}
+				}
+			},
+			"post": {
+				"tags": [
+					"RssComponentProp"
+				],
+				"summary": "新建 RssComponentProp",
+				"description": "",
+				"operationId": "createRssComponentProp",
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/RssComponentProp对象"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/RssComponentProp对象"
+						}
+					}
+				}
+			}
+		},
+		"/api/crud/rss/rssComponentProp/rssComponentProps/{id}": {
+			"get": {
+				"tags": [
+					"RssComponentProp"
+				],
+				"summary": "查看 RssComponentProp",
+				"description": "",
+				"operationId": "getRssComponentProp",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/RssComponentProp对象"
+						}
+					}
+				}
+			},
+			"put": {
+				"tags": [
+					"RssComponentProp"
+				],
+				"summary": "修改 RssComponentProp",
+				"description": "",
+				"operationId": "updateRssComponentProp",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/RssComponentProp对象"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/RssComponentProp对象"
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"RssComponentProp"
+				],
+				"summary": "删除 RssComponentProp",
+				"description": "",
+				"operationId": "deleteRssComponentProp",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Tip"
+						}
+					}
+				}
+			}
+		},
+		"/api/crud/rss/rssCssNamedProps/rssCssNamedPropses": {
+			"get": {
+				"tags": [
+					"RssCssNamedProps"
+				],
+				"summary": "RssCssNamedProps 列表信息",
+				"description": "",
+				"operationId": "queryRssCssNamedPropsPage",
+				"parameters": [
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int64"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/RssCssNamedProps对象"
+						}
+					}
+				}
+			},
+			"post": {
+				"tags": [
+					"RssCssNamedProps"
+				],
+				"summary": "新建 RssCssNamedProps",
+				"description": "",
+				"operationId": "createRssCssNamedProps",
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/RssCssNamedProps对象"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/RssCssNamedProps对象"
+						}
+					}
+				}
+			}
+		},
+		"/api/crud/rss/rssCssNamedProps/rssCssNamedPropses/{id}": {
+			"get": {
+				"tags": [
+					"RssCssNamedProps"
+				],
+				"summary": "查看 RssCssNamedProps",
+				"description": "",
+				"operationId": "getRssCssNamedProps",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/RssCssNamedProps对象"
+						}
+					}
+				}
+			},
+			"put": {
+				"tags": [
+					"RssCssNamedProps"
+				],
+				"summary": "修改 RssCssNamedProps",
+				"description": "",
+				"operationId": "updateRssCssNamedProps",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/RssCssNamedProps对象"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/RssCssNamedProps对象"
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"RssCssNamedProps"
+				],
+				"summary": "删除 RssCssNamedProps",
+				"description": "",
+				"operationId": "deleteRssCssNamedProps",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Tip"
+						}
+					}
+				}
+			}
+		},
+		"/api/crud/rss/rssCssPropOption/rssCssPropOptions": {
+			"get": {
+				"tags": [
+					"RssCssPropOption"
+				],
+				"summary": "RssCssPropOption 列表信息",
+				"description": "",
+				"operationId": "queryRssCssPropOptionPage",
+				"parameters": [
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int64"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/RssCssPropOption对象"
+						}
+					}
+				}
+			},
+			"post": {
+				"tags": [
+					"RssCssPropOption"
+				],
+				"summary": "新建 RssCssPropOption",
+				"description": "",
+				"operationId": "createRssCssPropOption",
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/RssCssPropOption对象"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/RssCssPropOption对象"
+						}
+					}
+				}
+			}
+		},
+		"/api/crud/rss/rssCssPropOption/rssCssPropOptions/{id}": {
+			"get": {
+				"tags": [
+					"RssCssPropOption"
+				],
+				"summary": "查看 RssCssPropOption",
+				"description": "",
+				"operationId": "getRssCssPropOption",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/RssCssPropOption对象"
+						}
+					}
+				}
+			},
+			"put": {
+				"tags": [
+					"RssCssPropOption"
+				],
+				"summary": "修改 RssCssPropOption",
+				"description": "",
+				"operationId": "updateRssCssPropOption",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/RssCssPropOption对象"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/RssCssPropOption对象"
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"RssCssPropOption"
+				],
+				"summary": "删除 RssCssPropOption",
+				"description": "",
+				"operationId": "deleteRssCssPropOption",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Tip"
+						}
+					}
+				}
+			}
+		},
+		"/api/crud/rss/rssItem/rssItems": {
+			"get": {
+				"tags": [
+					"RssItem"
+				],
+				"summary": "RssItem 列表信息",
+				"description": "",
+				"operationId": "queryRssItemPage",
+				"parameters": [
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int64"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "date-time"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "date-time"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/RssItem对象"
+						}
+					}
+				}
+			},
+			"post": {
+				"tags": [
+					"RssItem"
+				],
+				"summary": "新建 RssItem",
+				"description": "",
+				"operationId": "createRssItem",
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/RssItem对象"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/RssItem对象"
+						}
+					}
+				}
+			}
+		},
+		"/api/crud/rss/rssItem/rssItems/{id}": {
+			"get": {
+				"tags": [
+					"RssItem"
+				],
+				"summary": "查看 RssItem",
+				"description": "",
+				"operationId": "getRssItem",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/RssItem对象"
+						}
+					}
+				}
+			},
+			"put": {
+				"tags": [
+					"RssItem"
+				],
+				"summary": "修改 RssItem",
+				"description": "",
+				"operationId": "updateRssItem",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/RssItem对象"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/RssItem对象"
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"RssItem"
+				],
+				"summary": "删除 RssItem",
+				"description": "",
+				"operationId": "deleteRssItem",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Tip"
+						}
+					}
+				}
+			}
+		},
+		"/api/stock/tags": {
+			"get": {
+				"tags": [
+					"General-TagService"
+				],
+				"summary": "Tag List",
+				"description": "",
+				"operationId": "queryStockTags",
+				"parameters": [
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int64"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int64"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Tip"
+						}
+					}
+				}
+			},
+			"post": {
+				"tags": [
+					"General-TagService"
+				],
+				"summary": "Create Tag",
+				"description": "",
+				"operationId": "createStockTag",
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/StockTag"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Tip"
+						}
+					}
+				}
+			}
+		},
+		"/api/stock/tags/bulk": {
+			"post": {
+				"tags": [
+					"General-TagService"
+				],
+				"summary": "批量新建tag",
+				"description": "",
+				"operationId": "createStockTagWithRelation",
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/StockTagRecord"
+							}
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Tip"
+						}
+					}
+				}
+			}
+		},
+		"/api/stock/tags/ids": {
+			"post": {
+				"tags": [
+					"General-TagService"
+				],
+				"summary": "根据tagIds、stock_type查询列表",
+				"description": "",
+				"operationId": "updateStockTag",
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/IdsRquest"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Tip"
+						}
+					}
+				}
+			}
+		},
+		"/api/stock/tags/{id}": {
+			"get": {
+				"tags": [
+					"General-TagService"
+				],
+				"summary": "view Tag",
+				"description": "",
+				"operationId": "getStockTag",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Tip"
+						}
+					}
+				},
+				"deprecated": true
+			},
+			"put": {
+				"tags": [
+					"General-TagService"
+				],
+				"summary": "Update tag Msg",
+				"description": "",
+				"operationId": "updateStockTag",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/StockTag"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Tip"
+						}
+					}
+				},
+				"deprecated": true
+			},
+			"delete": {
+				"tags": [
+					"General-TagService"
+				],
+				"summary": "Delete one Tag Msg",
+				"description": "",
+				"operationId": "deleteStockTag",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Tip"
+						}
+					}
+				}
+			}
+		},
+		"/api/u/rss": {
+			"post": {
+				"tags": [
+					"Rss"
+				],
+				"summary": "新建 Rss",
+				"description": "",
+				"operationId": "createRss",
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/RssItem对象"
+							}
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Rss对象"
+						}
+					}
+				}
+			}
+		},
+		"/api/u/rss/{id}": {
+			"put": {
+				"tags": [
+					"Rss"
+				],
+				"summary": "修改 Rss",
+				"description": "",
+				"operationId": "updateRss",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/Rss对象"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Rss对象"
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"Rss"
+				],
+				"summary": "删除 Rss",
+				"description": "",
+				"operationId": "deleteRss",
+				"parameters": [
+					{
+						"name": "",
+						"in": "path",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Tip"
+						}
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
+		"IdsRquest": {
+			"type": "object",
+			"properties": {
+				"ids": {
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"format": "int64"
+					}
+				},
+				"stockType": {
+					"type": "string"
+				},
+				"pageSize": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"pageNum": {
+					"type": "integer",
+					"format": "int32"
+				}
+			}
+		},
+		"RssComponentProp对象": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer",
+					"format": "int64"
+				},
+				"componentId": {
+					"type": "integer",
+					"format": "int64",
+					"description": "所属标准组件"
+				},
+				"propName": {
+					"type": "string",
+					"description": "属性键/名称"
+				},
+				"propTips": {
+					"type": "string",
+					"description": "属性中文名称"
+				},
+				"propDefaultValue": {
+					"type": "string",
+					"description": "标准组件属性默认值"
+				},
+				"dataType": {
+					"type": "string",
+					"description": "SELECT单选项  MULTISELECT多选项  NUMBER数字  TEXT文本"
+				},
+				"optionName": {
+					"type": "string",
+					"description": "如果data_type=[select,multiselect],限制属性值选项"
+				}
+			}
+		},
+		"RssComponent对象": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer",
+					"format": "int64"
+				},
+				"rssItemId": {
+					"type": "integer",
+					"format": "int64",
+					"description": "rss_item_id"
+				},
+				"name": {
+					"type": "string",
+					"description": "组件中文名"
+				},
+				"componentName": {
+					"type": "string",
+					"description": "基于不同属性派生出来的新组件"
+				},
+				"componentType": {
+					"type": "string",
+					"description": "前端已开发的组件类型"
+				},
+				"componentOption": {
+					"type": "string",
+					"description": "组件类型"
+				},
+				"componentFormInputOption": {
+					"type": "string",
+					"description": "组件表单输入类型"
+				},
+				"componentTag": {
+					"type": "string",
+					"description": "组件类型子分类"
+				},
+				"cssName": {
+					"type": "string",
+					"description": "cssName"
+				},
+				"css": {
+					"type": "object",
+					"additionalProperties": {
+						"type": "object"
+					}
+				},
+				"rssComponentPropList": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/RssComponentProp对象"
+					}
+				}
+			}
+		},
+		"RssCssNamedProps对象": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer",
+					"format": "int64"
+				},
+				"rssItemId": {
+					"type": "integer",
+					"format": "int64",
+					"description": "rss_item_id"
+				},
+				"appid": {
+					"type": "string",
+					"description": "所属应用"
+				},
+				"tags": {
+					"type": "string",
+					"description": "tag用于分类"
+				},
+				"name": {
+					"type": "string",
+					"description": "显示名称"
+				},
+				"cssName": {
+					"type": "string",
+					"description": "css名称"
+				},
+				"cssValue": {
+					"type": "string",
+					"description": "css值"
+				},
+				"dataType": {
+					"type": "string",
+					"description": "属性值类型"
+				},
+				"optionName": {
+					"type": "string",
+					"description": "数据类型选项"
+				},
+				"rssCssPropOptionList": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/RssCssPropOption对象"
+					}
+				}
+			}
+		},
+		"RssCssPropOption对象": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer",
+					"format": "int64",
+					"description": "id"
+				},
+				"cssNamePropsId": {
+					"type": "integer",
+					"format": "int64",
+					"description": "关联id"
+				},
+				"propName": {
+					"type": "string",
+					"description": "属性名称"
+				},
+				"propOption": {
+					"type": "string",
+					"description": "属性值选项"
+				},
+				"note": {
+					"type": "string",
+					"description": "备注"
+				}
+			}
+		},
+		"RssItem对象": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer",
+					"format": "int64"
+				},
+				"pid": {
+					"type": "integer",
+					"format": "int64",
+					"description": "父id"
+				},
+				"title": {
+					"type": "string",
+					"description": "标题"
+				},
+				"pictures": {
+					"type": "string",
+					"description": "图片集"
+				},
+				"status": {
+					"type": "integer",
+					"format": "int32",
+					"description": "状态"
+				},
+				"sortNumber": {
+					"type": "integer",
+					"format": "int32",
+					"description": "排序号"
+				},
+				"fontWeight": {
+					"type": "boolean"
+				},
+				"fontSize": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"lineHeight": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"note": {
+					"type": "string",
+					"description": "备用"
+				},
+				"createTime": {
+					"type": "string",
+					"format": "date-time",
+					"description": "创建时间"
+				},
+				"updateTime": {
+					"type": "string",
+					"format": "date-time",
+					"description": "更新时间"
+				},
+				"rssComponentList": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/RssComponent对象"
+					}
+				}
+			}
+		},
+		"Rss对象": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer",
+					"format": "int64"
+				},
+				"uuid": {
+					"type": "string",
+					"description": "uuid"
+				},
+				"orgId": {
+					"type": "integer",
+					"format": "int64",
+					"description": "orgId"
+				},
+				"name": {
+					"type": "string",
+					"description": "名字"
+				},
+				"status": {
+					"type": "integer",
+					"format": "int32",
+					"description": "状态"
+				},
+				"sortNumber": {
+					"type": "integer",
+					"format": "int32",
+					"description": "排序号"
+				},
+				"note": {
+					"type": "string",
+					"description": "备用"
+				},
+				"createTime": {
+					"type": "string",
+					"format": "date-time",
+					"description": "创建时间"
+				},
+				"updateTime": {
+					"type": "string",
+					"format": "date-time",
+					"description": "更新时间"
+				},
+				"rssItemList": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/RssItem对象"
+					}
+				},
+				"extra": {
+					"type": "object",
+					"additionalProperties": {
+						"type": "object"
+					}
+				},
+				"tags": {
+					"type": "string"
+				},
+				"tagIds": {
+					"type": "string"
+				},
+				"items": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/RssItem对象"
+					}
+				}
+			}
+		},
+		"StockTag": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer",
+					"format": "int64"
+				},
+				"tagName": {
+					"type": "string"
+				},
+				"tagType": {
+					"type": "string"
+				},
+				"isPrimary": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"sortOrder": {
+					"type": "integer",
+					"format": "int32"
+				}
+			}
+		},
+		"StockTagRecord": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer",
+					"format": "int64"
+				},
+				"tagName": {
+					"type": "string"
+				},
+				"tagType": {
+					"type": "string"
+				},
+				"isPrimary": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"sortOrder": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"stockId": {
+					"type": "integer",
+					"format": "int64"
+				},
+				"stockType": {
+					"type": "string"
+				}
+			}
+		},
+		"Tip": {
+			"type": "object",
+			"properties": {
+				"code": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"message": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "http://localhost:8000",
+			"description": "Optional server description, e.g. Main (production) server"
+		},
+		{
+			"url": "https://house.cloud.smallsaas.cn",
+			"description": "Optional server description, e.g. Main (production) server"
+		}
+	]
 }

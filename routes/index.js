@@ -85,6 +85,15 @@ router.get('/api/doswagger/lookupfile', async (ctx, next) => {
 })
 
 
+// swagger配置文件增加url
+
+router.post('/api/doswagger/editFile', async (ctx, next) => {
+  await ApiService.editFile(ctx,next)
+})
+
+
+
+
 // //配置文件修改
 // router.post('/api/doswagger/deleteFile', async (ctx, next) => {
 //   await ApiService.deleteFile(ctx,next)
