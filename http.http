@@ -22,7 +22,7 @@ GET {{dev}}/api/doswagger/download/rss/rss图片集测试用例.http
 GET {{dev}}/api/doswagger/lookupfile?filePath=rss/rss图片集测试用例.http
 
 ###增加url
-POST {{dev}}/api/doswagger/editFile
+POST {{endpoint}}/api/doswagger/editFile
 Content-Type: application/json
 
 {
@@ -34,7 +34,7 @@ Content-Type: application/json
         "description": "Optional server description, e.g. Main (production) server"
     }
     ],
-    "filePath": "rss/swagger.json"
+    "filePath": "pom-dev-devops/swagger.json"
 }
 
 ###

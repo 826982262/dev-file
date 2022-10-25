@@ -36,6 +36,9 @@
 				],
 				"summary": "Rss 列表信息",
 				"description": "",
+				"x-accessor": {
+					"authenticated": true
+				  },
 				"operationId": "queryRssPage",
 				"parameters": [
 					{

@@ -178,9 +178,12 @@ let editFile=async (ctx, next) => {
 
         var jsonData = JSON.parse(data.toString())
         jsonData.servers= servers
+        jsonData.openapi="3.0.0"
+        jsonData.swagger=''
         console.log(jsonData)
         // jsonData.servers.push(servers)
         // 写入
+
         console.log(JSON.stringify(jsonData,"","\t"))
         fs.writeFile(`${WORKDIR}/swagger/${filePath}`, JSON.stringify(jsonData,"","\t"), function (err) {
             if (err) {
