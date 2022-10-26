@@ -7,9 +7,28 @@
 GET {{endpoint}}/api/doswagger/checkfiles?pageNum=1&pageSize=10
 
 
+###获取文件夹
+GET {{dev}}/api/doswagger/getSwaggerTag
+
 
 ### 配置文件执行
 GET {{endpoint}}/api/doswagger/execConfig?swagger=rss/swagger.json
+
+###增加url
+POST {{endpoint}}/api/doswagger/editFile
+Content-Type: application/json
+
+{
+    "servers":[{
+        "url": "http://localhost:8000",
+        "description": "Optional server description, e.g. Main (production) server"
+    },{
+        "url": "https://static.smallsaas.cn",
+        "description": "Optional server description, e.g. Main (production) server"
+    }
+    ],
+    "filePath": "pom-dev-auto-render/swagger.json"
+}
 
 
 ###查找http文件
@@ -21,21 +40,7 @@ GET {{dev}}/api/doswagger/download/rss/rss图片集测试用例.http
 ###查看文件
 GET {{dev}}/api/doswagger/lookupfile?filePath=rss/rss图片集测试用例.http
 
-###增加url
-POST {{endpoint}}/api/doswagger/editFile
-Content-Type: application/json
 
-{
-    "servers":[{
-        "url": "http://localhost:8000",
-        "description": "Optional server description, e.g. Main (production) server"
-    },{
-        "url": "https://house.cloud.smallsaas.cn",
-        "description": "Optional server description, e.g. Main (production) server"
-    }
-    ],
-    "filePath": "pom-dev-devops/swagger.json"
-}
 
 ###
 #http://localhost:8080/api/doswagger/download/rss/rss图片集测试用例.http

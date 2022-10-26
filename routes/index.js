@@ -83,6 +83,10 @@ router.get('/api/doswagger/download/:filePath/:fileName', async (ctx, next) => {
 router.get('/api/doswagger/lookupfile', async (ctx, next) => {
   await ApiService.lookupConfig(ctx,next)
 })
+//获取swaggertag
+router.get('/api/doswagger/getSwaggerTag', async (ctx, next) => {
+  await ApiService.getSwaggerTag(ctx,next)
+})
 
 
 // swagger配置文件增加url

@@ -2,7 +2,7 @@ let co = require('co');//异步控制器
 const fs = require("fs")
 const path = require('path')
 const {WORKDIR,SWAGGERJSONFILE,HTTP} = require('../config/config.default.js');
-const {getCheckSum,checkConfigFile,checkSumEqueir,findFile} = require('../utils/fileUtils')
+const {findDir,checkConfigFile,checkSumEqueir,findFile} = require('../utils/fileUtils')
 const {item} = require('../model/item')
 // 配置文件查找
 let checkConfigFileService = async (ctx, next) => {
@@ -200,4 +200,22 @@ let editFile=async (ctx, next) => {
 
 
 }
-module.exports = { editFile,checkHttpFileService,checkConfigFileService,uploadFile ,execFile ,deleteFile,lookupConfig}
+
+let getSwaggerTag = async (ctx,next)=>{
+
+    // 执行获取tag
+    let res = await co(function* (){
+        let tags = new Array()    
+        let dirNames = findDir(`${WORKDIR}/swagger`)
+        dirNames.forEach(Element=>{
+            let data = {id: Element,tag: Element}
+            tags.push(data)
+        })
+
+         return result = {success: true,code: 200, message: "上传成功",data: {records: tags}};
+        })
+        ctx.body = res
+    // 返回
+}
+
+module.exports = { getSwaggerTag,editFile,checkHttpFileService,checkConfigFileService,uploadFile ,execFile ,deleteFile,lookupConfig}

@@ -15,8 +15,6 @@ let checkConfigFile = (WORKDIR)=>{
     // 查找文件
     let fileNames = fs.readdirSync(`${WORKDIR}/swagger`)
     let swaggerConfigchecksum = getCheckSum(SWAGGERJSONFILE)
-
-
     fileNames.forEach(Element =>{
         let swagger = fs.readdirSync(`${WORKDIR}/swagger/${Element}`)
         let chacksum = getCheckSum(`${WORKDIR}/swagger/${Element}/${swagger}`)
@@ -26,6 +24,12 @@ let checkConfigFile = (WORKDIR)=>{
     }
     )
     return arr;
+}
+
+
+let findDir = (path)=>{
+    let dirNames = fs.readdirSync(path)
+    return dirNames
 }
 
 
@@ -74,4 +78,4 @@ let checkSumEqueir = (str1,str2)=>{
     return false;
 }
 
-module.exports = { findFile,getCheckSum ,checkConfigFile,checkSumEqueir}
+module.exports = { findDir,findFile,getCheckSum ,checkConfigFile,checkSumEqueir}
