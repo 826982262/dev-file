@@ -16,7 +16,14 @@ let checkConfigFileService = async (ctx, next) => {
             }
      let pages =  Math.ceil(items.length/pageSize)
      let records = new Array()    
+     let temp=null
      for(let i=(pageNum-1)*pageSize;i< pageNum*pageSize;i++){
+        if(items[i].status=='active'){
+            temp = items[0]
+            items[0] = items[i]
+            items[i] = temp
+
+        }
         records.push(items[i])
         if(items[i+1]==null){
             break
@@ -212,7 +219,7 @@ let getSwaggerTag = async (ctx,next)=>{
             tags.push(data)
         })
 
-         return result = {success: true,code: 200, message: "上传成功",data: {records: tags}};
+         return result = {success: true,code: 200,data: {records: tags}};
         })
         ctx.body = res
     // 返回
