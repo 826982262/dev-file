@@ -17,21 +17,24 @@ let checkConfigFileService = async (ctx, next) => {
             }
      let pages =  Math.ceil(items.length/pageSize)
      let records = new Array()    
-     let temp=null
-     for(let i=(pageNum-1)*pageSize;i< pageNum*pageSize;i++){
-        if(items[i].status=='active'){
-            temp = items[0]
-            items[0] = items[i]
-            items[i] = temp
 
-        }
+     for(let i=(pageNum-1)*pageSize;i< pageNum*pageSize;i++){
+   
           items[i].data=JSON.parse(yield lookupSwaggerFile(items[i].swagger))
         records.push(items[i])
         if(items[i+1]==null){
             break
         }
      }
+items.forEach(function(items){
+    let temp=null
 
+    if(items[i].status=='active'){
+        temp = items[0]
+        items[0] = items[i]
+        items[i] = temp
+    }
+})
     console.log(pages)
     var result = {
         data: {
