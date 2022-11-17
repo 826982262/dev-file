@@ -25,7 +25,7 @@ let checkConfigFileService = async (ctx, next) => {
             items[i] = temp
 
         }
-        items[i].data=JSON.parse(lookupSwaggerFile(items[i].swagger))
+          items[i].data=JSON.parse(yield lookupSwaggerFile(items[i].swagger))
         records.push(items[i])
         if(items[i+1]==null){
             break
