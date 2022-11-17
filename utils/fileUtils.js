@@ -78,4 +78,20 @@ let checkSumEqueir = (str1,str2)=>{
     return false;
 }
 
-module.exports = { findDir,findFile,getCheckSum ,checkConfigFile,checkSumEqueir}
+
+let lookupSwaggerFile = (filePath)=>{
+
+    return new Promise(
+        function (resolve, reject) {
+    if(!fs.existsSync(`${WORKDIR}/swagger/${filePath}`)){
+        ctx.throw({success: false,code: 500, message: "文件不存在"})
+    }
+        let data = fs.readFileSync(`${WORKDIR}/swagger/${filePath}`,'utf-8');
+        resolve(data)        
+    
+ } )
+}
+
+
+
+module.exports = { findDir,findFile,getCheckSum ,checkConfigFile,checkSumEqueir,lookupSwaggerFile}

@@ -2,7 +2,7 @@ let co = require('co');//异步控制器
 const fs = require("fs")
 const path = require('path')
 const {WORKDIR,SWAGGERJSONFILE,HTTP} = require('../config/config.default.js');
-const {findDir,checkConfigFile,checkSumEqueir,findFile} = require('../utils/fileUtils')
+const {findDir,checkConfigFile,checkSumEqueir,findFile,lookupSwaggerFile} = require('../utils/fileUtils')
 const {item} = require('../model/item')
 
 // 配置文件查找
@@ -168,21 +168,6 @@ let lookupConfig =async (ctx, next)=>{
 }
 
 
-let lookupSwaggerFile = (filePath)=>{
-
-    
-
-    if(!fs.existsSync(`${WORKDIR}/swagger/${filePath}`)){
-        ctx.throw({success: false,code: 500, message: "文件不存在"})
-    }
-     
-        let data = fs.readFileSync(`${WORKDIR}/swagger/${filePath}`,'utf-8');
-
-        console.log(data)
-        
-    
-    return data
-}
 
 
 let editFile=async (ctx, next) => {

@@ -8,7 +8,7 @@ GET {{dev}}/api/doswagger/checkfiles?pageNum=1&pageSize=10
 
 
 ###获取文件夹
-GET {{dev}}/api/doswagger/getSwaggerTag
+GET {{endpoint }}/api/doswagger/getSwaggerTag
 
 
 ### 配置文件执行
