@@ -58,6 +58,8 @@ const fs = require("fs")
 router.get('/api/doswagger/checkfiles', async (ctx, next) => {
   await ApiService.checkConfigFileService(ctx,next)
 })
+
+
 // 配置文件执行
 router.get('/api/doswagger/execConfig', async (ctx, next) => {
   await ApiService.execFile(ctx,next)
@@ -80,7 +82,7 @@ router.get('/api/doswagger/download/:filePath/:fileName', async (ctx, next) => {
 
 });
 // 文件查看
-router.get('/api/doswagger/lookupfile', async (ctx, next) => {
+router.get('/api/doswagger/lookuphttpfile', async (ctx, next) => {
   await ApiService.lookupConfig(ctx,next)
 })
 //获取swaggertag

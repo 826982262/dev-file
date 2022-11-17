@@ -4,6 +4,7 @@ const path = require('path')
 const {WORKDIR,SWAGGERJSONFILE,HTTP} = require('../config/config.default.js');
 const {findDir,checkConfigFile,checkSumEqueir,findFile} = require('../utils/fileUtils')
 const {item} = require('../model/item')
+
 // 配置文件查找
 let checkConfigFileService = async (ctx, next) => {
     let {pageNum,pageSize} = ctx.query
@@ -24,6 +25,7 @@ let checkConfigFileService = async (ctx, next) => {
             items[i] = temp
 
         }
+        items[i].data=JSON.parse(lookupSwaggerFile(items[i].swagger))
         records.push(items[i])
         if(items[i+1]==null){
             break
@@ -166,6 +168,23 @@ let lookupConfig =async (ctx, next)=>{
 }
 
 
+let lookupSwaggerFile = (filePath)=>{
+
+    
+
+    if(!fs.existsSync(`${WORKDIR}/swagger/${filePath}`)){
+        ctx.throw({success: false,code: 500, message: "文件不存在"})
+    }
+     
+        let data = fs.readFileSync(`${WORKDIR}/swagger/${filePath}`,'utf-8');
+
+        console.log(data)
+        
+    
+    return data
+}
+
+
 let editFile=async (ctx, next) => {
 
     var {servers,filePath} = ctx.request.body
@@ -225,4 +244,4 @@ let getSwaggerTag = async (ctx,next)=>{
     // 返回
 }
 
-module.exports = { getSwaggerTag,editFile,checkHttpFileService,checkConfigFileService,uploadFile ,execFile ,deleteFile,lookupConfig}
+module.exports = { lookupSwaggerFile,getSwaggerTag,editFile,checkHttpFileService,checkConfigFileService,uploadFile ,execFile ,deleteFile,lookupConfig}

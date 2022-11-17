@@ -1,14 +1,13 @@
 @dev=http://localhost:8080
-@endpoint=http://static.smallsaas.cn:8000
-
+@endpoint=https://static.smallsaas.cn
+@house=https://house.cloud.smallsaas.cn
 
 ####
 //配置查询
-GET {{endpoint}}/api/doswagger/checkfiles?pageNum=1&pageSize=10
-
+GET {{dev}}/api/doswagger/checkfiles?pageNum=1&pageSize=10
 
 ###获取文件夹
-GET {{dev}}/api/doswagger/getSwaggerTag
+GET {{endpoint}}/api/doswagger/getSwaggerTag
 
 
 ### 配置文件执行
@@ -38,7 +37,7 @@ GET {{dev}}/api/doswagger/fileFiles?pageNum=1&pageSize=10
 GET {{dev}}/api/doswagger/download/rss/rss图片集测试用例.http
 
 ###查看文件
-GET {{dev}}/api/doswagger/lookupfile?filePath=rss/rss图片集测试用例.http
+GET {{endpoint}}/api/doswagger/lookuphttpfile?filePath=rss/swagger.json
 
 
 
