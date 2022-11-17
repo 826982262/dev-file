@@ -26,15 +26,15 @@ let checkConfigFileService = async (ctx, next) => {
             break
         }
      }
-items.forEach(function(items){
-    let temp=null
 
+    let temp=null
+for(let i=0;i<items.length;i++){
     if(items[i].status=='active'){
         temp = items[0]
         items[0] = items[i]
         items[i] = temp
     }
-})
+}
     console.log(pages)
     var result = {
         data: {
