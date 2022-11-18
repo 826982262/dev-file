@@ -90,6 +90,10 @@ router.get('/api/doswagger/getSwaggerTag', async (ctx, next) => {
   await ApiService.getSwaggerTag(ctx,next)
 })
 
+//入库
+router.get('/api/doswagger/putstorage', async (ctx, next) => {
+  await ApiService.putStorage(ctx,next)
+})
 
 // swagger配置文件增加url
 

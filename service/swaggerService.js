@@ -2,7 +2,7 @@ let co = require('co');//异步控制器
 const fs = require("fs")
 const path = require('path')
 const {WORKDIR,SWAGGERJSONFILE,HTTP} = require('../config/config.default.js');
-const {findDir,checkConfigFile,checkSumEqueir,findFile,lookupSwaggerFile} = require('../utils/fileUtils')
+const {findDir,checkConfigFile,checkSumEqueir,findFile,lookupSwaggerFile,sendHttpRequest} = require('../utils/fileUtils')
 const {item} = require('../model/item')
 
 // 配置文件查找
@@ -19,8 +19,11 @@ let checkConfigFileService = async (ctx, next) => {
      let records = new Array()    
 
      for(let i=(pageNum-1)*pageSize;i< pageNum*pageSize;i++){
-   
-          items[i].data=JSON.parse(yield lookupSwaggerFile(items[i].swagger))
+        if(items[i].status=='active'){
+            temp = items[0]
+            items[0] = items[i]
+            items[i] = temp
+        }
         records.push(items[i])
         if(items[i+1]==null){
             break
@@ -29,11 +32,7 @@ let checkConfigFileService = async (ctx, next) => {
 
     let temp=null
 for(let i=0;i<items.length;i++){
-    if(items[i].status=='active'){
-        temp = items[0]
-        items[0] = items[i]
-        items[i] = temp
-    }
+  
 }
     console.log(pages)
     var result = {
@@ -93,7 +92,19 @@ let checkHttpFileService = async (ctx, next) => {
     ctx.body = res
 } 
 
-
+// 入库
+let putStorage = async (ctx, next) =>{
+    var {swagger} = ctx.query
+    console.log(swagger)
+     let res = await co(function* (){
+         var data = fs.readFileSync(`${WORKDIR}/swagger/${swagger}`);
+    let result=sendHttpRequest("http://house.cloud.smallsaas.cn/api/u/lowAutoApis/syncJson",data)
+console.log(result)
+     return result;
+     })
+     ctx.body = res
+ }
+ 
 
 // 执行文件
 let execFile = async (ctx, next) =>{
@@ -232,4 +243,4 @@ let getSwaggerTag = async (ctx,next)=>{
     // 返回
 }
 
-module.exports = { lookupSwaggerFile,getSwaggerTag,editFile,checkHttpFileService,checkConfigFileService,uploadFile ,execFile ,deleteFile,lookupConfig}
+module.exports = { lookupSwaggerFile,getSwaggerTag,editFile,checkHttpFileService,checkConfigFileService,uploadFile ,execFile ,deleteFile,lookupConfig,putStorage}

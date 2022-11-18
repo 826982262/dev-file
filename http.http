@@ -6,6 +6,10 @@
 //配置查询
 GET {{dev}}/api/doswagger/checkfiles?pageNum=1&pageSize=10
 
+###入库
+GET {{dev}}/api/doswagger/putstorage?swagger=rss/swagger.json
+
+
 
 ###获取文件夹
 GET {{endpoint }}/api/doswagger/getSwaggerTag

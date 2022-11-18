@@ -1,6 +1,8 @@
 const fs = require("fs")
 const crypto = require('crypto');
 var path = require('path');
+const axios = require('axios')
+
 const {WORKDIR,SWAGGERJSONFILE,HTTP} = require('../config/config.default.js');
 
 //查找目录存在文件
@@ -92,6 +94,33 @@ let lookupSwaggerFile = (filePath)=>{
  } )
 }
 
+function sendHttpRequest(url,data) {
+
+    /*****创建promise函数****/
+    return new Promise(function (resolve, reject) {
+        /*****正常的发请求****/
+        let req =  axios({
+            url: `${url}`,
+            data: data,
+            method: 'post',
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          })
+            .then(function (response) {
+                console.log(`respose:${response.data}`)
+                resolve(response.data);
+
+              })
+            .catch(function (error) {
+                console.log(`respose:${error.message}`)
+
+                resolve(error.message);
+            })
+        
+    });
+}
 
 
-module.exports = { findDir,findFile,getCheckSum ,checkConfigFile,checkSumEqueir,lookupSwaggerFile}
+
+module.exports = { findDir,findFile,getCheckSum ,checkConfigFile,checkSumEqueir,lookupSwaggerFile,sendHttpRequest}
