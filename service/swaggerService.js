@@ -17,12 +17,13 @@ let checkConfigFileService = async (ctx, next) => {
             }
      let pages =  Math.ceil(items.length/pageSize)
      let records = new Array()    
-
+     let temp=null
      for(let i=(pageNum-1)*pageSize;i< pageNum*pageSize;i++){
         if(items[i].status=='active'){
             temp = items[0]
             items[0] = items[i]
             items[i] = temp
+
         }
         records.push(items[i])
         if(items[i+1]==null){
@@ -30,10 +31,6 @@ let checkConfigFileService = async (ctx, next) => {
         }
      }
 
-    let temp=null
-for(let i=0;i<items.length;i++){
-  
-}
     console.log(pages)
     var result = {
         data: {
