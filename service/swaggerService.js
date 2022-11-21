@@ -97,7 +97,7 @@ let putStorage = async (ctx, next) =>{
     console.log(swagger)
      let res = await co(function* (){
          var data = fs.readFileSync(`${WORKDIR}/swagger/${swagger}`);
-        let result=sendHttpRequest(`http://house.cloud.smallsaas.cn/api/u/lowAutoApis/syncJson?force=${isForce}`,data)
+        let result=sendHttpRequest(`http://house.cloud.smallsaas.cn/api/u/lowAutoApis/syncJson?force=${force}`,data)
 console.log(result)
      return result;
      })
