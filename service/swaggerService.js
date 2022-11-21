@@ -91,13 +91,13 @@ let checkHttpFileService = async (ctx, next) => {
 
 // 入库
 let putStorage = async (ctx, next) =>{
-    var {swagger,isForce} = ctx.query
+    var {swagger,force} = ctx.query
 
-    isForce=isForce==null?false:isForce
+    force=force==null?false:force
     console.log(swagger)
      let res = await co(function* (){
          var data = fs.readFileSync(`${WORKDIR}/swagger/${swagger}`);
-        let result=sendHttpRequest(`http://house.cloud.smallsaas.cn/api/u/lowAutoApis/syncJson?isForce=${isForce}`,data)
+        let result=sendHttpRequest(`http://house.cloud.smallsaas.cn/api/u/lowAutoApis/syncJson?force=${isForce}`,data)
 console.log(result)
      return result;
      })
