@@ -93,7 +93,7 @@ let checkHttpFileService = async (ctx, next) => {
 let putStorage = async (ctx, next) =>{
     var {swagger,isForce} = ctx.query
 
-    isForce=isForce==null?ture:isForce
+    isForce=isForce==null?false:isForce
     console.log(swagger)
      let res = await co(function* (){
          var data = fs.readFileSync(`${WORKDIR}/swagger/${swagger}`);
