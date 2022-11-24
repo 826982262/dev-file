@@ -2084,7 +2084,10 @@
             "type": "string",
             "example": "A栋1102房"
           }
-        }
+        },
+        "required": [
+          "userId"
+        ]
       },
       "UserStatus": {
         "type": "string",
@@ -2217,8 +2220,12 @@
                   "example": "http://images.test.com/1.png"
                 }
               },
-              "infoDisplaymentSettings": {},
-              "endTimeSettings": {},
+              "infoDisplaymentSettings": {
+                "type": "object"
+              },
+              "endTimeSettings": {
+                "type": "object"
+              },
               "createdAt": {
                 "type": "string",
                 "example": "2022-08-01T13:02:11.000Z"

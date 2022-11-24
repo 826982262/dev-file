@@ -1,13 +1,17 @@
 @dev=http://localhost:8080
-@endpoint=https://static.smallsaas.cn
-@house=https://house.cloud.smallsaas.cn
+# @endpoint=https://static.smallsaas.cn
+@endpoint=https://house.cloud.smallsaas.cn
+
+GET {{endpoint}}/api/u/rss/master
 
 ####
 //配置查询
 GET {{endpoint}}/api/doswagger/checkfiles?pageNum=1&pageSize=10
+###
+GET https://house.cloud.smallsaas.cn/form?id=555511111&pageSize=10&pageNum=1
 
 ###入库
-GET {{dev}}/api/doswagger/putstorage?swagger=rss/swagger.json&isForce=false
+GET {{endpoint}}/api/doswagger/putstorage?swagger=monemts/swagger.json&isForce=false
 
 
 

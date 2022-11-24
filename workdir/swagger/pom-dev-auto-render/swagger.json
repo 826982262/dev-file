@@ -1,0 +1,4543 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "pom-base",
+    "version" : "0.0.1",
+    "title" : "pom-dev-auto-render"
+  },
+  "tags" : [ {
+    "name" : "FrontPage"
+  }, {
+    "name" : "General-TagService"
+  }, {
+    "name" : "LowAutoComponent"
+  }, {
+    "name" : "LowAutoComponentLayout"
+  }, {
+    "name" : "LowAutoComponentProp"
+  }, {
+    "name" : "LowAutoModule"
+  }, {
+    "name" : "LowAutoModuleData"
+  }, {
+    "name" : "LowAutoModuleProp"
+  }, {
+    "name" : "LowAutoModuleStyle"
+  }, {
+    "name" : "PagePropOperation"
+  }, {
+    "name" : "PreviewPage"
+  }, {
+    "name" : "Route"
+  }, {
+    "name" : "RouterModule"
+  }, {
+    "name" : "TableItemModule"
+  }, {
+    "name" : "Template"
+  }, {
+    "name" : "mock data测试用"
+  }, {
+    "name" : "mock测试用"
+  }, {
+    "name" : "组件操作"
+  }, {
+    "name" : "表单用"
+  }, {
+    "name" : "页面模块"
+  } ],
+  "paths" : {
+    "/api/crud/frontPage/frontPage/frontPages" : {
+      "get" : {
+        "tags" : [ "FrontPage" ],
+        "summary" : "FrontPage 列表信息",
+        "description" : "",
+        "operationId" : "queryFrontPagePage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "format" : "date-time"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "format" : "date-time"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/FrontPage对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "FrontPage" ],
+        "summary" : "新建 FrontPage",
+        "description" : "",
+        "operationId" : "createFrontPage",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/FrontPage对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/FrontPage对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/crud/frontPage/frontPage/frontPages/{id}" : {
+      "get" : {
+        "tags" : [ "FrontPage" ],
+        "summary" : "查看 FrontPage",
+        "description" : "",
+        "operationId" : "getFrontPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/FrontPage对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "FrontPage" ],
+        "summary" : "修改 FrontPage",
+        "description" : "",
+        "operationId" : "updateFrontPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/FrontPage对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/FrontPage对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "FrontPage" ],
+        "summary" : "删除 FrontPage",
+        "description" : "",
+        "operationId" : "deleteFrontPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/crud/frontPageModuleInfo" : {
+      "get" : {
+        "tags" : [ "页面模块" ],
+        "summary" : "FrontPageModuleInfo 列表信息",
+        "description" : "",
+        "operationId" : "queryFrontPageModuleInfos",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : true,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/FrontPageModuleInfoRecord"
+            }
+          }
+        }
+      }
+    },
+    "/api/stock/tags" : {
+      "get" : {
+        "tags" : [ "General-TagService" ],
+        "summary" : "Tag List",
+        "description" : "",
+        "operationId" : "queryStockTags",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "General-TagService" ],
+        "summary" : "Create Tag",
+        "description" : "",
+        "operationId" : "createStockTag",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StockTag"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/stock/tags/bulk" : {
+      "post" : {
+        "tags" : [ "General-TagService" ],
+        "summary" : "批量新建tag",
+        "description" : "",
+        "operationId" : "createStockTagWithRelation",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/StockTagRecord"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/stock/tags/ids" : {
+      "post" : {
+        "tags" : [ "General-TagService" ],
+        "summary" : "根据tagIds、stock_type查询列表",
+        "description" : "",
+        "operationId" : "updateStockTag",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/IdsRquest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/stock/tags/{id}" : {
+      "get" : {
+        "tags" : [ "General-TagService" ],
+        "summary" : "view Tag",
+        "description" : "",
+        "operationId" : "getStockTag",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        },
+        "deprecated" : true
+      },
+      "put" : {
+        "tags" : [ "General-TagService" ],
+        "summary" : "Update tag Msg",
+        "description" : "",
+        "operationId" : "updateStockTag",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StockTag"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        },
+        "deprecated" : true
+      },
+      "delete" : {
+        "tags" : [ "General-TagService" ],
+        "summary" : "Delete one Tag Msg",
+        "description" : "",
+        "operationId" : "deleteStockTag",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/frontPage/frontPage/frontPages" : {
+      "get" : {
+        "tags" : [ "FrontPage" ],
+        "summary" : "FrontPage 列表信息",
+        "description" : "",
+        "operationId" : "queryFrontPagePage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "format" : "date-time"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "format" : "date-time"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/FrontPage对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "FrontPage" ],
+        "summary" : "新建 FrontPage",
+        "description" : "",
+        "operationId" : "createFrontPage",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/FrontPage对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/FrontPage对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/frontPage/frontPage/frontPages/{id}" : {
+      "get" : {
+        "tags" : [ "FrontPage" ],
+        "summary" : "查看 FrontPage",
+        "description" : "",
+        "operationId" : "getFrontPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/FrontPage对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "FrontPage" ],
+        "summary" : "修改 FrontPage",
+        "description" : "",
+        "operationId" : "updateFrontPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/FrontPage对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/FrontPage对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "FrontPage" ],
+        "summary" : "删除 FrontPage",
+        "description" : "",
+        "operationId" : "deleteFrontPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/frontPageModuleInfo" : {
+      "get" : {
+        "tags" : [ "页面模块" ],
+        "summary" : "FrontPageModuleInfo 列表信息",
+        "description" : "",
+        "operationId" : "queryFrontPageModuleInfos",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : true,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/FrontPageModuleInfoRecord"
+            }
+          }
+        }
+      }
+    },
+    "/data/{dir}" : {
+      "get" : {
+        "tags" : [ "mock data测试用" ],
+        "summary" : "查看mock列表",
+        "description" : "",
+        "operationId" : "getMockList",
+        "parameters" : [ {
+          "name" : "dir",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/data/{dir}/{name}" : {
+      "get" : {
+        "tags" : [ "mock data测试用" ],
+        "summary" : "查看 指定文件夹下的mock数据",
+        "description" : "",
+        "operationId" : "getMock",
+        "parameters" : [ {
+          "name" : "dir",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "name",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "mock data测试用" ],
+        "summary" : "新增mock数据",
+        "description" : "",
+        "operationId" : "createMock",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "object"
+            }
+          }
+        }, {
+          "name" : "dir",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "name",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/data/{name}" : {
+      "get" : {
+        "tags" : [ "mock data测试用" ],
+        "summary" : "查看 指定文件夹下的mock数据",
+        "description" : "",
+        "operationId" : "getMock",
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "mock data测试用" ],
+        "summary" : "新增mock数据",
+        "description" : "",
+        "operationId" : "createMock",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "object"
+            }
+          }
+        }, {
+          "name" : "name",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/component" : {
+      "get" : {
+        "tags" : [ "组件操作" ],
+        "summary" : "LowAutoComponent 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoComponentPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponent对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "组件操作" ],
+        "summary" : "新建 LowAutoComponent",
+        "description" : "",
+        "operationId" : "createLowAutoComponent",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoComponent对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponent对象"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/component/{id}" : {
+      "get" : {
+        "tags" : [ "组件操作" ],
+        "summary" : "查看 LowAutoComponent",
+        "description" : "",
+        "operationId" : "getLowAutoComponent",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponent对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "组件操作" ],
+        "summary" : "修改 LowAutoComponent",
+        "description" : "",
+        "operationId" : "updateLowAutoComponent",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoComponent对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponent对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "组件操作" ],
+        "summary" : "删除 LowAutoComponent",
+        "description" : "",
+        "operationId" : "deleteLowAutoComponent",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/forms/current" : {
+      "post" : {
+        "tags" : [ "组件操作" ],
+        "summary" : "创建页面模板",
+        "description" : "",
+        "operationId" : "createPageTemplate",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/AutoPage"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/AutoPage"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/forms/page/template" : {
+      "get" : {
+        "tags" : [ "PagePropOperation" ],
+        "summary" : "获取页面列表模板",
+        "description" : "",
+        "operationId" : "getTemplatePageList",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/forms/page/{id}" : {
+      "post" : {
+        "tags" : [ "PagePropOperation" ],
+        "summary" : "创建页面",
+        "description" : "",
+        "operationId" : "createPage",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/forms/{id}/columns" : {
+      "get" : {
+        "tags" : [ "TableItemModule" ],
+        "summary" : "查看全部的columns",
+        "description" : "",
+        "operationId" : "getAllColumns",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "currentModule",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "TableItemModule" ],
+        "summary" : "添加新的columns",
+        "description" : "",
+        "operationId" : "addColumns",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/AutoTableItemColumns"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/AutoTableItemColumns"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/forms/{id}/columns/op/arrange" : {
+      "post" : {
+        "tags" : [ "TableItemModule" ],
+        "summary" : "移动colums",
+        "description" : "",
+        "operationId" : "moveColumn",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/AutoTableItemColumns"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/AutoTableItemColumns"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/forms/{id}/columns/op/copy" : {
+      "post" : {
+        "tags" : [ "TableItemModule" ],
+        "summary" : "复制colums",
+        "description" : "",
+        "operationId" : "copyColumn",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/AutoTableItemColumns"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/AutoTableItemColumns"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/forms/{id}/columns/op/remove" : {
+      "post" : {
+        "tags" : [ "TableItemModule" ],
+        "summary" : "移除colums",
+        "description" : "",
+        "operationId" : "removeColumn",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/AutoTableItemColumns"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/AutoTableItemColumns"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/forms/{id}/columns/{index}" : {
+      "get" : {
+        "tags" : [ "TableItemModule" ],
+        "summary" : "查看指定columns",
+        "description" : "",
+        "operationId" : "getColumnsById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "index",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "currentModule",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "TableItemModule" ],
+        "summary" : "修改指定位置的colums",
+        "description" : "",
+        "operationId" : "updateColumns",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "index",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/AutoTableItemColumns"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/AutoTableItemColumns"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/forms/{id}/module/op/arrange" : {
+      "post" : {
+        "tags" : [ "组件操作" ],
+        "summary" : "移动组件顺序",
+        "description" : "",
+        "operationId" : "arrangeComponent",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/AutoModule"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/AutoModule"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/forms/{id}/module/op/copy" : {
+      "post" : {
+        "tags" : [ "组件操作" ],
+        "summary" : "复制组件",
+        "description" : "",
+        "operationId" : "copyComponent",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/AutoModule"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/AutoModule"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/forms/{id}/module/op/remove" : {
+      "post" : {
+        "tags" : [ "组件操作" ],
+        "summary" : "移除组件",
+        "description" : "",
+        "operationId" : "removeComponent",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/AutoModule"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/AutoModule"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/forms/{id}/modules" : {
+      "post" : {
+        "tags" : [ "组件操作" ],
+        "summary" : "创建组件item",
+        "description" : "",
+        "operationId" : "addComponent",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/AutoModule"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/AutoModule"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/forms/{id}/page" : {
+      "put" : {
+        "tags" : [ "PagePropOperation" ],
+        "summary" : "修改页面属性id",
+        "description" : "",
+        "operationId" : "updatePageProp",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "object"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/AutoPage"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/forms/{id}/route/module" : {
+      "get" : {
+        "tags" : [ "RouterModule" ],
+        "summary" : "获取路由module",
+        "description" : "",
+        "operationId" : "getRouteModule",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "currentModule",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "RouterModule" ],
+        "summary" : "更新路由module",
+        "description" : "",
+        "operationId" : "updateRouteModule",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/AutoRoute"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/forms/{id}/route/op/arrange" : {
+      "post" : {
+        "tags" : [ "Route" ],
+        "summary" : "移动路由位置",
+        "description" : "",
+        "operationId" : "updateRoutePosition",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/AutoRoute"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/forms/{id}/route/op/copy" : {
+      "post" : {
+        "tags" : [ "Route" ],
+        "summary" : "复制路由",
+        "description" : "",
+        "operationId" : "copyRoute",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/AutoRoute"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/forms/{id}/route/op/remove" : {
+      "post" : {
+        "tags" : [ "Route" ],
+        "summary" : "移除路由",
+        "description" : "",
+        "operationId" : "removeRoute",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/AutoRoute"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/forms/{id}/routes" : {
+      "get" : {
+        "tags" : [ "Route" ],
+        "summary" : "查看路由",
+        "description" : "",
+        "operationId" : "getRouterList",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "currentModule",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Route" ],
+        "summary" : "添加路由",
+        "description" : "",
+        "operationId" : "addRoute",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/AutoRoute"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/forms/{id}/routes/{index}" : {
+      "get" : {
+        "tags" : [ "Route" ],
+        "summary" : "查看路由",
+        "description" : "",
+        "operationId" : "getRouter",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "currentModule",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Route" ],
+        "summary" : "修改路由",
+        "description" : "",
+        "operationId" : "updateRouteDate",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "index",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/AutoRoute"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/forms/{id}/routes/{index}/op/next" : {
+      "post" : {
+        "tags" : [ "Route" ],
+        "summary" : "变更路由跳转页面",
+        "description" : "",
+        "operationId" : "updateRouteDate",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/AutoRoute"
+          }
+        }, {
+          "name" : "index",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/preview/appList" : {
+      "get" : {
+        "tags" : [ "PreviewPage" ],
+        "summary" : "页面配置列表",
+        "description" : "",
+        "operationId" : "getAppIdMap",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/preview/current" : {
+      "get" : {
+        "tags" : [ "PreviewPage" ],
+        "summary" : "获取当前预览页ID",
+        "description" : "",
+        "operationId" : "getCurrentPageId",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/preview/current/form" : {
+      "get" : {
+        "tags" : [ "PreviewPage" ],
+        "summary" : "获取当前预览页配置",
+        "description" : "",
+        "operationId" : "getCurrentPageJson",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/preview/current/from" : {
+      "put" : {
+        "tags" : [ "PreviewPage" ],
+        "summary" : "设置当前预览页配置",
+        "description" : "",
+        "operationId" : "updateCurrentPageJson",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "object"
+            }
+          }
+        }, {
+          "name" : "id",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/preview/current/{id}" : {
+      "put" : {
+        "tags" : [ "PreviewPage" ],
+        "summary" : "设置当前预览页ID",
+        "description" : "",
+        "operationId" : "updateCurrentPageId",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/preview/form" : {
+      "get" : {
+        "tags" : [ "PreviewPage" ],
+        "summary" : "获取pageidJson",
+        "description" : "",
+        "operationId" : "getJson",
+        "parameters" : [ {
+          "name" : "pageId",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/preview/form/{id}" : {
+      "post" : {
+        "tags" : [ "PreviewPage" ],
+        "summary" : "提交pageid 的json配置",
+        "description" : "",
+        "operationId" : "addJson",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "object"
+            }
+          }
+        }, {
+          "name" : "appid",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/preview/forms" : {
+      "get" : {
+        "tags" : [ "PreviewPage" ],
+        "summary" : "获取所有form页面列表",
+        "description" : "",
+        "operationId" : "getAllPages",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "format" : "date-time"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "format" : "date-time"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/preview/forms/simple" : {
+      "get" : {
+        "tags" : [ "PreviewPage" ],
+        "summary" : "获取所有form页面列表",
+        "description" : "",
+        "operationId" : "getAllSimplePages",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/template" : {
+      "get" : {
+        "tags" : [ "Template" ],
+        "summary" : "获取模板列表",
+        "description" : "",
+        "operationId" : "getTemplate",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/template/cancelTemplate/{id}" : {
+      "put" : {
+        "tags" : [ "Template" ],
+        "summary" : "修改模板",
+        "description" : "",
+        "operationId" : "cancelTemplateStatus",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/template/confirmTemplate/{id}" : {
+      "put" : {
+        "tags" : [ "Template" ],
+        "summary" : "设置模板",
+        "description" : "",
+        "operationId" : "setTemplateStatus",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/dev/auto/template/simple" : {
+      "get" : {
+        "tags" : [ "Template" ],
+        "summary" : "获取所有form页面列表",
+        "description" : "",
+        "operationId" : "getAllSimplePages",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/form/appMap" : {
+      "get" : {
+        "tags" : [ "表单用" ],
+        "summary" : "查看 当前appId下的idmap",
+        "description" : "",
+        "operationId" : "getAppIdMap",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/form/byTag/{tag}" : {
+      "get" : {
+        "tags" : [ "表单用" ],
+        "summary" : "查看 Json",
+        "description" : "",
+        "operationId" : "getJson",
+        "parameters" : [ {
+          "name" : "tag",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/form/map" : {
+      "get" : {
+        "tags" : [ "表单用" ],
+        "summary" : "查看 当前appId下的idmap",
+        "description" : "",
+        "operationId" : "getMap",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/form/{id}" : {
+      "post" : {
+        "tags" : [ "表单用" ],
+        "summary" : "增加Json",
+        "description" : "",
+        "operationId" : "addJson",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "object"
+            }
+          }
+        }, {
+          "name" : "appid",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/form/{id}/{tag}" : {
+      "post" : {
+        "tags" : [ "表单用" ],
+        "summary" : "增加Json 带tag",
+        "description" : "",
+        "operationId" : "addJsonTag",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "object"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/mock/{dir}" : {
+      "get" : {
+        "tags" : [ "mock测试用" ],
+        "summary" : "查看mock列表",
+        "description" : "",
+        "operationId" : "getMockList",
+        "parameters" : [ {
+          "name" : "dir",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/mock/{dir}/{name}" : {
+      "get" : {
+        "tags" : [ "mock测试用" ],
+        "summary" : "查看 指定文件夹下的mock数据",
+        "description" : "",
+        "operationId" : "getMock",
+        "parameters" : [ {
+          "name" : "dir",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "name",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "mock测试用" ],
+        "summary" : "新增mock数据",
+        "description" : "",
+        "operationId" : "createMock",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "object"
+            }
+          }
+        }, {
+          "name" : "dir",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "name",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_component/lowAutoComponent/lowAutoComponents" : {
+      "get" : {
+        "tags" : [ "LowAutoComponent" ],
+        "summary" : "LowAutoComponent 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoComponentPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponent对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoComponent" ],
+        "summary" : "新建 LowAutoComponent",
+        "description" : "",
+        "operationId" : "createLowAutoComponent",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoComponent对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponent对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_component/lowAutoComponent/lowAutoComponents/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoComponent" ],
+        "summary" : "查看 LowAutoComponent",
+        "description" : "",
+        "operationId" : "getLowAutoComponent",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponent对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoComponent" ],
+        "summary" : "修改 LowAutoComponent",
+        "description" : "",
+        "operationId" : "updateLowAutoComponent",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoComponent对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponent对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoComponent" ],
+        "summary" : "删除 LowAutoComponent",
+        "description" : "",
+        "operationId" : "deleteLowAutoComponent",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_component_layout/lowAutoComponentLayout/lowAutoComponentLayouts" : {
+      "get" : {
+        "tags" : [ "LowAutoComponentLayout" ],
+        "summary" : "LowAutoComponentLayout 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoComponentLayoutPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponentLayout对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoComponentLayout" ],
+        "summary" : "新建 LowAutoComponentLayout",
+        "description" : "",
+        "operationId" : "createLowAutoComponentLayout",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoComponentLayout对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponentLayout对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_component_layout/lowAutoComponentLayout/lowAutoComponentLayouts/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoComponentLayout" ],
+        "summary" : "查看 LowAutoComponentLayout",
+        "description" : "",
+        "operationId" : "getLowAutoComponentLayout",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponentLayout对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoComponentLayout" ],
+        "summary" : "修改 LowAutoComponentLayout",
+        "description" : "",
+        "operationId" : "updateLowAutoComponentLayout",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoComponentLayout对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponentLayout对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoComponentLayout" ],
+        "summary" : "删除 LowAutoComponentLayout",
+        "description" : "",
+        "operationId" : "deleteLowAutoComponentLayout",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_component_prop/lowAutoComponentProp/lowAutoComponentProps" : {
+      "get" : {
+        "tags" : [ "LowAutoComponentProp" ],
+        "summary" : "LowAutoComponentProp 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoComponentPropPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponentProp对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoComponentProp" ],
+        "summary" : "新建 LowAutoComponentProp",
+        "description" : "",
+        "operationId" : "createLowAutoComponentProp",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoComponentProp对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponentProp对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_component_prop/lowAutoComponentProp/lowAutoComponentProps/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoComponentProp" ],
+        "summary" : "查看 LowAutoComponentProp",
+        "description" : "",
+        "operationId" : "getLowAutoComponentProp",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponentProp对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoComponentProp" ],
+        "summary" : "修改 LowAutoComponentProp",
+        "description" : "",
+        "operationId" : "updateLowAutoComponentProp",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoComponentProp对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponentProp对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoComponentProp" ],
+        "summary" : "删除 LowAutoComponentProp",
+        "description" : "",
+        "operationId" : "deleteLowAutoComponentProp",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_module/lowAutoModule/lowAutoModules" : {
+      "get" : {
+        "tags" : [ "LowAutoModule" ],
+        "summary" : "LowAutoModule 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoModulePage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModule对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoModule" ],
+        "summary" : "新建 LowAutoModule",
+        "description" : "",
+        "operationId" : "createLowAutoModule",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoModule对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModule对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_module/lowAutoModule/lowAutoModules/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoModule" ],
+        "summary" : "查看 LowAutoModule",
+        "description" : "",
+        "operationId" : "getLowAutoModule",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModule对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoModule" ],
+        "summary" : "修改 LowAutoModule",
+        "description" : "",
+        "operationId" : "updateLowAutoModule",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoModule对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModule对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoModule" ],
+        "summary" : "删除 LowAutoModule",
+        "description" : "",
+        "operationId" : "deleteLowAutoModule",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_module_data/lowAutoModuleData/lowAutoModuleDatas" : {
+      "get" : {
+        "tags" : [ "LowAutoModuleData" ],
+        "summary" : "LowAutoModuleData 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoModuleDataPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleData对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoModuleData" ],
+        "summary" : "新建 LowAutoModuleData",
+        "description" : "",
+        "operationId" : "createLowAutoModuleData",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoModuleData对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleData对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_module_data/lowAutoModuleData/lowAutoModuleDatas/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoModuleData" ],
+        "summary" : "查看 LowAutoModuleData",
+        "description" : "",
+        "operationId" : "getLowAutoModuleData",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleData对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoModuleData" ],
+        "summary" : "修改 LowAutoModuleData",
+        "description" : "",
+        "operationId" : "updateLowAutoModuleData",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoModuleData对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleData对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoModuleData" ],
+        "summary" : "删除 LowAutoModuleData",
+        "description" : "",
+        "operationId" : "deleteLowAutoModuleData",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_module_prop/lowAutoModuleProp/lowAutoModuleProps" : {
+      "get" : {
+        "tags" : [ "LowAutoModuleProp" ],
+        "summary" : "LowAutoModuleProp 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoModulePropPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModulePropRecord"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoModuleProp" ],
+        "summary" : "新建 LowAutoModuleProp",
+        "description" : "",
+        "operationId" : "createLowAutoModuleProp",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoModuleProp"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleProp"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_module_prop/lowAutoModuleProp/lowAutoModuleProps/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoModuleProp" ],
+        "summary" : "查看 LowAutoModuleProp",
+        "description" : "",
+        "operationId" : "getLowAutoModuleProp",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleProp"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoModuleProp" ],
+        "summary" : "修改 LowAutoModuleProp",
+        "description" : "",
+        "operationId" : "updateLowAutoModuleProp",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoModuleProp"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleProp"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoModuleProp" ],
+        "summary" : "删除 LowAutoModuleProp",
+        "description" : "",
+        "operationId" : "deleteLowAutoModuleProp",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_module_style/lowAutoModuleStyle/lowAutoModuleStyles" : {
+      "get" : {
+        "tags" : [ "LowAutoModuleStyle" ],
+        "summary" : "LowAutoModuleStyle 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoModuleStylePage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleStyle对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoModuleStyle" ],
+        "summary" : "新建 LowAutoModuleStyle",
+        "description" : "",
+        "operationId" : "createLowAutoModuleStyle",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoModuleStyle对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleStyle对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_module_style/lowAutoModuleStyle/lowAutoModuleStyles/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoModuleStyle" ],
+        "summary" : "查看 LowAutoModuleStyle",
+        "description" : "",
+        "operationId" : "getLowAutoModuleStyle",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleStyle对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoModuleStyle" ],
+        "summary" : "修改 LowAutoModuleStyle",
+        "description" : "",
+        "operationId" : "updateLowAutoModuleStyle",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoModuleStyle对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleStyle对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoModuleStyle" ],
+        "summary" : "删除 LowAutoModuleStyle",
+        "description" : "",
+        "operationId" : "deleteLowAutoModuleStyle",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/lc/components/cart" : {
+      "get" : {
+        "tags" : [ "LowAutoComponent" ],
+        "summary" : "获取cart列表",
+        "description" : "",
+        "operationId" : "getCartDetailList",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponent对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/lc/components/cart/{componentName}" : {
+      "get" : {
+        "tags" : [ "LowAutoComponent" ],
+        "summary" : "获取 Cart",
+        "description" : "",
+        "operationId" : "getCart",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponent对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/lc/components/layoutJson/{autoLayoutName}" : {
+      "get" : {
+        "tags" : [ "LowAutoComponent" ],
+        "summary" : "获取layoutJson",
+        "description" : "",
+        "operationId" : "getComponentConfig",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponent对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/lc/components/selector" : {
+      "get" : {
+        "tags" : [ "LowAutoComponent" ],
+        "summary" : "获取select列表",
+        "description" : "",
+        "operationId" : "getSelectorList",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponent对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/lc/module/addModule" : {
+      "post" : {
+        "tags" : [ "LowAutoModule" ],
+        "summary" : "根据pageId增加module",
+        "description" : "",
+        "operationId" : "createLowAutoModule",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "object"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModule对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/lc/module/moduleList/{pageId}" : {
+      "get" : {
+        "tags" : [ "LowAutoModule" ],
+        "summary" : "查看对应pageId下的module列表",
+        "description" : "",
+        "operationId" : "queryModuleList",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModule对象"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "AutoModule" : {
+      "type" : "object",
+      "properties" : {
+        "moduleName" : {
+          "type" : "string"
+        },
+        "from" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "to" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "index" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "AutoPage" : {
+      "type" : "object",
+      "properties" : {
+        "pageType" : {
+          "type" : "string"
+        },
+        "version" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "title" : {
+          "type" : "string"
+        }
+      }
+    },
+    "AutoRoute" : {
+      "type" : "object",
+      "properties" : {
+        "index" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "target" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "img" : {
+          "type" : "string"
+        },
+        "nav" : {
+          "type" : "string"
+        },
+        "color" : {
+          "type" : "string"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "group" : {
+          "type" : "string"
+        },
+        "from" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "to" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "pageId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "moduleName" : {
+          "type" : "string"
+        },
+        "currentModule" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "AutoTableItemColumns" : {
+      "type" : "object",
+      "properties" : {
+        "currentModule" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "from" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "to" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "index" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "label" : {
+          "type" : "string"
+        },
+        "field" : {
+          "type" : "string"
+        },
+        "width" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "thAlign" : {
+          "type" : "string"
+        },
+        "tdAlign" : {
+          "type" : "string"
+        }
+      }
+    },
+    "FrontPageModuleInfoRecord" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "pageId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "itemModuleName" : {
+          "type" : "string"
+        },
+        "moduleType" : {
+          "type" : "string"
+        },
+        "frontPageId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "title" : {
+          "type" : "string"
+        }
+      }
+    },
+    "FrontPage对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "pageId" : {
+          "type" : "string",
+          "description" : "前端传的唯一数值"
+        },
+        "title" : {
+          "type" : "string",
+          "description" : "标题"
+        },
+        "pageDescrip" : {
+          "type" : "string",
+          "description" : "页面描述"
+        },
+        "content" : {
+          "type" : "string",
+          "description" : "页面配置json数据"
+        },
+        "appid" : {
+          "type" : "string",
+          "description" : "appid"
+        },
+        "jsonName" : {
+          "type" : "string",
+          "description" : "json文件名"
+        },
+        "jsonPath" : {
+          "type" : "string",
+          "description" : "json文件路径"
+        },
+        "createTime" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "创建时间"
+        },
+        "updateTime" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "更新时间"
+        },
+        "templateStatus" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "tag" : {
+          "type" : "string"
+        },
+        "extra" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "object"
+          }
+        },
+        "tags" : {
+          "type" : "string"
+        },
+        "tagIds" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "moduleName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "IdsRquest" : {
+      "type" : "object",
+      "properties" : {
+        "ids" : {
+          "type" : "array",
+          "items" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        },
+        "stockType" : {
+          "type" : "string"
+        },
+        "pageSize" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "pageNum" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "LowAutoComponentLayout对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "componentId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "父组件id"
+        },
+        "componentLayoutId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "子组件id"
+        }
+      }
+    },
+    "LowAutoComponentProp对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "componentId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "所属标准组件"
+        },
+        "propName" : {
+          "type" : "string",
+          "description" : "属性键/名称"
+        },
+        "propTips" : {
+          "type" : "string",
+          "description" : "属性中文名称"
+        },
+        "propDefaultValue" : {
+          "type" : "string",
+          "description" : "标准组件属性默认值"
+        },
+        "dataType" : {
+          "type" : "string",
+          "description" : "SELECT单选项  MULTISELECT多选项  NUMBER数字  TEXT文本"
+        },
+        "optionName" : {
+          "type" : "string",
+          "description" : "如果data_type=[select,multiselect],限制属性值选项"
+        }
+      }
+    },
+    "LowAutoComponent对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "组件中文名"
+        },
+        "componentName" : {
+          "type" : "string",
+          "description" : "基于不同属性派生出来的新组件"
+        },
+        "componentType" : {
+          "type" : "string",
+          "description" : "前端已开发的组件类型"
+        },
+        "componentOption" : {
+          "type" : "string",
+          "description" : "组件类型"
+        },
+        "items" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LowAutoComponentProp对象"
+          }
+        }
+      }
+    },
+    "LowAutoModuleData对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "id"
+        },
+        "moduleId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "所属组件实例id"
+        },
+        "autolistItemModuleName" : {
+          "type" : "string",
+          "description" : "列表子组件名称"
+        },
+        "autolistItemNavigation" : {
+          "type" : "string",
+          "description" : "列表子组件点击时的转发路由"
+        },
+        "autolistResponseListKey" : {
+          "type" : "string",
+          "description" : "从api返回获取列表数据的json键值"
+        },
+        "bindingField" : {
+          "type" : "string",
+          "description" : "绑定数据源字段api"
+        },
+        "bindingType" : {
+          "type" : "string",
+          "description" : "绑定类型  固定选项直接绑定（无值） 绑定到目标对象"
+        },
+        "bindingTarget" : {
+          "type" : "string",
+          "description" : "绑定字段的目标组键属性"
+        },
+        "loadApi" : {
+          "type" : "string",
+          "description" : "可以自定义组件数据从此api获取"
+        },
+        "requestPs" : {
+          "type" : "string",
+          "description" : "发送请求时的pageSize命名，默认值是pageSize"
+        },
+        "requestPn" : {
+          "type" : "string",
+          "description" : "发送请求时的pageNum名称，默认值是pageNum"
+        }
+      }
+    },
+    "LowAutoModuleProp" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "moduleId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "moduleName" : {
+          "type" : "string"
+        },
+        "moduleKey" : {
+          "type" : "string"
+        },
+        "propName" : {
+          "type" : "string"
+        },
+        "propValue" : {
+          "type" : "string"
+        },
+        "propDataType" : {
+          "type" : "string"
+        },
+        "dataType" : {
+          "type" : "string"
+        },
+        "pid" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      }
+    },
+    "LowAutoModulePropRecord" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "moduleId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "moduleName" : {
+          "type" : "string"
+        },
+        "moduleKey" : {
+          "type" : "string"
+        },
+        "propName" : {
+          "type" : "string"
+        },
+        "propValue" : {
+          "type" : "string"
+        },
+        "propDataType" : {
+          "type" : "string"
+        },
+        "dataType" : {
+          "type" : "string"
+        },
+        "pid" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      }
+    },
+    "LowAutoModuleStyle对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "id"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "显示名称"
+        },
+        "styleName" : {
+          "type" : "string",
+          "description" : "风格名称"
+        },
+        "cssName" : {
+          "type" : "string",
+          "description" : "css名称"
+        },
+        "cssValue" : {
+          "type" : "string",
+          "description" : "css值"
+        },
+        "dataType" : {
+          "type" : "string",
+          "description" : "属性值类型 SELECT单选，MULTISELECT多选项，NUMBER数字，TEXT文本"
+        },
+        "optionName" : {
+          "type" : "string",
+          "description" : "如果数据类型是选项，限定属性值"
+        }
+      }
+    },
+    "LowAutoModule对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "moduleKey" : {
+          "type" : "string",
+          "description" : "UUID"
+        },
+        "moduleName" : {
+          "type" : "string",
+          "description" : "组件中文标识名"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "组件英文标识名"
+        },
+        "pageId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "一对多关联字段"
+        },
+        "containerStyleName" : {
+          "type" : "string",
+          "description" : "所属容器组风格"
+        },
+        "moduleData" : {
+          "type" : "string",
+          "description" : "页面组件配置参数"
+        },
+        "componentId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "所属标准组件"
+        },
+        "componentType" : {
+          "type" : "string",
+          "description" : "组件类型/名称"
+        },
+        "componentOption" : {
+          "type" : "string",
+          "description" : "组件类型"
+        },
+        "binding" : {
+          "type" : "string",
+          "description" : "字段名称或绑定集合"
+        },
+        "bindingTarget" : {
+          "type" : "string",
+          "description" : "绑定聚合目标"
+        },
+        "pid" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "用于组合AutoLayout多层组件"
+        },
+        "referenceStyleName" : {
+          "type" : "string",
+          "description" : "直接引用组件的风格名称，相当于Cart"
+        },
+        "referenceGatewayName" : {
+          "type" : "string",
+          "description" : "直接引用网关名称"
+        },
+        "lowAutoModuleDatas" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LowAutoModuleData对象"
+          }
+        },
+        "lowAutoModuleProps" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LowAutoModuleProp"
+          }
+        }
+      }
+    },
+    "StockTag" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "tagName" : {
+          "type" : "string"
+        },
+        "tagType" : {
+          "type" : "string"
+        },
+        "isPrimary" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "sortOrder" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "StockTagRecord" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "tagName" : {
+          "type" : "string"
+        },
+        "tagType" : {
+          "type" : "string"
+        },
+        "isPrimary" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "sortOrder" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "stockId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "stockType" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Tip" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "message" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

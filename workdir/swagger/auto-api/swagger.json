@@ -1,0 +1,7366 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Parent pom providing dependency and plugin management for applications\n\t\tbuilt with Maven",
+    "version" : "1.0.0",
+    "title" : "lc_low_auto_main"
+  },
+  "tags" : [ {
+    "name" : "General-TagService"
+  }, {
+    "name" : "LowAutoAlbum"
+  }, {
+    "name" : "LowAutoAlbumItem"
+  }, {
+    "name" : "LowAutoApiModel"
+  }, {
+    "name" : "LowAutoApiParamter"
+  }, {
+    "name" : "LowAutoApis"
+  }, {
+    "name" : "LowAutoApp"
+  }, {
+    "name" : "LowAutoComponent"
+  }, {
+    "name" : "LowAutoComponentLayout"
+  }, {
+    "name" : "LowAutoComponentProp"
+  }, {
+    "name" : "LowAutoModule"
+  }, {
+    "name" : "LowAutoModuleData"
+  }, {
+    "name" : "LowAutoModuleProp"
+  }, {
+    "name" : "LowAutoModuleStyle"
+  }, {
+    "name" : "LowAutoNamedProps"
+  }, {
+    "name" : "LowAutoPage"
+  }, {
+    "name" : "LowAutoPageStyle"
+  }, {
+    "name" : "LowAutoPalette"
+  }, {
+    "name" : "LowAutoPaletteTag"
+  }, {
+    "name" : "LowAutoPropDefault"
+  }, {
+    "name" : "LowAutoPropOption"
+  }, {
+    "name" : "LowAutoService"
+  }, {
+    "name" : "LowSelectOption"
+  }, {
+    "name" : "Service"
+  }, {
+    "name" : "ZeroIoIcon"
+  } ],
+  "paths" : {
+    "/api/crud/album/lowAutoAlbum/lowAutoAlbums" : {
+      "get" : {
+        "tags" : [ "LowAutoAlbum" ],
+        "summary" : "LowAutoAlbum 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoAlbumPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "format" : "date-time"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "format" : "date-time"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoAlbum对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoAlbum" ],
+        "summary" : "新建 LowAutoAlbum",
+        "description" : "",
+        "operationId" : "createLowAutoAlbum",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoAlbum对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoAlbum对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/crud/album/lowAutoAlbum/lowAutoAlbums/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoAlbum" ],
+        "summary" : "查看 LowAutoAlbum",
+        "description" : "",
+        "operationId" : "getLowAutoAlbum",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoAlbum对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoAlbum" ],
+        "summary" : "修改 LowAutoAlbum",
+        "description" : "",
+        "operationId" : "updateLowAutoAlbum",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoAlbum对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoAlbum对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoAlbum" ],
+        "summary" : "删除 LowAutoAlbum",
+        "description" : "",
+        "operationId" : "deleteLowAutoAlbum",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/crud/album/lowAutoAlbumItem/lowAutoAlbumItems" : {
+      "get" : {
+        "tags" : [ "LowAutoAlbumItem" ],
+        "summary" : "LowAutoAlbumItem 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoAlbumItemPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoAlbumItem对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoAlbumItem" ],
+        "summary" : "新建 LowAutoAlbumItem",
+        "description" : "",
+        "operationId" : "createLowAutoAlbumItem",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoAlbumItem对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoAlbumItem对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/crud/album/lowAutoAlbumItem/lowAutoAlbumItems/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoAlbumItem" ],
+        "summary" : "查看 LowAutoAlbumItem",
+        "description" : "",
+        "operationId" : "getLowAutoAlbumItem",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoAlbumItem对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoAlbumItem" ],
+        "summary" : "修改 LowAutoAlbumItem",
+        "description" : "",
+        "operationId" : "updateLowAutoAlbumItem",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoAlbumItem对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoAlbumItem对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoAlbumItem" ],
+        "summary" : "删除 LowAutoAlbumItem",
+        "description" : "",
+        "operationId" : "deleteLowAutoAlbumItem",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/crud/icon/zeroIoIcon/zeroIoIcons" : {
+      "get" : {
+        "tags" : [ "ZeroIoIcon" ],
+        "summary" : "ZeroIoIcon 列表信息",
+        "description" : "",
+        "operationId" : "queryZeroIoIconPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "format" : "date-time"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "format" : "date-time"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/ZeroIoIcon对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "ZeroIoIcon" ],
+        "summary" : "新建 ZeroIoIcon",
+        "description" : "",
+        "operationId" : "createZeroIoIcon",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/ZeroIoIcon对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/ZeroIoIcon对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/crud/icon/zeroIoIcon/zeroIoIcons/{id}" : {
+      "get" : {
+        "tags" : [ "ZeroIoIcon" ],
+        "summary" : "查看 ZeroIoIcon",
+        "description" : "",
+        "operationId" : "getZeroIoIcon",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/ZeroIoIcon对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "ZeroIoIcon" ],
+        "summary" : "修改 ZeroIoIcon",
+        "description" : "",
+        "operationId" : "updateZeroIoIcon",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/ZeroIoIcon对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/ZeroIoIcon对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "ZeroIoIcon" ],
+        "summary" : "删除 ZeroIoIcon",
+        "description" : "",
+        "operationId" : "deleteZeroIoIcon",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/crud/lc_low_auto_api_model/lowAutoApiModel/lowAutoApiModels" : {
+      "get" : {
+        "tags" : [ "LowAutoApiModel" ],
+        "summary" : "LowAutoApiModel 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoApiModelPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoApiModel对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoApiModel" ],
+        "summary" : "新建 LowAutoApiModel",
+        "description" : "",
+        "operationId" : "createLowAutoApiModel",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoApiModel对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoApiModel对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/crud/lc_low_auto_api_model/lowAutoApiModel/lowAutoApiModels/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoApiModel" ],
+        "summary" : "查看 LowAutoApiModel",
+        "description" : "",
+        "operationId" : "getLowAutoApiModel",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoApiModel对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoApiModel" ],
+        "summary" : "修改 LowAutoApiModel",
+        "description" : "",
+        "operationId" : "updateLowAutoApiModel",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoApiModel对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoApiModel对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoApiModel" ],
+        "summary" : "删除 LowAutoApiModel",
+        "description" : "",
+        "operationId" : "deleteLowAutoApiModel",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/crud/lc_low_auto_api_paramter/lowAutoApiParamter/lowAutoApiParamters" : {
+      "get" : {
+        "tags" : [ "LowAutoApiParamter" ],
+        "summary" : "LowAutoApiParamter 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoApiParamterPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoApiParamter对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoApiParamter" ],
+        "summary" : "新建 LowAutoApiParamter",
+        "description" : "",
+        "operationId" : "createLowAutoApiParamter",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoApiParamter对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoApiParamter对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/crud/lc_low_auto_api_paramter/lowAutoApiParamter/lowAutoApiParamters/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoApiParamter" ],
+        "summary" : "查看 LowAutoApiParamter",
+        "description" : "",
+        "operationId" : "getLowAutoApiParamter",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoApiParamter对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoApiParamter" ],
+        "summary" : "修改 LowAutoApiParamter",
+        "description" : "",
+        "operationId" : "updateLowAutoApiParamter",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoApiParamter对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoApiParamter对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoApiParamter" ],
+        "summary" : "删除 LowAutoApiParamter",
+        "description" : "",
+        "operationId" : "deleteLowAutoApiParamter",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/crud/lc_low_auto_named_props/lowAutoNamedProps/lowAutoNamedPropses" : {
+      "get" : {
+        "tags" : [ "LowAutoNamedProps" ],
+        "summary" : "LowAutoNamedProps 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoNamedPropsPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoNamedProps对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoNamedProps" ],
+        "summary" : "新建 LowAutoNamedProps",
+        "description" : "",
+        "operationId" : "createLowAutoNamedProps",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoNamedProps对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoNamedProps对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/crud/lc_low_auto_named_props/lowAutoNamedProps/lowAutoNamedPropses/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoNamedProps" ],
+        "summary" : "查看 LowAutoNamedProps",
+        "description" : "",
+        "operationId" : "getLowAutoNamedProps",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoNamedProps对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoNamedProps" ],
+        "summary" : "修改 LowAutoNamedProps",
+        "description" : "",
+        "operationId" : "updateLowAutoNamedProps",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoNamedProps对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoNamedProps对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoNamedProps" ],
+        "summary" : "删除 LowAutoNamedProps",
+        "description" : "",
+        "operationId" : "deleteLowAutoNamedProps",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/crud/lc_low_auto_page_style/lowAutoPageStyle/lowAutoPageStyles" : {
+      "get" : {
+        "tags" : [ "LowAutoPageStyle" ],
+        "summary" : "LowAutoPageStyle 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoPageStylePage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPageStyle对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoPageStyle" ],
+        "summary" : "新建 LowAutoPageStyle",
+        "description" : "",
+        "operationId" : "createLowAutoPageStyle",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoPageStyle对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPageStyle对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/crud/lc_low_auto_page_style/lowAutoPageStyle/lowAutoPageStyles/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoPageStyle" ],
+        "summary" : "查看 LowAutoPageStyle",
+        "description" : "",
+        "operationId" : "getLowAutoPageStyle",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPageStyle对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoPageStyle" ],
+        "summary" : "修改 LowAutoPageStyle",
+        "description" : "",
+        "operationId" : "updateLowAutoPageStyle",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoPageStyle对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPageStyle对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoPageStyle" ],
+        "summary" : "删除 LowAutoPageStyle",
+        "description" : "",
+        "operationId" : "deleteLowAutoPageStyle",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/crud/lc_low_auto_service/lowAutoService/lowAutoServices" : {
+      "get" : {
+        "tags" : [ "LowAutoService" ],
+        "summary" : "LowAutoService 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoServicePage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoService对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoService" ],
+        "summary" : "新建 LowAutoService",
+        "description" : "",
+        "operationId" : "createLowAutoService",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoService对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoService对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/crud/lc_low_auto_service/lowAutoService/lowAutoServices/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoService" ],
+        "summary" : "查看 LowAutoService",
+        "description" : "",
+        "operationId" : "getLowAutoService",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoService对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoService" ],
+        "summary" : "修改 LowAutoService",
+        "description" : "",
+        "operationId" : "updateLowAutoService",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoService对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoService对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoService" ],
+        "summary" : "删除 LowAutoService",
+        "description" : "",
+        "operationId" : "deleteLowAutoService",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/crud/palette/lowAutoPalette/lowAutoPalettes" : {
+      "get" : {
+        "tags" : [ "LowAutoPalette" ],
+        "summary" : "LowAutoPalette 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoPalettePage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "format" : "date-time"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "format" : "date-time"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPalette对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoPalette" ],
+        "summary" : "新建 LowAutoPalette",
+        "description" : "",
+        "operationId" : "createLowAutoPalette",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoPalette对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPalette对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/crud/palette/lowAutoPalette/lowAutoPalettes/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoPalette" ],
+        "summary" : "查看 LowAutoPalette",
+        "description" : "",
+        "operationId" : "getLowAutoPalette",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPalette对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoPalette" ],
+        "summary" : "修改 LowAutoPalette",
+        "description" : "",
+        "operationId" : "updateLowAutoPalette",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoPalette对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPalette对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoPalette" ],
+        "summary" : "删除 LowAutoPalette",
+        "description" : "",
+        "operationId" : "deleteLowAutoPalette",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/fs/buckets" : {
+      "post" : {
+        "tags" : [ "Service" ],
+        "summary" : "创建存储桶",
+        "description" : "根据Token中的APPID创建对应的存储桶",
+        "operationId" : "generateBucket",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Bucket"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "/api/fs/dlcode" : {
+      "get" : {
+        "tags" : [ "Service" ],
+        "summary" : "获取下载码",
+        "description" : "登陆后自动生成的一个下载码",
+        "operationId" : "getCode",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "/api/fs/upload64" : {
+      "post" : {
+        "tags" : [ "Service" ],
+        "summary" : "Base64格式上传图片",
+        "description" : "",
+        "operationId" : "base64Upload",
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : true,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/FileInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/fs/uploadfile" : {
+      "post" : {
+        "tags" : [ "Service" ],
+        "summary" : "上传文件",
+        "description" : "",
+        "operationId" : "fileUpload",
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "X-FS-BUCKET",
+          "in" : "header",
+          "description" : "上传文件至不同的分组",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "file",
+          "in" : "formData",
+          "required" : true,
+          "type" : "file"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/FileInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/fs/uploadx" : {
+      "post" : {
+        "tags" : [ "Service" ],
+        "summary" : "multipart方式上传图片",
+        "description" : "",
+        "operationId" : "formUpload",
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : true,
+          "type" : "boolean"
+        }, {
+          "name" : "file",
+          "in" : "formData",
+          "required" : true,
+          "type" : "file"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/FileInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/stock/tags" : {
+      "get" : {
+        "tags" : [ "General-TagService" ],
+        "summary" : "Tag List",
+        "description" : "",
+        "operationId" : "queryStockTags",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "General-TagService" ],
+        "summary" : "Create Tag",
+        "description" : "",
+        "operationId" : "createStockTag",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StockTag"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/stock/tags/bulk" : {
+      "post" : {
+        "tags" : [ "General-TagService" ],
+        "summary" : "批量新建tag",
+        "description" : "",
+        "operationId" : "createStockTagWithRelation",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/StockTagRecord"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/stock/tags/ids" : {
+      "post" : {
+        "tags" : [ "General-TagService" ],
+        "summary" : "根据tagIds、stock_type查询列表",
+        "description" : "",
+        "operationId" : "updateStockTag",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/IdsRquest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/stock/tags/{id}" : {
+      "get" : {
+        "tags" : [ "General-TagService" ],
+        "summary" : "view Tag",
+        "description" : "",
+        "operationId" : "getStockTag",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        },
+        "deprecated" : true
+      },
+      "put" : {
+        "tags" : [ "General-TagService" ],
+        "summary" : "Update tag Msg",
+        "description" : "",
+        "operationId" : "updateStockTag",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StockTag"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        },
+        "deprecated" : true
+      },
+      "delete" : {
+        "tags" : [ "General-TagService" ],
+        "summary" : "Delete one Tag Msg",
+        "description" : "",
+        "operationId" : "deleteStockTag",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/album" : {
+      "get" : {
+        "summary" : "LowAutoAlbum 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoAlbumPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "format" : "date-time"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "format" : "date-time"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoAlbum对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "新建 LowAutoAlbum",
+        "description" : "",
+        "operationId" : "createLowAutoAlbum",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoAlbum对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoAlbum对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/album/bulk" : {
+      "post" : {
+        "summary" : "新建 相册附带图片链接",
+        "description" : "",
+        "operationId" : "createRssImageNameStyle",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoAlbum对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoAlbum对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/album/json/{name}" : {
+      "get" : {
+        "summary" : "查看 已相册名查看 LowAutoAlbum",
+        "description" : "",
+        "operationId" : "getLowAutoAlbumByName",
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoAlbum对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/album/{id}" : {
+      "get" : {
+        "summary" : "查看 LowAutoAlbum",
+        "description" : "",
+        "operationId" : "getLowAutoAlbum",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoAlbum对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "修改 LowAutoAlbum",
+        "description" : "",
+        "operationId" : "updateLowAutoAlbum",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoAlbum对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoAlbum对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "删除 LowAutoAlbum",
+        "description" : "",
+        "operationId" : "deleteLowAutoAlbum",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/albumItem" : {
+      "post" : {
+        "summary" : "新建 LowAutoAlbumItem",
+        "description" : "",
+        "operationId" : "createLowAutoAlbumItem",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoAlbumItem对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoAlbumItem对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/albumItem/bulk/{name}" : {
+      "post" : {
+        "summary" : "新建 批量添加 LowAutoAlbumItem",
+        "description" : "",
+        "operationId" : "bulkCreateLowAutoAlbumItem",
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/LowAutoAlbumItem对象"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoAlbumItem对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "批量删除 LowAutoAlbumItem",
+        "description" : "",
+        "operationId" : "bulkDeleteLowAutoAlbumItem",
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/albumItem/{id}" : {
+      "put" : {
+        "summary" : "修改 LowAutoAlbumItem",
+        "description" : "",
+        "operationId" : "updateLowAutoAlbumItem",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoAlbumItem对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoAlbumItem对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "删除 LowAutoAlbumItem",
+        "description" : "",
+        "operationId" : "deleteLowAutoAlbumItem",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/albumTag" : {
+      "get" : {
+        "summary" : "tag列表",
+        "description" : "",
+        "operationId" : "getIconTagList",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "添加tag",
+        "description" : "",
+        "operationId" : "createIconTag",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StockTag"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/albumTag/bind" : {
+      "post" : {
+        "summary" : "tag 绑定",
+        "description" : "",
+        "operationId" : "bingIconTag",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StockTagRelation"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/albumTag/unbind" : {
+      "post" : {
+        "summary" : "tag 解绑",
+        "description" : "",
+        "operationId" : "unbindIconTag",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StockTagRelation"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/albumTag/{id}" : {
+      "put" : {
+        "summary" : "更新tag",
+        "description" : "",
+        "operationId" : "updateIconTag",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StockTag"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "删除tag",
+        "description" : "",
+        "operationId" : "deleteIconTag",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/lowAutoPageStyles/rss/json" : {
+      "get" : {
+        "tags" : [ "LowAutoPageStyle" ],
+        "summary" : "LowAutoPageStyle 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoPageStylePage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPageStyle对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoPageStyle" ],
+        "summary" : "添加css",
+        "description" : "",
+        "operationId" : "createCss",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoPageStyle对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/lowAutoPageStyles/rss/json/{styleName}" : {
+      "get" : {
+        "tags" : [ "LowAutoPageStyle" ],
+        "summary" : "以风格名查询 css json数据",
+        "description" : "",
+        "operationId" : "getCssJsonByStyleName",
+        "parameters" : [ {
+          "name" : "styleName",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoPageStyle" ],
+        "summary" : "以风格名删除css",
+        "description" : "",
+        "operationId" : "deleteCssByName",
+        "parameters" : [ {
+          "name" : "styleName",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/lowAutoPageStyles/rss/list" : {
+      "get" : {
+        "tags" : [ "LowAutoPageStyle" ],
+        "summary" : "LowAutoPageStyle 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoPageStylePage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPageStyle对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoPageStyle" ],
+        "summary" : "新建 LowAutoPageStyle",
+        "description" : "",
+        "operationId" : "createLowAutoPageStyle",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoPageStyle对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPageStyle对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/lowAutoPageStyles/rss/list/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoPageStyle" ],
+        "summary" : "查看 LowAutoPageStyle",
+        "description" : "",
+        "operationId" : "getLowAutoPageStyle",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPageStyle对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoPageStyle" ],
+        "summary" : "修改 LowAutoPageStyle",
+        "description" : "",
+        "operationId" : "updateLowAutoPageStyle",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoPageStyle对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPageStyle对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoPageStyle" ],
+        "summary" : "删除 LowAutoPageStyle",
+        "description" : "",
+        "operationId" : "deleteLowAutoPageStyle",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/lowAutoPageStylesTag" : {
+      "get" : {
+        "summary" : "tag列表",
+        "description" : "",
+        "operationId" : "getIconTagList",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "添加tag",
+        "description" : "",
+        "operationId" : "createIconTag",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StockTag"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/lowAutoPageStylesTag/bind" : {
+      "post" : {
+        "summary" : "tag 绑定",
+        "description" : "",
+        "operationId" : "bingIconTag",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StockTagRelation"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/lowAutoPageStylesTag/unbind" : {
+      "post" : {
+        "summary" : "tag 解绑",
+        "description" : "",
+        "operationId" : "unbindIconTag",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StockTagRelation"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/lowAutoPageStylesTag/{id}" : {
+      "put" : {
+        "summary" : "更新tag",
+        "description" : "",
+        "operationId" : "updateIconTag",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StockTag"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "删除tag",
+        "description" : "",
+        "operationId" : "deleteIconTag",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/palette" : {
+      "get" : {
+        "tags" : [ "LowAutoPalette" ],
+        "summary" : "LowAutoPalette 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoPalettePage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "format" : "date-time"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "format" : "date-time"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPalette对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoPalette" ],
+        "summary" : "新建 LowAutoPalette",
+        "description" : "",
+        "operationId" : "createLowAutoPalette",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoPalette对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPalette对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/palette/name/{name}" : {
+      "get" : {
+        "tags" : [ "LowAutoPalette" ],
+        "summary" : "以色板名称 查看 LowAutoPalette列表",
+        "description" : "",
+        "operationId" : "getLowAutoPaletteByName",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPalette对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/palette/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoPalette" ],
+        "summary" : "查看 LowAutoPalette",
+        "description" : "",
+        "operationId" : "getLowAutoPalette",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPalette对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoPalette" ],
+        "summary" : "修改 LowAutoPalette",
+        "description" : "",
+        "operationId" : "updateLowAutoPalette",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoPalette对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPalette对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoPalette" ],
+        "summary" : "删除 LowAutoPalette",
+        "description" : "",
+        "operationId" : "deleteLowAutoPalette",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/paletteTag" : {
+      "get" : {
+        "tags" : [ "LowAutoPaletteTag" ],
+        "summary" : "tag列表",
+        "description" : "",
+        "operationId" : "getIconTagList",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoPaletteTag" ],
+        "summary" : "添加tag",
+        "description" : "",
+        "operationId" : "createIconTag",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StockTag"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/paletteTag/bind" : {
+      "post" : {
+        "tags" : [ "LowAutoPaletteTag" ],
+        "summary" : "tag 绑定",
+        "description" : "",
+        "operationId" : "bingIconTag",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StockTagRelation"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/paletteTag/unbind" : {
+      "post" : {
+        "tags" : [ "LowAutoPaletteTag" ],
+        "summary" : "tag 解绑",
+        "description" : "",
+        "operationId" : "unbindIconTag",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StockTagRelation"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/autoApi/paletteTag/{id}" : {
+      "put" : {
+        "tags" : [ "LowAutoPaletteTag" ],
+        "summary" : "更新tag",
+        "description" : "",
+        "operationId" : "updateIconTag",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StockTag"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoPaletteTag" ],
+        "summary" : "删除tag",
+        "description" : "",
+        "operationId" : "deleteIconTag",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/fs/upload64" : {
+      "post" : {
+        "tags" : [ "Service" ],
+        "summary" : "Base64格式上传图片",
+        "description" : "",
+        "operationId" : "base64Upload",
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : true,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/FileInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/fs/uploadfile" : {
+      "post" : {
+        "tags" : [ "Service" ],
+        "summary" : "上传文件",
+        "description" : "",
+        "operationId" : "fileUpload",
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "X-FS-BUCKET",
+          "in" : "header",
+          "description" : "上传文件至不同的分组",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "file",
+          "in" : "formData",
+          "required" : true,
+          "type" : "file"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/FileInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/lc/apps" : {
+      "put" : {
+        "tags" : [ "LowAutoApp" ],
+        "summary" : "edit app",
+        "description" : "",
+        "operationId" : "updateApp",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoApp对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoApp对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoApp" ],
+        "summary" : "删除 LowAutoApp",
+        "description" : "",
+        "operationId" : "deleteLowAutoApp",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/lc/apps/app" : {
+      "get" : {
+        "tags" : [ "LowAutoApp" ],
+        "summary" : "query all app",
+        "description" : "",
+        "operationId" : "queryAllApp",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoApp对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/lc/apps/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoApp" ],
+        "summary" : "query app",
+        "description" : "",
+        "operationId" : "queryAppByAppid",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoApp对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/page/pages" : {
+      "get" : {
+        "tags" : [ "LowAutoPage" ],
+        "summary" : "根据appId 获取所有page",
+        "description" : "",
+        "operationId" : "getPagesByAppId",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPage对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/zero/icon" : {
+      "get" : {
+        "summary" : "ZeroIoIcon 列表信息",
+        "description" : "",
+        "operationId" : "queryZeroIoIconPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "format" : "date-time"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "format" : "date-time"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/ZeroIoIcon对象"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/zero/icon/fs/uploadfile" : {
+      "post" : {
+        "summary" : "上传文件",
+        "description" : "",
+        "operationId" : "fileUpload",
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "X-FS-BUCKET",
+          "in" : "header",
+          "description" : "上传文件至不同的分组",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "file",
+          "in" : "formData",
+          "required" : true,
+          "type" : "file"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/FileInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/zero/icon/synIconInfo" : {
+      "post" : {
+        "summary" : "同步icon信息到数据数据库",
+        "description" : "",
+        "operationId" : "synIconInfo",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/zero/icon/{id}" : {
+      "get" : {
+        "summary" : "查看 ZeroIoIcon",
+        "description" : "",
+        "operationId" : "getZeroIoIcon",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/ZeroIoIcon对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "修改 ZeroIoIcon",
+        "description" : "",
+        "operationId" : "updateZeroIoIcon",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/ZeroIoIcon对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/ZeroIoIcon对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "删除 ZeroIoIcon",
+        "description" : "",
+        "operationId" : "deleteZeroIoIcon",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/zero/iconTag" : {
+      "get" : {
+        "summary" : "tag列表",
+        "description" : "",
+        "operationId" : "getIconTagList",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "添加tag",
+        "description" : "",
+        "operationId" : "createIconTag",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StockTag"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/zero/iconTag/bind" : {
+      "post" : {
+        "summary" : "tag 绑定",
+        "description" : "",
+        "operationId" : "bingIconTag",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StockTagRelation"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/zero/iconTag/unbind" : {
+      "post" : {
+        "summary" : "tag 解绑",
+        "description" : "",
+        "operationId" : "unbindIconTag",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StockTagRelation"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/u/zero/iconTag/{id}" : {
+      "put" : {
+        "summary" : "更新tag",
+        "description" : "",
+        "operationId" : "updateIconTag",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StockTag"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "删除tag",
+        "description" : "",
+        "operationId" : "deleteIconTag",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/app/lowAutoPage/lowAutoPages" : {
+      "get" : {
+        "tags" : [ "LowAutoPage" ],
+        "summary" : "LowAutoPage 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoPagePage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPage对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoPage" ],
+        "summary" : "新建 LowAutoPage",
+        "description" : "",
+        "operationId" : "createLowAutoPage",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoPage对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPage对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/app/lowAutoPage/lowAutoPages/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoPage" ],
+        "summary" : "查看 LowAutoPage",
+        "description" : "",
+        "operationId" : "getLowAutoPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPage对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoPage" ],
+        "summary" : "修改 LowAutoPage",
+        "description" : "",
+        "operationId" : "updateLowAutoPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoPage对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPage对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoPage" ],
+        "summary" : "删除 LowAutoPage",
+        "description" : "",
+        "operationId" : "deleteLowAutoPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_apis/lowAutoApis/lowAutoApises" : {
+      "get" : {
+        "tags" : [ "LowAutoApis" ],
+        "summary" : "LowAutoApis 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoApisPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoApis对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoApis" ],
+        "summary" : "新建 LowAutoApis",
+        "description" : "",
+        "operationId" : "createLowAutoApis",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoApis对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoApis对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_apis/lowAutoApis/lowAutoApises/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoApis" ],
+        "summary" : "查看 LowAutoApis",
+        "description" : "",
+        "operationId" : "getLowAutoApis",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoApis对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoApis" ],
+        "summary" : "修改 LowAutoApis",
+        "description" : "",
+        "operationId" : "updateLowAutoApis",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoApis对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoApis对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoApis" ],
+        "summary" : "删除 LowAutoApis",
+        "description" : "",
+        "operationId" : "deleteLowAutoApis",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_app/lowAutoApp/lowAutoApps" : {
+      "get" : {
+        "tags" : [ "LowAutoApp" ],
+        "summary" : "LowAutoApp 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoAppPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoApp对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoApp" ],
+        "summary" : "新建 LowAutoApp",
+        "description" : "",
+        "operationId" : "createLowAutoApp",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoApp对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoApp对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_app/lowAutoApp/lowAutoApps/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoApp" ],
+        "summary" : "查看 LowAutoApp",
+        "description" : "",
+        "operationId" : "getLowAutoApp",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoApp对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoApp" ],
+        "summary" : "修改 LowAutoApp",
+        "description" : "",
+        "operationId" : "updateLowAutoApp",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoApp对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoApp对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoApp" ],
+        "summary" : "删除 LowAutoApp",
+        "description" : "",
+        "operationId" : "deleteLowAutoApp",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_component/lowAutoComponent/lowAutoComponents" : {
+      "get" : {
+        "tags" : [ "LowAutoComponent" ],
+        "summary" : "LowAutoComponent 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoComponentPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponent对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoComponent" ],
+        "summary" : "新建 LowAutoComponent",
+        "description" : "",
+        "operationId" : "createLowAutoComponent",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoComponent对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponent对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_component/lowAutoComponent/lowAutoComponents/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoComponent" ],
+        "summary" : "查看 LowAutoComponent",
+        "description" : "",
+        "operationId" : "getLowAutoComponent",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponent对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoComponent" ],
+        "summary" : "修改 LowAutoComponent",
+        "description" : "",
+        "operationId" : "updateLowAutoComponent",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoComponent对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponent对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoComponent" ],
+        "summary" : "删除 LowAutoComponent",
+        "description" : "",
+        "operationId" : "deleteLowAutoComponent",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_component_layout/lowAutoComponentLayout/lowAutoComponentLayouts" : {
+      "get" : {
+        "tags" : [ "LowAutoComponentLayout" ],
+        "summary" : "LowAutoComponentLayout 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoComponentLayoutPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponentLayout对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoComponentLayout" ],
+        "summary" : "新建 LowAutoComponentLayout",
+        "description" : "",
+        "operationId" : "createLowAutoComponentLayout",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoComponentLayout对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponentLayout对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_component_layout/lowAutoComponentLayout/lowAutoComponentLayouts/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoComponentLayout" ],
+        "summary" : "查看 LowAutoComponentLayout",
+        "description" : "",
+        "operationId" : "getLowAutoComponentLayout",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponentLayout对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoComponentLayout" ],
+        "summary" : "修改 LowAutoComponentLayout",
+        "description" : "",
+        "operationId" : "updateLowAutoComponentLayout",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoComponentLayout对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponentLayout对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoComponentLayout" ],
+        "summary" : "删除 LowAutoComponentLayout",
+        "description" : "",
+        "operationId" : "deleteLowAutoComponentLayout",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_component_prop/lowAutoComponentProp/lowAutoComponentProps" : {
+      "get" : {
+        "tags" : [ "LowAutoComponentProp" ],
+        "summary" : "LowAutoComponentProp 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoComponentPropPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponentProp对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoComponentProp" ],
+        "summary" : "新建 LowAutoComponentProp",
+        "description" : "",
+        "operationId" : "createLowAutoComponentProp",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoComponentProp对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponentProp对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_component_prop/lowAutoComponentProp/lowAutoComponentProps/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoComponentProp" ],
+        "summary" : "查看 LowAutoComponentProp",
+        "description" : "",
+        "operationId" : "getLowAutoComponentProp",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponentProp对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoComponentProp" ],
+        "summary" : "修改 LowAutoComponentProp",
+        "description" : "",
+        "operationId" : "updateLowAutoComponentProp",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoComponentProp对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponentProp对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoComponentProp" ],
+        "summary" : "删除 LowAutoComponentProp",
+        "description" : "",
+        "operationId" : "deleteLowAutoComponentProp",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_module/lowAutoModule/lowAutoModules" : {
+      "get" : {
+        "tags" : [ "LowAutoModule" ],
+        "summary" : "LowAutoModule 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoModulePage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModule对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoModule" ],
+        "summary" : "新建 LowAutoModule",
+        "description" : "",
+        "operationId" : "createLowAutoModule",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoModule对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModule对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_module/lowAutoModule/lowAutoModules/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoModule" ],
+        "summary" : "查看 LowAutoModule",
+        "description" : "",
+        "operationId" : "getLowAutoModule",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModule对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoModule" ],
+        "summary" : "修改 LowAutoModule",
+        "description" : "",
+        "operationId" : "updateLowAutoModule",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoModule对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModule对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoModule" ],
+        "summary" : "删除 LowAutoModule",
+        "description" : "",
+        "operationId" : "deleteLowAutoModule",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_module_data/lowAutoModuleData/lowAutoModuleDatas" : {
+      "get" : {
+        "tags" : [ "LowAutoModuleData" ],
+        "summary" : "LowAutoModuleData 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoModuleDataPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleData对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoModuleData" ],
+        "summary" : "新建 LowAutoModuleData",
+        "description" : "",
+        "operationId" : "createLowAutoModuleData",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoModuleData对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleData对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_module_data/lowAutoModuleData/lowAutoModuleDatas/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoModuleData" ],
+        "summary" : "查看 LowAutoModuleData",
+        "description" : "",
+        "operationId" : "getLowAutoModuleData",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleData对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoModuleData" ],
+        "summary" : "修改 LowAutoModuleData",
+        "description" : "",
+        "operationId" : "updateLowAutoModuleData",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoModuleData对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleData对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoModuleData" ],
+        "summary" : "删除 LowAutoModuleData",
+        "description" : "",
+        "operationId" : "deleteLowAutoModuleData",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_module_prop/lowAutoModuleProp/lowAutoModuleProps" : {
+      "get" : {
+        "tags" : [ "LowAutoModuleProp" ],
+        "summary" : "LowAutoModuleProp 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoModulePropPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModulePropRecord"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoModuleProp" ],
+        "summary" : "新建 LowAutoModuleProp",
+        "description" : "",
+        "operationId" : "createLowAutoModuleProp",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoModuleProp"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleProp"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_module_prop/lowAutoModuleProp/lowAutoModuleProps/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoModuleProp" ],
+        "summary" : "查看 LowAutoModuleProp",
+        "description" : "",
+        "operationId" : "getLowAutoModuleProp",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleProp"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoModuleProp" ],
+        "summary" : "修改 LowAutoModuleProp",
+        "description" : "",
+        "operationId" : "updateLowAutoModuleProp",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoModuleProp"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleProp"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoModuleProp" ],
+        "summary" : "删除 LowAutoModuleProp",
+        "description" : "",
+        "operationId" : "deleteLowAutoModuleProp",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_module_style/lowAutoModuleStyle/lowAutoModuleStyles" : {
+      "get" : {
+        "tags" : [ "LowAutoModuleStyle" ],
+        "summary" : "LowAutoModuleStyle 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoModuleStylePage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleStyle对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoModuleStyle" ],
+        "summary" : "新建 LowAutoModuleStyle",
+        "description" : "",
+        "operationId" : "createLowAutoModuleStyle",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoModuleStyle对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleStyle对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_module_style/lowAutoModuleStyle/lowAutoModuleStyles/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoModuleStyle" ],
+        "summary" : "查看 LowAutoModuleStyle",
+        "description" : "",
+        "operationId" : "getLowAutoModuleStyle",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleStyle对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoModuleStyle" ],
+        "summary" : "修改 LowAutoModuleStyle",
+        "description" : "",
+        "operationId" : "updateLowAutoModuleStyle",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoModuleStyle对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoModuleStyle对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoModuleStyle" ],
+        "summary" : "删除 LowAutoModuleStyle",
+        "description" : "",
+        "operationId" : "deleteLowAutoModuleStyle",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_prop_default/lowAutoPropDefault/lowAutoPropDefaults" : {
+      "get" : {
+        "tags" : [ "LowAutoPropDefault" ],
+        "summary" : "LowAutoPropDefault 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoPropDefaultPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPropDefault对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoPropDefault" ],
+        "summary" : "新建 LowAutoPropDefault",
+        "description" : "",
+        "operationId" : "createLowAutoPropDefault",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoPropDefault对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPropDefault对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_prop_default/lowAutoPropDefault/lowAutoPropDefaults/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoPropDefault" ],
+        "summary" : "查看 LowAutoPropDefault",
+        "description" : "",
+        "operationId" : "getLowAutoPropDefault",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPropDefault对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoPropDefault" ],
+        "summary" : "修改 LowAutoPropDefault",
+        "description" : "",
+        "operationId" : "updateLowAutoPropDefault",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoPropDefault对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPropDefault对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoPropDefault" ],
+        "summary" : "删除 LowAutoPropDefault",
+        "description" : "",
+        "operationId" : "deleteLowAutoPropDefault",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_prop_option/lowAutoPropOption/lowAutoPropOptions" : {
+      "get" : {
+        "tags" : [ "LowAutoPropOption" ],
+        "summary" : "LowAutoPropOption 列表信息",
+        "description" : "",
+        "operationId" : "queryLowAutoPropOptionPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPropOption对象"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowAutoPropOption" ],
+        "summary" : "新建 LowAutoPropOption",
+        "description" : "",
+        "operationId" : "createLowAutoPropOption",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoPropOption对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPropOption对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_auto_prop_option/lowAutoPropOption/lowAutoPropOptions/{id}" : {
+      "get" : {
+        "tags" : [ "LowAutoPropOption" ],
+        "summary" : "查看 LowAutoPropOption",
+        "description" : "",
+        "operationId" : "getLowAutoPropOption",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPropOption对象"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowAutoPropOption" ],
+        "summary" : "修改 LowAutoPropOption",
+        "description" : "",
+        "operationId" : "updateLowAutoPropOption",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowAutoPropOption对象"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPropOption对象"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowAutoPropOption" ],
+        "summary" : "删除 LowAutoPropOption",
+        "description" : "",
+        "operationId" : "deleteLowAutoPropOption",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_select_option/lowSelectOption/lowSelectOptions" : {
+      "get" : {
+        "tags" : [ "LowSelectOption" ],
+        "summary" : "LowSelectOption 列表信息",
+        "description" : "",
+        "operationId" : "queryLowSelectOptionPage",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowSelectOptionRecord"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LowSelectOption" ],
+        "summary" : "新建 LowSelectOption",
+        "description" : "",
+        "operationId" : "createLowSelectOption",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowSelectOption"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowSelectOption"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/crud/lc_low_select_option/lowSelectOption/lowSelectOptions/{id}" : {
+      "get" : {
+        "tags" : [ "LowSelectOption" ],
+        "summary" : "查看 LowSelectOption",
+        "description" : "",
+        "operationId" : "getLowSelectOption",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowSelectOption"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "LowSelectOption" ],
+        "summary" : "修改 LowSelectOption",
+        "description" : "",
+        "operationId" : "updateLowSelectOption",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/LowSelectOption"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowSelectOption"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LowSelectOption" ],
+        "summary" : "删除 LowSelectOption",
+        "description" : "",
+        "operationId" : "deleteLowSelectOption",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/lc/apis/{apiName}" : {
+      "get" : {
+        "tags" : [ "LowAutoApis" ],
+        "summary" : "根据apiName 查看 LowAutoApis",
+        "description" : "",
+        "operationId" : "getApiModel",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoApis对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/lc/components/cart/{componentName}" : {
+      "get" : {
+        "tags" : [ "LowAutoComponent" ],
+        "summary" : "获取 Cart",
+        "description" : "",
+        "operationId" : "getCart",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponent对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/lc/components/componentList/{componentOption}" : {
+      "get" : {
+        "tags" : [ "LowAutoComponent" ],
+        "summary" : "根据组件类型获取组件列表",
+        "description" : "",
+        "operationId" : "listComponent",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponent对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/lc/components/layoutJson/{autoLayoutName}" : {
+      "get" : {
+        "tags" : [ "LowAutoComponent" ],
+        "summary" : "获取layoutJson",
+        "description" : "",
+        "operationId" : "getComponentConfig",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoComponent对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/lc/module/AutoLayout/replaceModule" : {
+      "post" : {
+        "tags" : [ "LowAutoModule" ],
+        "summary" : "替换实例",
+        "description" : "",
+        "operationId" : "queryAutoLayoutDistribute",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "object"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "object",
+              "additionalProperties" : {
+                "type" : "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/openapi/lc/module/addModule" : {
+      "post" : {
+        "tags" : [ "LowAutoModule" ],
+        "summary" : "根据pageId增加module",
+        "description" : "",
+        "operationId" : "createLowAutoModule",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "object"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/lc/module/componentChangeModule" : {
+      "post" : {
+        "tags" : [ "LowAutoModule" ],
+        "summary" : "将component转换为module",
+        "description" : "",
+        "operationId" : "componentChangeModule",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "object"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/lc/module/getAutoLayout/{moduleName}" : {
+      "get" : {
+        "tags" : [ "LowAutoModule" ],
+        "summary" : "获取autoLayOut格式的json",
+        "description" : "",
+        "operationId" : "getAutoLayOut",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "verbose",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "object",
+              "additionalProperties" : {
+                "type" : "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/openapi/lc/module/moduleList/{pageId}" : {
+      "get" : {
+        "tags" : [ "LowAutoModule" ],
+        "summary" : "查看对应pageId下的module列表",
+        "description" : "",
+        "operationId" : "queryModuleList",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/lc/pages/pageConfig/dynamicPageConfig/{pageId}" : {
+      "get" : {
+        "tags" : [ "LowAutoPage" ],
+        "summary" : "根据ID获取 动态页面配置参数",
+        "description" : "",
+        "operationId" : "pageConfig",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPage对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/lc/pages/pageConfig/{pageName}" : {
+      "get" : {
+        "tags" : [ "LowAutoPage" ],
+        "summary" : "根据pageName获取页面配置参数",
+        "description" : "",
+        "operationId" : "pageConfigByPageName",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPage对象"
+            }
+          }
+        }
+      }
+    },
+    "/openapi/lc/pages/pages/{appId}" : {
+      "get" : {
+        "tags" : [ "LowAutoPage" ],
+        "summary" : "根据appId 获取所有page",
+        "description" : "",
+        "operationId" : "getPagesByAppId",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/LowAutoPage对象"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Bucket" : {
+      "type" : "object",
+      "properties" : {
+        "bucket" : {
+          "type" : "string"
+        },
+        "appId" : {
+          "type" : "string"
+        },
+        "appSecret" : {
+          "type" : "string"
+        }
+      }
+    },
+    "FileInfo" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "bucket" : {
+          "type" : "string"
+        },
+        "host" : {
+          "type" : "string"
+        },
+        "url" : {
+          "type" : "string"
+        },
+        "blurryName" : {
+          "type" : "string"
+        },
+        "blurryUrl" : {
+          "type" : "string"
+        },
+        "originalFileName" : {
+          "type" : "string"
+        },
+        "extensionName" : {
+          "type" : "string"
+        },
+        "size" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "path" : {
+          "type" : "string"
+        }
+      }
+    },
+    "IdsRquest" : {
+      "type" : "object",
+      "properties" : {
+        "ids" : {
+          "type" : "array",
+          "items" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        },
+        "stockType" : {
+          "type" : "string"
+        },
+        "pageSize" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "pageNum" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "LowAutoAlbumItem对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "albumId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "相册id"
+        },
+        "albumUrl" : {
+          "type" : "string",
+          "description" : "图片路径"
+        },
+        "note" : {
+          "type" : "string",
+          "description" : "备注"
+        }
+      }
+    },
+    "LowAutoAlbum对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "ablumName" : {
+          "type" : "string",
+          "description" : "相册名称"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "显示名称"
+        },
+        "orgId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "社区管理"
+        },
+        "appid" : {
+          "type" : "string",
+          "description" : "appid"
+        },
+        "category" : {
+          "type" : "string",
+          "description" : "分类"
+        },
+        "state" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "是否启用"
+        },
+        "note" : {
+          "type" : "string",
+          "description" : "备注"
+        },
+        "createTime" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "创建时间"
+        },
+        "updateTime" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "更新时间"
+        },
+        "images" : {
+          "type" : "string"
+        },
+        "items" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LowAutoAlbumItem对象"
+          }
+        }
+      }
+    },
+    "LowAutoApiModel对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "modelName" : {
+          "type" : "string",
+          "description" : "模型名称"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "数据名称"
+        },
+        "dataType" : {
+          "type" : "string",
+          "description" : "数据模型"
+        },
+        "description" : {
+          "type" : "string",
+          "description" : "描述"
+        },
+        "parentModelId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "父模型"
+        }
+      }
+    },
+    "LowAutoApiParamter对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "apiId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "api id"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "参数名称"
+        },
+        "dataType" : {
+          "type" : "string",
+          "description" : "数据类型"
+        },
+        "description" : {
+          "type" : "string",
+          "description" : "描述"
+        },
+        "defaultValue" : {
+          "type" : "string",
+          "description" : "默认值"
+        },
+        "required" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "是否是必填项"
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "参数类型 header query path..."
+        }
+      }
+    },
+    "LowAutoApis对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "显示名称"
+        },
+        "apiName" : {
+          "type" : "string",
+          "description" : "命名"
+        },
+        "api" : {
+          "type" : "string",
+          "description" : "api"
+        },
+        "appId" : {
+          "type" : "string",
+          "description" : "所属应用"
+        },
+        "appName" : {
+          "type" : "string",
+          "description" : "所属应用名称"
+        },
+        "apiMethod" : {
+          "type" : "string",
+          "description" : "api请求方式"
+        },
+        "dataModelName" : {
+          "type" : "string",
+          "description" : "数据模型名称"
+        },
+        "description" : {
+          "type" : "string",
+          "description" : "描述"
+        }
+      }
+    },
+    "LowAutoApp对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "中文名"
+        },
+        "appName" : {
+          "type" : "string",
+          "description" : "英文标识名"
+        },
+        "logo" : {
+          "type" : "string",
+          "description" : "logo"
+        },
+        "notes" : {
+          "type" : "string",
+          "description" : "应用说明"
+        },
+        "items" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LowAutoPage对象"
+          }
+        }
+      }
+    },
+    "LowAutoComponentLayout对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "componentId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "父组件id"
+        },
+        "componentLayoutId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "子组件id"
+        }
+      }
+    },
+    "LowAutoComponentProp对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "componentId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "所属标准组件"
+        },
+        "propName" : {
+          "type" : "string",
+          "description" : "属性键/名称"
+        },
+        "propTips" : {
+          "type" : "string",
+          "description" : "属性中文名称"
+        },
+        "propDefaultValue" : {
+          "type" : "string",
+          "description" : "标准组件属性默认值"
+        },
+        "dataType" : {
+          "type" : "string",
+          "description" : "SELECT单选项  MULTISELECT多选项  NUMBER数字  TEXT文本"
+        },
+        "optionName" : {
+          "type" : "string",
+          "description" : "如果data_type=[select,multiselect],限制属性值选项"
+        }
+      }
+    },
+    "LowAutoComponent对象" : {
+      "type" : "object",
+      "properties" : {
+        "extra" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "组件中文名"
+        },
+        "componentName" : {
+          "type" : "string",
+          "description" : "基于不同属性派生出来的新组件"
+        },
+        "componentType" : {
+          "type" : "string",
+          "description" : "前端已开发的组件类型"
+        },
+        "componentOption" : {
+          "type" : "string",
+          "description" : "组件类型"
+        },
+        "items" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LowAutoComponentProp对象"
+          }
+        }
+      }
+    },
+    "LowAutoModuleData对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "id"
+        },
+        "moduleId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "所属组件实例id"
+        },
+        "autolistItemModuleName" : {
+          "type" : "string",
+          "description" : "列表子组件名称"
+        },
+        "autolistItemNavigation" : {
+          "type" : "string",
+          "description" : "列表子组件点击时的转发路由"
+        },
+        "autolistResponseListKey" : {
+          "type" : "string",
+          "description" : "从api返回获取列表数据的json键值"
+        },
+        "bindingField" : {
+          "type" : "string",
+          "description" : "绑定数据源字段api"
+        },
+        "bindingType" : {
+          "type" : "string",
+          "description" : "绑定类型  固定选项直接绑定（无值） 绑定到目标对象"
+        },
+        "bindingTarget" : {
+          "type" : "string",
+          "description" : "绑定字段的目标组键属性"
+        },
+        "loadApi" : {
+          "type" : "string",
+          "description" : "可以自定义组件数据从此api获取"
+        },
+        "requestPs" : {
+          "type" : "string",
+          "description" : "发送请求时的pageSize命名，默认值是pageSize"
+        },
+        "requestPn" : {
+          "type" : "string",
+          "description" : "发送请求时的pageNum名称，默认值是pageNum"
+        }
+      }
+    },
+    "LowAutoModuleProp" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "moduleId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "moduleName" : {
+          "type" : "string"
+        },
+        "moduleKey" : {
+          "type" : "string"
+        },
+        "propName" : {
+          "type" : "string"
+        },
+        "propValue" : {
+          "type" : "string"
+        },
+        "propDataType" : {
+          "type" : "string"
+        },
+        "dataType" : {
+          "type" : "string"
+        }
+      }
+    },
+    "LowAutoModulePropRecord" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "moduleId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "moduleName" : {
+          "type" : "string"
+        },
+        "moduleKey" : {
+          "type" : "string"
+        },
+        "propName" : {
+          "type" : "string"
+        },
+        "propValue" : {
+          "type" : "string"
+        },
+        "propDataType" : {
+          "type" : "string"
+        },
+        "dataType" : {
+          "type" : "string"
+        }
+      }
+    },
+    "LowAutoModuleStyle对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "id"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "显示名称"
+        },
+        "styleName" : {
+          "type" : "string",
+          "description" : "风格名称"
+        },
+        "cssName" : {
+          "type" : "string",
+          "description" : "css名称"
+        },
+        "cssValue" : {
+          "type" : "string",
+          "description" : "css值"
+        },
+        "dataType" : {
+          "type" : "string",
+          "description" : "属性值类型 SELECT单选，MULTISELECT多选项，NUMBER数字，TEXT文本"
+        },
+        "optionName" : {
+          "type" : "string",
+          "description" : "如果数据类型是选项，限定属性值"
+        }
+      }
+    },
+    "LowAutoModule对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "moduleKey" : {
+          "type" : "string",
+          "description" : "UUID"
+        },
+        "moduleName" : {
+          "type" : "string",
+          "description" : "组件中文标识名"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "组件英文标识名"
+        },
+        "pageId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "一对多关联字段"
+        },
+        "containerStyleName" : {
+          "type" : "string",
+          "description" : "所属容器组风格"
+        },
+        "moduleData" : {
+          "type" : "string",
+          "description" : "页面组件配置参数"
+        },
+        "componentId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "所属标准组件"
+        },
+        "componentType" : {
+          "type" : "string",
+          "description" : "组件类型/名称"
+        },
+        "componentOption" : {
+          "type" : "string",
+          "description" : "组件类型"
+        },
+        "binding" : {
+          "type" : "string",
+          "description" : "字段名称或绑定集合"
+        },
+        "bindingTarget" : {
+          "type" : "string",
+          "description" : "绑定聚合目标"
+        },
+        "pid" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "用于组合AutoLayout多层组件"
+        },
+        "referenceStyleName" : {
+          "type" : "string",
+          "description" : "直接引用组件的风格名称，相当于Cart"
+        },
+        "referenceGatewayName" : {
+          "type" : "string",
+          "description" : "直接引用网关名称"
+        }
+      }
+    },
+    "LowAutoNamedProps对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "appid" : {
+          "type" : "string",
+          "description" : "所属应用"
+        },
+        "tags" : {
+          "type" : "string",
+          "description" : "tag用于分类"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "显示名称"
+        },
+        "cssName" : {
+          "type" : "string",
+          "description" : "css名称"
+        },
+        "cssValue" : {
+          "type" : "string",
+          "description" : "css值"
+        },
+        "dataType" : {
+          "type" : "string",
+          "description" : "属性值类型"
+        },
+        "optionName" : {
+          "type" : "string",
+          "description" : "数据类型选项"
+        }
+      }
+    },
+    "LowAutoPageStyle对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "风格组名中文标识名"
+        },
+        "styleName" : {
+          "type" : "string",
+          "description" : "风格组名英文标识名"
+        },
+        "cssName" : {
+          "type" : "string",
+          "description" : "css属性名"
+        },
+        "cssValue" : {
+          "type" : "string",
+          "description" : "css属性值"
+        },
+        "tags" : {
+          "type" : "string"
+        },
+        "tagIds" : {
+          "type" : "string"
+        },
+        "extra" : {
+          "type" : "string"
+        },
+        "cssJson" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "object"
+          }
+        }
+      }
+    },
+    "LowAutoPage对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "version" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "版本号"
+        },
+        "appId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "所属app"
+        },
+        "pageName" : {
+          "type" : "string",
+          "description" : "页面标识名称"
+        },
+        "pageTitle" : {
+          "type" : "string",
+          "description" : "页面标题(其他页面路由跳转)"
+        },
+        "pageStyleName" : {
+          "type" : "string",
+          "description" : "页面风格名称"
+        },
+        "moduleStyleName" : {
+          "type" : "string",
+          "description" : "子组件容器所属容器组名称"
+        },
+        "dataSourceApi" : {
+          "type" : "string",
+          "description" : "loadAPI"
+        },
+        "dataSourceResponseData" : {
+          "type" : "string",
+          "description" : "指定api数据的数据域，默认值为data"
+        },
+        "dataSourceResponseTotal" : {
+          "type" : "string",
+          "description" : "指定数据的数据域，默认值为total"
+        },
+        "items" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LowAutoModule对象"
+          }
+        }
+      }
+    },
+    "LowAutoPalette对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "paletteName" : {
+          "type" : "string",
+          "description" : "色板名称"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "显示名称"
+        },
+        "color" : {
+          "type" : "string",
+          "description" : "颜色值"
+        },
+        "orgId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "社区管理"
+        },
+        "appid" : {
+          "type" : "string",
+          "description" : "appid"
+        },
+        "category" : {
+          "type" : "string",
+          "description" : "分类"
+        },
+        "note" : {
+          "type" : "string",
+          "description" : "备注"
+        },
+        "createTime" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "创建时间"
+        },
+        "updateTime" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "更新时间"
+        }
+      }
+    },
+    "LowAutoPropDefault对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "id"
+        },
+        "propName" : {
+          "type" : "string",
+          "description" : "常见属性名称"
+        },
+        "propOption" : {
+          "type" : "string",
+          "description" : "center"
+        },
+        "note" : {
+          "type" : "string",
+          "description" : "备注"
+        }
+      }
+    },
+    "LowAutoPropOption对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "id"
+        },
+        "propName" : {
+          "type" : "string",
+          "description" : "属性名称"
+        },
+        "propOption" : {
+          "type" : "string",
+          "description" : "属性值选项"
+        },
+        "note" : {
+          "type" : "string",
+          "description" : "备注"
+        }
+      }
+    },
+    "LowAutoService对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "展示名称"
+        },
+        "serviceName" : {
+          "type" : "string",
+          "description" : "标识名称"
+        },
+        "moduleId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "组件id"
+        },
+        "moduleName" : {
+          "type" : "string",
+          "description" : "组件名称"
+        },
+        "serviceHttpMethod" : {
+          "type" : "string",
+          "description" : "请求方式"
+        },
+        "serviceHttpPath" : {
+          "type" : "string",
+          "description" : "服务路径"
+        },
+        "serviceHttpEndpoint" : {
+          "type" : "string",
+          "description" : "服务端口"
+        },
+        "apiId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "api_id"
+        }
+      }
+    },
+    "LowSelectOption" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "field" : {
+          "type" : "string"
+        },
+        "key" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "LowSelectOptionRecord" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "field" : {
+          "type" : "string"
+        },
+        "key" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "StockTag" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "tagName" : {
+          "type" : "string"
+        },
+        "tagType" : {
+          "type" : "string"
+        },
+        "isPrimary" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "sortOrder" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "StockTagRecord" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "tagName" : {
+          "type" : "string"
+        },
+        "tagType" : {
+          "type" : "string"
+        },
+        "isPrimary" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "sortOrder" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "stockId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "stockType" : {
+          "type" : "string"
+        }
+      }
+    },
+    "StockTagRelation" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "tagId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "stockId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "stockType" : {
+          "type" : "string"
+        },
+        "createTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        }
+      }
+    },
+    "Tip" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ZeroIoIcon对象" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "名称"
+        },
+        "title" : {
+          "type" : "string",
+          "description" : "标题"
+        },
+        "note" : {
+          "type" : "string",
+          "description" : "描述"
+        },
+        "path" : {
+          "type" : "string",
+          "description" : "路径"
+        },
+        "checkSum" : {
+          "type" : "string",
+          "description" : "摘要"
+        },
+        "flag" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "是否逻辑删除"
+        },
+        "createTime" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "创建时间"
+        },
+        "updateTime" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "更新时间"
+        }
+      }
+    }
+  }
+}

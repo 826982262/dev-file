@@ -1,0 +1,576 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "CRUD Category Service",
+    "version" : "1.1.0",
+    "title" : "Category Service"
+  },
+  "tags" : [ {
+    "name" : "CategoryEndpoint"
+  }, {
+    "name" : "CategoryTypeEndpoint"
+  } ],
+  "paths" : {
+    "/api/category/categories" : {
+      "get" : {
+        "tags" : [ "CategoryEndpoint" ],
+        "summary" : "显示列表",
+        "description" : "",
+        "operationId" : "getNodeCategoryList",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "CategoryEndpoint" ],
+        "summary" : "添加  parentCode为空时没有父级 ",
+        "description" : "",
+        "operationId" : "saveCategory",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/CategoryRecord"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "CategoryEndpoint" ],
+        "summary" : "更新分类",
+        "description" : "",
+        "operationId" : "updateCategory",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Category"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/category/categories/all/list" : {
+      "get" : {
+        "tags" : [ "CategoryEndpoint" ],
+        "summary" : "all categories (deprecated)",
+        "description" : "",
+        "operationId" : "findAllCategories",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/category/categories/all/tree" : {
+      "get" : {
+        "tags" : [ "CategoryEndpoint" ],
+        "summary" : "all categories with tree structure",
+        "description" : "",
+        "operationId" : "recursivelyFindAllCategories",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/category/categories/all/tree/identifier/{identifier}" : {
+      "get" : {
+        "tags" : [ "CategoryEndpoint" ],
+        "summary" : "直接根据路径获取分类信息",
+        "description" : "",
+        "operationId" : "recursivelyFindAllCategoriesIdentifier",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/category/categories/all/tree/scope/{scope}" : {
+      "get" : {
+        "tags" : [ "CategoryEndpoint" ],
+        "summary" : "直接根据路径获取分类信息",
+        "description" : "",
+        "operationId" : "recursivelyFindAllCategoriesScope",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/category/categories/parentCode/{parentCode}" : {
+      "post" : {
+        "tags" : [ "CategoryEndpoint" ],
+        "summary" : "parentCode为0时没有父级",
+        "description" : "",
+        "operationId" : "saveCategory",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Category"
+          }
+        }, {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/category/categories/{id}" : {
+      "get" : {
+        "tags" : [ "CategoryEndpoint" ],
+        "summary" : "获取详情",
+        "description" : "",
+        "operationId" : "showCategoryById",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "CategoryEndpoint" ],
+        "summary" : "更新分类",
+        "description" : "",
+        "operationId" : "updateCategory",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Category"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "CategoryEndpoint" ],
+        "summary" : "删除分类",
+        "description" : "",
+        "operationId" : "deleteCategory",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/category/types" : {
+      "post" : {
+        "tags" : [ "CategoryTypeEndpoint" ],
+        "summary" : "创建分类类型",
+        "description" : "",
+        "operationId" : "saveCategoryType",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/CategoryType"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "CategoryTypeEndpoint" ],
+        "summary" : "更新分类类型",
+        "description" : "",
+        "operationId" : "updateCategoryType",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/CategoryType"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/category/types/all/tree" : {
+      "get" : {
+        "tags" : [ "CategoryTypeEndpoint" ],
+        "summary" : "获取分类类型 树状列表",
+        "description" : "",
+        "operationId" : "recursivelyFindAllCategories",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    },
+    "/api/category/types/{id}" : {
+      "get" : {
+        "tags" : [ "CategoryTypeEndpoint" ],
+        "summary" : "获取分类类型详情",
+        "description" : "",
+        "operationId" : "showCategoryById",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "CategoryTypeEndpoint" ],
+        "summary" : " 删除分类类型",
+        "description" : "",
+        "operationId" : "deleteCategoryType",
+        "parameters" : [ {
+          "name" : "",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Tip"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Category" : {
+      "type" : "object",
+      "properties" : {
+        "extra" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "object"
+          }
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "orgId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "orgTag" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "code" : {
+          "type" : "string"
+        },
+        "categoryScope" : {
+          "type" : "string"
+        },
+        "invalid" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "pid" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "typeId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "sortNum" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "cover" : {
+          "type" : "string"
+        }
+      }
+    },
+    "CategoryRecord" : {
+      "type" : "object",
+      "properties" : {
+        "extra" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "object"
+          }
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "orgId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "orgTag" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "code" : {
+          "type" : "string"
+        },
+        "categoryScope" : {
+          "type" : "string"
+        },
+        "invalid" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "pid" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "typeId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "sortNum" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "cover" : {
+          "type" : "string"
+        },
+        "parentCode" : {
+          "type" : "string"
+        }
+      }
+    },
+    "CategoryType" : {
+      "type" : "object",
+      "properties" : {
+        "extra" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "object"
+          }
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "orgId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "orgTag" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "pid" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "sortNum" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "identifier" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Tip" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "message" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
