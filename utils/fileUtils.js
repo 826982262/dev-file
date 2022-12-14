@@ -2,12 +2,10 @@ const fs = require("fs")
 const crypto = require('crypto');
 var path = require('path');
 const axios = require('axios')
-
 const {WORKDIR,SWAGGERJSONFILE,HTTP} = require('../config/config.default.js');
 
 //查找目录存在文件
 let checkConfigFile = (WORKDIR)=>{ 
-
     let arr = new Array()    
     // 判断配置文件目录存在
     if(!fs.existsSync(`${WORKDIR}/swagger`)){
@@ -36,26 +34,65 @@ let findDir = (path)=>{
 
 
 let findFile = (path)=>{
-    let arr = new Array()    
+    let arr = new Array() 
+    let result = new Array() 
+    let filepath= readdirectory(path,arr)
 
-    let fileNames = fs.readdirSync(path)
-    if(fileNames!=''){
-        fileNames.forEach(Element =>{
-            let files = fs.readdirSync(`${path}/${Element}`)
-            if(files!=''){
-                files.forEach(file =>{
-                    let  data = {id: `${Element}/${file}`,tag: Element,filePath: `${Element}/${file}`}
-                    arr.push(data)
-
-                })
-            }
+    console.log(filepath)
+    if(filepath!=''){
+        filepath.forEach(file =>{
+           let fileName =file.toString().substring(file.toString().lastIndexOf("/")+1,file.toString().length)
+        //    console.log(files.toString())
+            let  data = {filePath: `${file}`,fileName: fileName}
+            result.push(data)
 
         })
-
     }
-    return arr;
+    return result;
 
 }
+
+
+function readdirectory(dir,arrs){
+    let arr = arrs
+    let files = fs.readdirSync(dir)
+    files.forEach((item)=>{
+    let filepath1 = `${dir}/${item}`
+    let stat = fs.statSync(filepath1)
+    if(stat.isFile()){
+        arr.push(filepath1)
+    }else{
+    readdirectory(filepath1,arr)
+    }
+     
+    } )
+    return arr
+    }
+
+
+
+ let fileForEach = (path)=>{
+    let arr = new Array()   
+    let fileNames = fs.readdirSync(path)
+    console.log(fileNames)
+    if(fileNames!=''){
+        fileNames.forEach(Element =>{
+            arr.push(fs.statSync(`${path}/${Element}`,(stats)=>{
+                console.log(stats.isFile())
+                if(stats.isFile()){
+                    console.log(`file:${path}/${Element}`)
+                    return `${path}/${Element}`
+                }else{
+                    console.log(`path:${path}/${Element}`)
+
+                   return fileForEach(`${path}/${Element}`)
+                }
+               }))
+        })}
+
+        return arr
+ }
+
 let getCheckSum=(file) =>{
     var stat = fs.lstatSync(file)
     if(fs.existsSync(file)&&stat.isFile()){
@@ -79,6 +116,7 @@ let checkSumEqueir = (str1,str2)=>{
     }
     return false;
 }
+
 
 
 let lookupSwaggerFile = (filePath)=>{
@@ -120,6 +158,8 @@ function sendHttpRequest(url,data) {
         
     });
 }
+
+
 
 
 

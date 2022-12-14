@@ -2,51 +2,10 @@
 # @endpoint=https://static.smallsaas.cn
 @endpoint=https://house.cloud.smallsaas.cn
 
-GET {{endpoint}}/api/u/rss/master
 
-####
-//配置查询
-GET {{endpoint}}/api/doswagger/checkfiles?pageNum=1&pageSize=10
-###
-GET https://house.cloud.smallsaas.cn/form?id=555511111&pageSize=10&pageNum=1
+###文件查找
+GET {{dev}}/api/js/v1/132/findfiles
 
-###入库
-GET {{endpoint}}/api/doswagger/putstorage?swagger=monemts/swagger.json&isForce=false
-
-
-
-###获取文件夹
-GET {{endpoint }}/api/doswagger/getSwaggerTag
-
-
-### 配置文件执行
-GET {{endpoint}}/api/doswagger/execConfig?swagger=rss/swagger.json
-
-###增加url
-POST {{endpoint}}/api/doswagger/editFile
-Content-Type: application/json
-
-{
-    "servers":[{
-        "url": "http://localhost:8000",
-        "description": "Optional server description, e.g. Main (production) server"
-    },{
-        "url": "https://static.smallsaas.cn",
-        "description": "Optional server description, e.g. Main (production) server"
-    }
-    ],
-    "filePath": "pom-dev-auto-render/swagger.json"
-}
-
-
-###查找http文件
-GET {{dev}}/api/doswagger/fileFiles?pageNum=1&pageSize=10
-
-###下载文件
-GET {{dev}}/api/doswagger/download/rss/rss图片集测试用例.http
-
-###查看文件
-GET {{endpoint}}/api/doswagger/lookuphttpfile?filePath=rss/swagger.json
 
 
 
